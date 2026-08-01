@@ -124,7 +124,7 @@
                             Grid.Column="0"
                             Margin="0,0,8,0"
                             FontSize="13"
-                            Foreground="{Binding ElementName=MainPageRoot, Path=ViewModel.GameNewsCardTextBrush}"
+                            Foreground="{ThemeResource TextFillColorPrimaryBrush}"
                             MaxLines="1"
                             Text="{Binding Title}"
                             TextTrimming="CharacterEllipsis" />
@@ -132,7 +132,7 @@
                             Grid.Column="1"
                             VerticalAlignment="Center"
                             FontSize="12"
-                            Foreground="{Binding ElementName=MainPageRoot, Path=ViewModel.GameNewsCardTextBrush}"
+                            Foreground="{ThemeResource TextFillColorPrimaryBrush}"
                             Opacity="0.5"
                             Text="{Binding Date}" />
                     </Grid>
@@ -221,12 +221,32 @@
                                         x:Name="BannerCurrentImage"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
+                                        ImageFailed="BannerImage_ImageFailed"
+                                        ImageOpened="BannerImage_ImageOpened"
                                         RenderTransformOrigin="0.5,0.5"
                                         Stretch="Fill">
                                         <Image.RenderTransform>
                                             <ScaleTransform x:Name="BannerCurrentScale" ScaleX="1" ScaleY="1" />
                                         </Image.RenderTransform>
                                     </Image>
+
+                                    <Grid
+                                        x:Name="BannerCurrentPlaceholder"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Background="#20000000"
+                                        IsHitTestVisible="False">
+                                        <Viewbox
+                                            Width="32"
+                                            Height="32"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                            <FontIcon
+                                                FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                                Glyph="&#xEB9F;" />
+                                        </Viewbox>
+                                    </Grid>
 
                                     <Button
                                         Margin="0"
@@ -256,12 +276,32 @@
                                         x:Name="BannerIncomingImage"
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
+                                        ImageFailed="BannerImage_ImageFailed"
+                                        ImageOpened="BannerImage_ImageOpened"
                                         RenderTransformOrigin="0.5,0.5"
                                         Stretch="Fill">
                                         <Image.RenderTransform>
                                             <ScaleTransform x:Name="BannerIncomingScale" ScaleX="1" ScaleY="1" />
                                         </Image.RenderTransform>
                                     </Image>
+
+                                    <Grid
+                                        x:Name="BannerIncomingPlaceholder"
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Background="#20000000"
+                                        IsHitTestVisible="False">
+                                        <Viewbox
+                                            Width="32"
+                                            Height="32"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center">
+                                            <FontIcon
+                                                FontFamily="{ThemeResource SymbolThemeFontFamily}"
+                                                Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                                Glyph="&#xEB9F;" />
+                                        </Viewbox>
+                                    </Grid>
                                 </Grid>
 
                                 <Button
@@ -439,7 +479,7 @@
                                     ToolTipService.ToolTip="{helpers:Loc Key=Home_RefreshToken}">
                                     <FontIcon
                                         FontSize="11"
-                                        Foreground="{Binding GameCheckinTextBrush, Mode=OneWay}"
+                                        Foreground="{ThemeResource TextFillColorPrimaryBrush}"
                                         Glyph="&#xE72C;" />
                                 </Button>
                                 <Button
@@ -455,7 +495,7 @@
                                     ToolTipService.ToolTip="{helpers:Loc Key=Home_GoToCheckinConfig}">
                                     <FontIcon
                                         FontSize="11"
-                                        Foreground="{Binding GameCheckinTextBrush, Mode=OneWay}"
+                                        Foreground="{ThemeResource TextFillColorPrimaryBrush}"
                                         Glyph="&#xE713;" />
                                 </Button>
                                 <Border
@@ -468,7 +508,7 @@
                                     ToolTipService.ToolTip="{Binding CheckinStateTooltip, Mode=OneWay}">
                                     <FontIcon
                                         FontSize="12"
-                                        Foreground="{Binding CheckinStateBrush, Mode=OneWay}"
+                                        Foreground="{ThemeResource TextFillColorPrimaryBrush}"
                                         Glyph="{Binding CheckinStateGlyph, Mode=OneWay}" />
                                 </Border>
                             </Grid>
@@ -529,7 +569,7 @@
                                 Command="{Binding ExecuteCheckinCommand}"
                                 Content="{Binding CheckinButtonText}"
                                 CornerRadius="4"
-                                Foreground="{Binding GameCheckinTextBrush, Mode=OneWay}"
+                                Foreground="{ThemeResource TextFillColorPrimaryBrush}"
                                 IsEnabled="{Binding IsCheckinButtonEnabled, Mode=OneWay}" />
                         </Grid>
                     </Grid>

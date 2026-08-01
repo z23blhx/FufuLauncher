@@ -1,3 +1,7 @@
+/*
+Copyright (c) FufuLauncher Dev Team. All rights reserved.
+Licensed under the MIT License.
+*/
 using System.Diagnostics;
 using FufuLauncher.Data.Entities;
 using Microsoft.Data.Sqlite;
@@ -15,6 +19,16 @@ public class AchievementRepository
     public void ChangeDatabase(string? newDbPath)
     {
         _overridePath = newDbPath;
+    }
+    
+    public void InvalidateMigrationCache(string dbPath)
+    {
+        _migratedPaths.TryRemove(dbPath, out _);
+    }
+    
+    public static void ClearConnectionPool()
+    {
+        SqliteConnection.ClearAllPools();
     }
 
     private static readonly object _migrateLock = new();

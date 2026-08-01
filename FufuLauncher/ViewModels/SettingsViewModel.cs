@@ -33,6 +33,13 @@ namespace FufuLauncher.ViewModels
         Acrylic = 1,
         Mica = 2
     }
+    public enum NotificationPosition
+    {
+        BottomRight = 0,
+        TopRight = 1,
+        TopLeft = 2,
+        BottomLeft = 3
+    }
     public enum AppLanguage
     {
         Default = 0,
@@ -119,6 +126,7 @@ namespace FufuLauncher.ViewModels
         [ObservableProperty] private double _contentFrameBackgroundOpacity = 0.5;
         [ObservableProperty] private bool _isSaveWindowSizeEnabled;
         [ObservableProperty] private bool _isMinWindowSizeLimitEnabled = true;
+        [ObservableProperty] private NotificationPosition _notificationPosition;
         [ObservableProperty] private double _globalBackgroundImageOpacity = 1.0;
         [ObservableProperty] private bool _isAcrylicOverlayEnabled;
         [ObservableProperty] private bool _isPageOverlaySemiTransparentEnabled;
@@ -253,6 +261,7 @@ namespace FufuLauncher.ViewModels
                 new() { ViewModelKey = "FufuLauncher.ViewModels.OtherViewModel",      DisplayName = "其他功能",       IconGlyph = "\uE71D" },
                 new() { ViewModelKey = "FufuLauncher.ViewModels.PluginViewModel",     DisplayName = "插件管理",       IconGlyph = "\uE7B5" },
                 new() { ViewModelKey = "FufuLauncher.ViewModels.DataViewModel",       DisplayName = "数据中心",       IconGlyph = "\uE9D9" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.BackpackViewModel",   DisplayName = "背包浏览器",     IconGlyph = "\uE8EC" },
                 new() { ViewModelKey = "FufuLauncher.ViewModels.HelpViewModel",       DisplayName = "帮助文档",       IconGlyph = "\uE82D" },
                 new() { ViewModelKey = "FufuLauncher.ViewModels.CommunityViewModel",  DisplayName = "VanillaBBS",     IconGlyph = "\uE716" },
                 new() { ViewModelKey = "FufuLauncher.ViewModels.CalculatorViewModel",  DisplayName = "养成计算",      IconGlyph = "\uE1D0" },
@@ -1127,6 +1136,11 @@ namespace FufuLauncher.ViewModels
                 CurrentWindowBackdrop = WindowBackdropType.Acrylic;
             }
 
+            var notifPosJson = await _localSettingsService.ReadSettingAsync("NotificationPosition");
+            NotificationPosition = notifPosJson != null
+                ? (NotificationPosition)Convert.ToInt32(notifPosJson)
+                : NotificationPosition.BottomRight;
+
             var appThemeColorJson = await _localSettingsService.ReadSettingAsync("AppThemeColor");
             if (appThemeColorJson != null)
             {
@@ -1575,6 +1589,14 @@ namespace FufuLauncher.ViewModels
                 WeakReferenceMessenger.Default.Send(new ValueChangedMessage<WindowBackdropType>(value));
             }
         }
+
+        partial void OnNotificationPositionChanged(NotificationPosition value)
+        {
+            if (_isInitializing) return;
+            _ = _localSettingsService.SaveSettingAsync("NotificationPosition", (int)value);
+            WeakReferenceMessenger.Default.Send(new ValueChangedMessage<NotificationPosition>(value));
+        }
+
         private async Task SelectStartupSoundAsync()
         {
             try
@@ -1756,6 +1778,15 @@ namespace FufuLauncher.ViewModels
                 // Use ResourceExtensions.SetLanguage to control MRT via ResourceContext instead.
                 Helpers.ResourceExtensions.SetLanguage(
                     language == AppLanguage.Default ? null : culture);
+                
+                if (language == AppLanguage.zhCN)
+                {
+                    SelectedServer = ServerType.CN;
+                }
+                else if (language != AppLanguage.Default)
+                {
+                    SelectedServer = ServerType.OS;
+                }
 
                 var dialog = new ContentDialog
                 {

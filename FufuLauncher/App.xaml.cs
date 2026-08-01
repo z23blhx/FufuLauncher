@@ -25,6 +25,7 @@ using Windows.Media.Core;
 using Windows.Media.Playback;
 using System.Net.Sockets;
 using Sentry;
+using QuestPDF.Infrastructure;
 
 namespace FufuLauncher;
 
@@ -79,6 +80,7 @@ public partial class App : Application
     public App()
     {
         Helpers.AppPaths.EnsureDirectories();
+        QuestPDF.Settings.License = LicenseType.Community;
 
         string userDataFolder = Path.Combine(Helpers.AppPaths.CacheDir, "WebView2Data");
         Environment.SetEnvironmentVariable("WEBVIEW2_USER_DATA_FOLDER", userDataFolder);
@@ -139,8 +141,13 @@ public partial class App : Application
                     services.AddSingleton<MainViewModel>();
                     services.AddTransient<MainPage>();
                     
+                    services.AddSingleton<GameStatsService>();
+                    services.AddSingleton<IDataCenterPdfReportService, DataCenterPdfReportService>();
                     services.AddTransient<DataViewModel>();
                     services.AddTransient<DataPage>();
+
+                    services.AddSingleton<Services.Backpack.BackpackRuntimeService>();
+                    services.AddTransient<BackpackPage>();
                     
                     services.AddTransient<SettingsViewModel>();
                     services.AddTransient<SettingsPage>();
@@ -179,6 +186,7 @@ public partial class App : Application
                     services.AddSingleton<ControlPanelModel>();
                     services.AddTransient<PanelPage>();
                     services.AddSingleton<IUserInfoService, UserInfoService>();
+                    services.AddSingleton<IUidLookupService, Services.UID.UidLookupService>();
 
                     services.AddSingleton<AccountManager>();
 
@@ -384,6 +392,19 @@ public partial class App : Application
 
             _ = Task.Run(() => LaunchLocalUpdater());
 
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    var uidService = GetService<IUidLookupService>();
+                    await uidService.LoadAndWriteUidsAsync();
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"[UidLookup] 静默写入失败: {ex.Message}");
+                }
+            });
+
             await VerifyResourceFilesAsync();
 
             if (!Helpers.AppPaths.IsFirstRun)
@@ -393,8 +414,6 @@ public partial class App : Application
             }
             else
             {
-                // On first run, apply system default language so the language
-                // selection page shows in the user's OS language.
                 await ApplyLanguageSettingAsync();
 
                 WeakReferenceMessenger.Default.Register<Messages.AgreementAcceptedMessage>(this, (r, m) =>
@@ -501,19 +520,15 @@ public partial class App : Application
         try
         {
             var localSettings = GetService<ILocalSettingsService>();
-            // Check if we have already initialized the theme preference
             var isThemeInitialized = await localSettings.ReadSettingAsync("IsThemeInitialized");
-
-            // If null, this is the first run (or first run after this update)
+            
             if (isThemeInitialized == null)
             {
                 Debug.WriteLine("Initializing default theme to Dark.");
                 var themeService = GetService<IThemeSelectorService>();
-
-                // Force the theme service to set Dark mode
+                
                 await themeService.SetThemeAsync(ElementTheme.Dark);
-
-                // Mark as initialized so we don't overwrite user preference later
+                
                 await localSettings.SaveSettingAsync("IsThemeInitialized", true);
             }
         }
@@ -667,9 +682,7 @@ public partial class App : Application
                 };
 
                 Debug.WriteLine($"[App] ApplyLanguageSettingAsync: language={language}, culture='{culture}'");
-
-                // PrimaryLanguageOverride is NOT available for unpackaged apps.
-                // Use ResourceExtensions.SetLanguage to control MRT via ResourceContext instead.
+                
                 Helpers.ResourceExtensions.SetLanguage(
                     language == AppLanguage.Default ? null : culture);
             }

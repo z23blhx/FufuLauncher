@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <resheader name="resmimetype"><value>text/microsoft-resx</value></resheader>
   <resheader name="version"><value>2.0</value></resheader>
@@ -15,7 +15,7 @@
   <data name="Avatar_LoadFail_Title" xml:space="preserve"><value>Load Failed</value></data>
   <data name="Avatar_SaveFail_Title" xml:space="preserve"><value>Save Failed</value></data>
   <data name="Fps_CompatWarning_Content" xml:space="preserve"><value>If you have NVIDIA RTX 40-series or newer AI frame generation enabled, or use frame display software such as RTSS or MSI Afterburner, it may cause the game to freeze or fail to start normally.</value></data>
-  <data name="Fps_CompatWarning_DontShow" xml:space="preserve"><value>Don&apos;t show this warning again</value></data>
+  <data name="Fps_CompatWarning_DontShow" xml:space="preserve"><value>Don't show this warning again</value></data>
   <data name="Fps_CompatWarning_Title" xml:space="preserve"><value>Compatibility Warning</value></data>
   <data name="Fps_HashMismatch_Content" xml:space="preserve"><value>The frame rate display plugin hash does not match. It may have been tampered with or corrupted. Please reinstall the launcher.</value></data>
   <data name="Fps_Repair_Fail_Title" xml:space="preserve"><value>Repair Failed</value></data>
@@ -60,10 +60,10 @@ Recommendations:
   <data name="Preset_Create_Placeholder" xml:space="preserve"><value>Enter new preset name</value></data>
   <data name="Preset_Create_Title" xml:space="preserve"><value>Create New Preset</value></data>
   <data name="Preset_Delete_ConfirmBtn" xml:space="preserve"><value>Confirm Delete</value></data>
-  <data name="Preset_Delete_Confirm_Format" xml:space="preserve"><value>Are you sure you want to delete the preset &quot;{0}&quot;? This action cannot be undone!</value></data>
+  <data name="Preset_Delete_Confirm_Format" xml:space="preserve"><value>Are you sure you want to delete the preset "{0}"? This action cannot be undone!</value></data>
   <data name="Preset_Locked_Content_Format" xml:space="preserve"><value>Lock reason: {0}
 
-If you continue, this warning will be ignored and the preset&apos;s Hash will be updated to the current plugin Hash, unlocking the preset. Continue?</value></data>
+If you continue, this warning will be ignored and the preset's Hash will be updated to the current plugin Hash, unlocking the preset. Continue?</value></data>
   <data name="Preset_Locked_Continue" xml:space="preserve"><value>Continue and Unlock</value></data>
   <data name="Preset_Locked_Title" xml:space="preserve"><value>Configuration Preset Locked</value></data>
   <data name="Preset_ResetAll_ConfirmBtn" xml:space="preserve"><value>Confirm Reset</value></data>
@@ -505,7 +505,7 @@ Por favor, confirma que seleccionaste el directorio de instalación que contiene
   <data name="Btn_GotIt" xml:space="preserve"><value>Entendido</value></data>
   <data name="Err_SwitchFailed_Format" xml:space="preserve"><value>Error al cambiar: {0}</value></data>
   <data name="Title_ConfirmDelete" xml:space="preserve"><value>Confirmar eliminación</value></data>
-  <data name="Msg_DeleteAccountConfirm_Format" xml:space="preserve"><value>¿Eliminar la cuenta &apos;{0}&apos;?</value></data>
+  <data name="Msg_DeleteAccountConfirm_Format" xml:space="preserve"><value>¿Eliminar la cuenta '{0}'?</value></data>
   <data name="Err_DeleteFailed_Format" xml:space="preserve"><value>Error al eliminar: {0}</value></data>
   <data name="Title_OperationFailed" xml:space="preserve"><value>Operación fallida</value></data>
   <data name="NavHome" xml:space="preserve"><value>Inicio</value></data>
@@ -660,8 +660,8 @@ Por favor, confirma que seleccionaste el directorio de instalación que contiene
   <data name="Account_TotalTime" xml:space="preserve"><value>Tiempo total</value></data>
   <data name="Account_DailyAvg" xml:space="preserve"><value>Media diaria</value></data>
   <data name="Account_NoRecentRecords_Format" xml:space="preserve"><value>No hay registros de juego para los últimos {0} días</value></data>
-  <data name="Account_DeleteAccountConfirm_Format" xml:space="preserve"><value>¿Eliminar la cuenta &quot;{0}&quot;? Esto eliminará todos los datos relacionados, incluyendo credenciales, historial de deseos y credenciales de juego en la nube. Esta acción no se puede deshacer.</value></data>
-  <data name="Account_DeleteComplete" xml:space="preserve"><value>Cuenta &quot;{0}&quot; eliminada.</value></data>
+  <data name="Account_DeleteAccountConfirm_Format" xml:space="preserve"><value>¿Eliminar la cuenta "{0}"? Esto eliminará todos los datos relacionados, incluyendo credenciales, historial de deseos y credenciales de juego en la nube. Esta acción no se puede deshacer.</value></data>
+  <data name="Account_DeleteComplete" xml:space="preserve"><value>Cuenta "{0}" eliminada.</value></data>
   <data name="Account_DeleteException" xml:space="preserve"><value>Error al eliminar cuenta</value></data>
   <data name="Account_DeleteBtn" xml:space="preserve"><value>Eliminar</value></data>
   <data name="Account_CheckingIn" xml:space="preserve"><value>Haciendo check-in...</value></data>
@@ -864,7 +864,8 @@ Por favor, confirma que seleccionaste el directorio de instalación que contiene
   <data name="GenshinData_Mom" xml:space="preserve"><value>Mensual </value></data>
   <data name="GenshinData_LastMonth" xml:space="preserve"><value>(Mes pasado </value></data>
   <data name="GenshinData_MoraEarned" xml:space="preserve"><value>Mora obtenida</value></data>
-  <data name="GenshinData_DataNote" xml:space="preserve"><value>• Los datos diarios suelen actualizarse a la mañana siguiente&#x0a;• El nivel de ingresos se calcula según la eficiencia de obtención de protogemas</value></data>
+  <data name="GenshinData_DataNote" xml:space="preserve"><value>• Los datos diarios suelen actualizarse a la mañana siguiente
+• El nivel de ingresos se calcula según la eficiencia de obtención de protogemas</value></data>
   <data name="GenshinData_MonthlySourceAnalysis" xml:space="preserve"><value>Análisis mensual de fuentes de protogemas</value></data>
   <data name="GenshinData_Total" xml:space="preserve"><value>Total</value></data>
   <data name="DataPage_SearchRole" xml:space="preserve"><value>Buscar personajes...</value></data>
@@ -1026,10 +1027,14 @@ Por favor, confirma que seleccionaste el directorio de instalación que contiene
   <data name="GachaAnalysis_DeleteRecords" xml:space="preserve"><value>Eliminar registros</value></data>
   <data name="GachaAnalysis_PullsUnit" xml:space="preserve"><value> Tiradas</value></data>
   <data name="GachaAnalysis_ImportHint" xml:space="preserve"><value>Elige un método para importar tus registros de deseos y comenzar a analizar tus datos de gachapón</value></data>
-  <data name="GachaAnalysis_MiyousheDesc" xml:space="preserve"><value>Obtén registros directamente a través de&#x0a;tu cuenta de MiYouShe iniciada</value></data>
+  <data name="GachaAnalysis_MiyousheDesc" xml:space="preserve"><value>Obtén registros directamente a través de
+tu cuenta de MiYouShe iniciada</value></data>
   <data name="GachaAnalysis_Recommended" xml:space="preserve"><value>Recomendado</value></data>
-  <data name="GachaAnalysis_UrlDesc" xml:space="preserve"><value>Pega el enlace de análisis de gachapón&#x0a;para obtener registros de la API</value></data>
-  <data name="GachaAnalysis_UigfDesc" xml:space="preserve"><value>Importa registros desde un archivo JSON&#x0a;en formato estándar UIGF&#x0a;UIGF v4.x/3.0/2.x</value></data>
+  <data name="GachaAnalysis_UrlDesc" xml:space="preserve"><value>Pega el enlace de análisis de gachapón
+para obtener registros de la API</value></data>
+  <data name="GachaAnalysis_UigfDesc" xml:space="preserve"><value>Importa registros desde un archivo JSON
+en formato estándar UIGF
+UIGF v4.x/3.0/2.x</value></data>
   <data name="GachaAnalysis_IncrementalUpdate" xml:space="preserve"><value>Actualización incremental (Recomendado)</value></data>
   <data name="GachaAnalysis_FullUpdate" xml:space="preserve"><value>Actualización completa</value></data>
   <data name="GachaAnalysis_Characters" xml:space="preserve"><value>Personajes</value></data>
@@ -1362,7 +1367,7 @@ Archivos buscados:
   <data name="Element_Hydro" xml:space="preserve"><value>Hydro</value></data>
   <data name="Element_Cryo" xml:space="preserve"><value>Cryo</value></data>
   <data name="Download_Connecting" xml:space="preserve"><value>Conectando a servidores de Mihoyo...</value></data>
-  <data name="Download_VoiceOnly" xml:space="preserve"><value>>> Omitiendo juego base, solo modo paquete de voces</value></data>
+  <data name="Download_VoiceOnly" xml:space="preserve"><value>&gt;&gt; Omitiendo juego base, solo modo paquete de voces</value></data>
   <data name="Download_FetchingManifest" xml:space="preserve"><value>Obteniendo archivo de manifiesto: {0}...</value></data>
   <data name="Download_ManifestFailed" xml:space="preserve"><value>Descarga de manifiesto fallida: {0}</value></data>
   <data name="Download_TaskStart" xml:space="preserve"><value>Verificación/Descarga iniciada. Total: {0} archivos, {1}</value></data>
@@ -1410,9 +1415,423 @@ Traza de pila:
   <data name="Program_InjectionFailed" xml:space="preserve"><value>Falló el inicio de inyección: {0} (código: {1})</value></data>
   <data name="Program_InjectionException" xml:space="preserve"><value>Excepción de proceso de inyección: {0}</value></data>
   <data name="Program_ErrorTitle" xml:space="preserve"><value>Error de FufuLauncher</value></data>
-  <data name="IniFile_AccessDenied" xml:space="preserve"><value>Acceso denegado. Por favor, comprueba si el archivo o carpeta está configurado como &quot;solo lectura&quot;, o prueba a ejecutar el launcher como administrador.</value></data>
+  <data name="IniFile_AccessDenied" xml:space="preserve"><value>Acceso denegado. Por favor, comprueba si el archivo o carpeta está configurado como "solo lectura", o prueba a ejecutar el launcher como administrador.</value></data>
   <data name="IniFile_WriteFailed" xml:space="preserve"><value>Escritura fallida: el archivo puede estar en uso por el juego u otro programa.
 Detalles: {0}</value></data>
   <data name="IniFile_WriteError" xml:space="preserve"><value>Ocurrió un error al escribir la configuración.
 Detalles: {0}</value></data>
-</root>
+  <data name="SectionWindowBehavior" xml:space="preserve"><value>Ventana y navegación</value></data>
+  <data name="SettingsGroupPersonalization" xml:space="preserve"><value>Personalización</value></data>
+  <data name="SettingsGroupGame" xml:space="preserve"><value>Juego</value></data>
+  <data name="SettingsGroupApp" xml:space="preserve"><value>Aplicación</value></data>
+  <data name="SettingsGroupAbout" xml:space="preserve"><value>Acerca de y soporte</value></data>
+  <data name="SettingsSearchPlaceholder" xml:space="preserve"><value>Buscar ajustes…</value></data>
+  <data name="DisableCaptchaPopup" xml:space="preserve"><value>Desactivar la ventana emergente de captcha del control de riesgos</value></data>
+  <data name="DisableCaptchaPopupCaption" xml:space="preserve"><value>Cuando está activado, no aparecerá la ventana de captcha del control de riesgos de la cuenta. Omitir la verificación puede impedir temporalmente que funciones como las notas funcionen.</value></data>
+  <data name="UseThirdPartyCDNTitle" xml:space="preserve"><value>Usar CDN de terceros para las actualizaciones</value></data>
+  <data name="UseThirdPartyCDNCaption" xml:space="preserve"><value>Acelera la descarga a través de nodos CDN de terceros. Desactívalo para descargar directamente desde GitHub.</value></data>
+  <data name="PluginStoreSubtitle" xml:space="preserve"><value>Descubre e instala complementos de la comunidad para ampliar el lanzador</value></data>
+  <data name="PluginStorePluginsSection" xml:space="preserve"><value>Complementos</value></data>
+  <data name="PluginStoreMoreActions" xml:space="preserve"><value>Más acciones</value></data>
+  <data name="PluginStorePrivatePlugin" xml:space="preserve"><value>Complemento privado</value></data>
+  <data name="PluginStorePrivatePluginTooltip" xml:space="preserve"><value>Añadir un complemento privado (requiere ID y clave de acceso)</value></data>
+  <data name="PluginStorePrivateBadge" xml:space="preserve"><value>Privado</value></data>
+  <data name="PluginStoreLuaTestTooltip" xml:space="preserve"><value>Ejecuta el script de instalación Lua en modo de prueba y consulta el registro</value></data>
+  <data name="PluginStoreCancelInstall" xml:space="preserve"><value>Cancelar instalación</value></data>
+  <data name="PluginStoreEmptyHint" xml:space="preserve"><value>Prueba con otra categoría o ajusta las palabras de búsqueda</value></data>
+  <data name="PluginStoreResetFilters" xml:space="preserve"><value>Restablecer filtros</value></data>
+  <data name="PluginStoreErrorTitle" xml:space="preserve"><value>No se puede conectar con la tienda de complementos</value></data>
+  <data name="PluginStoreCategoryLabel" xml:space="preserve"><value>Categoría</value></data>
+  <data name="PluginStoreUpdateType" xml:space="preserve"><value>Tipo de actualización</value></data>
+  <data name="PluginStoreMinAppVersion" xml:space="preserve"><value>Versión mínima del lanzador</value></data>
+  <data name="PluginStoreVersionTooLow" xml:space="preserve"><value>v{0} (la actual {1} es demasiado antigua)</value></data>
+  <data name="PluginStoreVisibility" xml:space="preserve"><value>Visibilidad</value></data>
+  <data name="PluginStoreDependencies" xml:space="preserve"><value>Dependencias</value></data>
+  <data name="PluginStoreLongDescription" xml:space="preserve"><value>Acerca de este complemento</value></data>
+  <data name="PluginStoreDownloadingLua" xml:space="preserve"><value>Descargando el script de instalación...</value></data>
+  <data name="DataPage_Title" xml:space="preserve"><value>Centro de datos</value></data>
+  <data name="DataPage_Subtitle" xml:space="preserve"><value>Estadísticas de todo el servidor cruzadas en consejos concretos de builds y deseos</value></data>
+  <data name="DataPage_TabOverview" xml:space="preserve"><value>Resumen</value></data>
+  <data name="DataPage_TabCharacters" xml:space="preserve"><value>Personajes</value></data>
+  <data name="DataPage_TabSpiral" xml:space="preserve"><value>Abismo Espiral</value></data>
+  <data name="DataPage_TabStygian" xml:space="preserve"><value>Asalto Estigio</value></data>
+  <data name="DataPage_TabWish" xml:space="preserve"><value>Banners</value></data>
+  <data name="DataPage_TabRerun" xml:space="preserve"><value>Reediciones</value></data>
+  <data name="DataPage_TabTimeline" xml:space="preserve"><value>Cronología</value></data>
+  <data name="DataPage_Refresh" xml:space="preserve"><value>Actualizar datos</value></data>
+  <data name="DataPage_LastUpdate" xml:space="preserve"><value>actualizado {0}</value></data>
+  <data name="DataPage_Loading" xml:space="preserve"><value>Agregando estadísticas del servidor…</value></data>
+  <data name="DataPage_LoadFailedTitle" xml:space="preserve"><value>No se pudieron cargar los datos</value></data>
+  <data name="DataPage_LoadFailedBody" xml:space="preserve"><value>No se pudo contactar el servicio de estadísticas. Revisa tu conexión e inténtalo de nuevo.</value></data>
+  <data name="DataPage_PartialData" xml:space="preserve"><value>No se pudieron cargar {0} conjuntos de datos; se muestran resultados parciales.</value></data>
+  <data name="DataPage_Retry" xml:space="preserve"><value>Reintentar</value></data>
+  <data name="DataPage_NoResult" xml:space="preserve"><value>Sin resultados</value></data>
+  <data name="DataPage_ShowMore" xml:space="preserve"><value>Mostrar más (+{0})</value></data>
+  <data name="DataPage_ShownCount" xml:space="preserve"><value>Mostrando {0} / {1}</value></data>
+  <data name="DataPage_SectionEnvironment" xml:space="preserve"><value>Estado de la versión</value></data>
+  <data name="DataPage_SectionInsight" xml:space="preserve"><value>Lo que dicen los datos</value></data>
+  <data name="DataPage_SectionMovers" xml:space="preserve"><value>Cambios de uso</value></data>
+  <data name="DataPage_SectionTopTier" xml:space="preserve"><value>Máximo nivel de este periodo</value></data>
+  <data name="DataPage_SectionCurrentBanner" xml:space="preserve"><value>Disponible ahora</value></data>
+  <data name="DataPage_SectionValuePick" xml:space="preserve"><value>Vale la pena invocar</value></data>
+  <data name="DataPage_SectionOverdue" xml:space="preserve"><value>Más tiempo sin reedición</value></data>
+  <data name="DataPage_SectionRanking" xml:space="preserve"><value>Clasificaciones</value></data>
+  <data name="DataPage_SectionFilter" xml:space="preserve"><value>Filtros</value></data>
+  <data name="DataPage_SectionCharacters" xml:space="preserve"><value>Personajes</value></data>
+  <data name="DataPage_SectionBanners" xml:space="preserve"><value>Historial de banners</value></data>
+  <data name="DataPage_SectionRerun" xml:space="preserve"><value>Intervalos de reedición</value></data>
+  <data name="DataPage_Risers" xml:space="preserve"><value>Uso en alza</value></data>
+  <data name="DataPage_Fallers" xml:space="preserve"><value>Uso en baja</value></data>
+  <data name="DataPage_KpiVersion" xml:space="preserve"><value>Versión actual</value></data>
+  <data name="DataPage_KpiSample" xml:space="preserve"><value>Muestra del Abismo</value></data>
+  <data name="DataPage_KpiStygianSample" xml:space="preserve"><value>Estigio</value></data>
+  <data name="DataPage_KpiFullStar" xml:space="preserve"><value>Tasa de estrellas completas</value></data>
+  <data name="DataPage_KpiOnceFullStar" xml:space="preserve"><value>al primer intento</value></data>
+  <data name="DataPage_KpiRestart" xml:space="preserve"><value>Reintentos promedio</value></data>
+  <data name="DataPage_KpiCharacterCount" xml:space="preserve"><value>Personajes registrados</value></data>
+  <data name="DataPage_KpiBannerCount" xml:space="preserve"><value>Banners de personaje</value></data>
+  <data name="DataPage_KpiWeaponBanner" xml:space="preserve"><value>{0} banners de arma</value></data>
+  <data name="DataPage_UnitTimesShort" xml:space="preserve"><value>intentos</value></data>
+  <data name="DataPage_UnitEntries" xml:space="preserve"><value>{0} entradas</value></data>
+  <data name="DataPage_SortBy" xml:space="preserve"><value>Ordenar por</value></data>
+  <data name="DataPage_StarFilter" xml:space="preserve"><value>Rareza</value></data>
+  <data name="DataPage_SortHeat" xml:space="preserve"><value>Puntuación global</value></data>
+  <data name="DataPage_SortAbyss" xml:space="preserve"><value>Tasa de uso en el Abismo</value></data>
+  <data name="DataPage_SortValue" xml:space="preserve"><value>Prioridad de invocación</value></data>
+  <data name="DataPage_SortOwn" xml:space="preserve"><value>Tasa de posesión</value></data>
+  <data name="DataPage_SortLevel" xml:space="preserve"><value>Nivel promedio</value></data>
+  <data name="DataPage_SortDamage" xml:space="preserve"><value>Daño principal</value></data>
+  <data name="DataPage_FieldShare" xml:space="preserve"><value>Cuota en todo el servidor</value></data>
+  <data name="DataPage_SampleFormat" xml:space="preserve"><value>muestra {0}</value></data>
+  <data name="DataPage_ViewDetail" xml:space="preserve"><value>Análisis completo</value></data>
+  <data name="DataPage_CoreDamage" xml:space="preserve"><value>Daño principal</value></data>
+  <data name="DataPage_AbyssPick" xml:space="preserve"><value>Uso en el Abismo</value></data>
+  <data name="DataPage_StygianPick" xml:space="preserve"><value>Uso en el Estigio</value></data>
+  <data name="DataPage_MetricAvgLevel" xml:space="preserve"><value>Nivel promedio</value></data>
+  <data name="DataPage_MetricAvgConst" xml:space="preserve"><value>Constelación promedio</value></data>
+  <data name="DataPage_MetricSample" xml:space="preserve"><value>Tamaño de muestra</value></data>
+  <data name="DataPage_MetricTalent" xml:space="preserve"><value>Talentos</value></data>
+  <data name="DataPage_ZeroConstellation" xml:space="preserve"><value>Proporción C0</value></data>
+  <data name="DataPage_ClearTime" xml:space="preserve"><value>Tiempo de finalización</value></data>
+  <data name="DataPage_ChangeVsLast" xml:space="preserve"><value>vs. anterior</value></data>
+  <data name="DataPage_DetailTitle" xml:space="preserve"><value>{0} · análisis completo</value></data>
+  <data name="DataPage_DetailWeapons" xml:space="preserve"><value>Distribución de armas</value></data>
+  <data name="DataPage_DetailArtifacts" xml:space="preserve"><value>Distribución de sets de artefactos</value></data>
+  <data name="DataPage_DetailConstellation" xml:space="preserve"><value>Distribución de constelaciones</value></data>
+  <data name="DataPage_DetailTeams" xml:space="preserve"><value>Equipos frecuentes</value></data>
+  <data name="DataPage_DetailBanners" xml:space="preserve"><value>Historial de banners y reediciones</value></data>
+  <data name="DataPage_DetailInsights" xml:space="preserve"><value>Conclusiones</value></data>
+  <data name="DataPage_Close" xml:space="preserve"><value>Cerrar</value></data>
+  <data name="DataPage_ViewTier" xml:space="preserve"><value>Lista de niveles</value></data>
+  <data name="DataPage_ViewRank" xml:space="preserve"><value>Ranking de uso</value></data>
+  <data name="DataPage_ViewTeam" xml:space="preserve"><value>Composiciones</value></data>
+  <data name="DataPage_Version" xml:space="preserve"><value>Periodo</value></data>
+  <data name="DataPage_RestartDist" xml:space="preserve"><value>Distribución de reintentos</value></data>
+  <data name="DataPage_TierCount" xml:space="preserve"><value>{0} personajes</value></data>
+  <data name="DataPage_TeamHasRate" xml:space="preserve"><value>Formable</value></data>
+  <data name="DataPage_TeamAttendRate" xml:space="preserve"><value>Participación</value></data>
+  <data name="DataPage_TeamCount" xml:space="preserve"><value>usado {0} veces</value></data>
+  <data name="DataPage_HalfFirst" xml:space="preserve"><value>1.ª mitad</value></data>
+  <data name="DataPage_HalfMid" xml:space="preserve"><value>mitad</value></data>
+  <data name="DataPage_HalfSecond" xml:space="preserve"><value>2.ª mitad</value></data>
+  <data name="DataPage_MaxInterval" xml:space="preserve"><value>Intervalo más largo</value></data>
+  <data name="DataPage_TierS1Desc" xml:space="preserve"><value>Define el meta actual</value></data>
+  <data name="DataPage_TierSDesc" xml:space="preserve"><value>Fuertes y muy usados</value></data>
+  <data name="DataPage_TierADesc" xml:space="preserve"><value>Opciones situacionales sólidas</value></data>
+  <data name="DataPage_TierBDesc" xml:space="preserve"><value>De nicho o dependientes del equipo</value></data>
+  <data name="DataPage_TierCDesc" xml:space="preserve"><value>Casi no aparecen este periodo</value></data>
+  <data name="DataPage_WishCharacters" xml:space="preserve"><value>Banners de personaje</value></data>
+  <data name="DataPage_WishWeapons" xml:space="preserve"><value>Banners de arma</value></data>
+  <data name="DataPage_WishOngoing" xml:space="preserve"><value>En curso</value></data>
+  <data name="DataPage_WishUpcoming" xml:space="preserve"><value>Próximamente</value></data>
+  <data name="DataPage_WishDaysLeft" xml:space="preserve"><value>Quedan {0} días</value></data>
+  <data name="DataPage_WishDaysUntil" xml:space="preserve"><value>en {0} días</value></data>
+  <data name="DataPage_WishDaysAgo" xml:space="preserve"><value>hace {0} días</value></data>
+  <data name="DataPage_WishTopRerun" xml:space="preserve"><value>Más reediciones</value></data>
+  <data name="DataPage_WishTopCompanion" xml:space="preserve"><value>Acompañantes de 4★ más frecuentes</value></data>
+  <data name="DataPage_WishSearchPlaceholder" xml:space="preserve"><value>Buscar personaje o versión…</value></data>
+  <data name="DataPage_WishUpTimes" xml:space="preserve"><value>{0}×</value></data>
+  <data name="DataPage_WishSummaryFormat" xml:space="preserve"><value>Destacado {0} veces, la última en {1} (hace {2} días), con {3} días de media entre apariciones.</value></data>
+  <data name="DataPage_WishSummaryNever" xml:space="preserve"><value>Sin historial de banners.</value></data>
+  <data name="DataPage_RerunChar5" xml:space="preserve"><value>Personajes 5★</value></data>
+  <data name="DataPage_RerunChar4" xml:space="preserve"><value>Personajes 4★</value></data>
+  <data name="DataPage_RerunWeapon5" xml:space="preserve"><value>Armas 5★</value></data>
+  <data name="DataPage_RerunWeapon4" xml:space="preserve"><value>Armas 4★</value></data>
+  <data name="DataPage_RerunCategory" xml:space="preserve"><value>Categoría</value></data>
+  <data name="DataPage_RerunDays" xml:space="preserve"><value>días sin reedición</value></data>
+  <data name="DataPage_RerunDaysValue" xml:space="preserve"><value>{0} días</value></data>
+  <data name="DataPage_RerunUpTimes" xml:space="preserve"><value>{0} apariciones previas</value></data>
+  <data name="DataPage_RerunMaxGap" xml:space="preserve"><value>{0} días ({1})</value></data>
+  <data name="DataPage_RerunMinGap" xml:space="preserve"><value>Intervalo más corto {0} días ({1})</value></data>
+  <data name="DataPage_RerunOverdue" xml:space="preserve"><value>Muy retrasado</value></data>
+  <data name="DataPage_RerunDue" xml:space="preserve"><value>Toca ya</value></data>
+  <data name="DataPage_RerunSoon" xml:space="preserve"><value>Se acerca</value></data>
+  <data name="DataPage_RerunFresh" xml:space="preserve"><value>Reciente</value></data>
+  <data name="DataPage_RerunNever" xml:space="preserve"><value>Sin reedición</value></data>
+  <data name="DataPage_RerunForecastOver" xml:space="preserve"><value>{0} días por encima del intervalo medio</value></data>
+  <data name="DataPage_RerunForecastLeft" xml:space="preserve"><value>Faltan {0} días para el intervalo medio</value></data>
+  <data name="DataPage_RerunSortUrgency" xml:space="preserve"><value>Grado de retraso</value></data>
+  <data name="DataPage_RerunSortDays" xml:space="preserve"><value>Días de espera</value></data>
+  <data name="DataPage_RerunSortInterval" xml:space="preserve"><value>Intervalo medio</value></data>
+  <data name="DataPage_RerunSearchPlaceholder" xml:space="preserve"><value>Buscar por nombre…</value></data>
+  <data name="DataPage_RerunSummaryFormat" xml:space="preserve"><value>{0} días desde la última aparición; media histórica {1} días, máximo {2} días.</value></data>
+  <data name="DataPage_HeadlineTop" xml:space="preserve"><value>Máximo nivel</value></data>
+  <data name="DataPage_HeadlineValue" xml:space="preserve"><value>Gran valor</value></data>
+  <data name="DataPage_HeadlineRising" xml:space="preserve"><value>En alza</value></data>
+  <data name="DataPage_HeadlineFalling" xml:space="preserve"><value>En baja</value></data>
+  <data name="DataPage_HeadlinePopular" xml:space="preserve"><value>Casi todos lo tienen</value></data>
+  <data name="DataPage_InsightMetaTitle" xml:space="preserve"><value>Entorno del parche</value></data>
+  <data name="DataPage_InsightMetaBody" xml:space="preserve"><value>En {0} la tasa de estrellas completas es {1} con {2} reintentos de media; el máximo nivel lo encabezan {3}.</value></data>
+  <data name="DataPage_InsightRiseTitle" xml:space="preserve"><value>En ascenso</value></data>
+  <data name="DataPage_InsightRiseBody" xml:space="preserve"><value>{0} pasó de {1} a {2}, la mayor subida del periodo.</value></data>
+  <data name="DataPage_InsightFallTitle" xml:space="preserve"><value>En retirada</value></data>
+  <data name="DataPage_InsightFallBody" xml:space="preserve"><value>{0} bajó de {1} a {2}, claramente en desuso este periodo.</value></data>
+  <data name="DataPage_InsightValueTitle" xml:space="preserve"><value>Prioridad de invocación</value></data>
+  <data name="DataPage_InsightValueBody" xml:space="preserve"><value>{0} lo usa el {1} de quienes lo tienen, pero solo el {2} de las cuentas lo posee: fuerte y escaso, máxima prioridad.</value></data>
+  <data name="DataPage_InsightBenchTitle" xml:space="preserve"><value>En el banquillo</value></data>
+  <data name="DataPage_InsightBenchBody" xml:space="preserve"><value>{0} está en el {1} de las cuentas pero solo se usa un {2}: casi todos lo tienen y casi nadie lo juega.</value></data>
+  <data name="DataPage_InsightNoConstTitle" xml:space="preserve"><value>Funciona en C0</value></data>
+  <data name="DataPage_InsightNoConstBody" xml:space="preserve"><value>{0} lo juega en C0 el {1} de los jugadores, así que no hacen falta constelaciones.</value></data>
+  <data name="DataPage_InsightConstTitle" xml:space="preserve"><value>Depende de constelaciones</value></data>
+  <data name="DataPage_InsightConstBody" xml:space="preserve"><value>Solo el {1} de quienes usan {0} lo hacen en C0: las cifras vienen sobre todo de dueños de constelaciones.</value></data>
+  <data name="DataPage_InsightWeaponTitle" xml:space="preserve"><value>Arma insignia</value></data>
+  <data name="DataPage_InsightWeaponBody" xml:space="preserve"><value>{0} aparece en el {1} de las builds de {2}: es la opción por defecto.</value></data>
+  <data name="DataPage_InsightArtifactTitle" xml:space="preserve"><value>Set de artefactos</value></data>
+  <data name="DataPage_InsightArtifactBody" xml:space="preserve"><value>{0} representa el {1} de las builds; tómalo como referencia.</value></data>
+  <data name="DataPage_InsightOverdueTitle" xml:space="preserve"><value>Vigilancia de reediciones</value></data>
+  <data name="DataPage_InsightOverdueBody" xml:space="preserve"><value>{0} lleva {1} días sin reedición (media histórica {2} días), así que es un candidato probable para la próxima tanda.</value></data>
+  <data name="DataPage_InsightTeamTitle" xml:space="preserve"><value>Composición dominante</value></data>
+  <data name="DataPage_InsightTeamBody" xml:space="preserve"><value>El equipo más usado es {0}, con {1}.</value></data>
+  <data name="DataPage_InsightBannerTitle" xml:space="preserve"><value>Banners actuales</value></data>
+  <data name="DataPage_InsightBannerBody" xml:space="preserve"><value>En curso: {0}. {1}</value></data>
+  <data name="DataPage_InsightBannerNone" xml:space="preserve"><value>Ahora mismo no hay banners de personaje activos.</value></data>
+  <data name="DataPage_BannerAdviceItem" xml:space="preserve"><value>{0} ({1}, uso en el Abismo {2})</value></data>
+  <data name="DataPage_ListSeparator" xml:space="preserve"><value>, </value></data>
+  <data name="DataPage_ClauseSeparator" xml:space="preserve"><value>; </value></data>
+  <data name="DataPage_ExportPdf" xml:space="preserve"><value>Exportar informe profesional en PDF</value></data>
+  <data name="DataPage_ExportPdfFileType" xml:space="preserve"><value>Documento PDF</value></data>
+  <data name="DataPage_Exporting" xml:space="preserve"><value>Creando informe de análisis de FufuLauncher…</value></data>
+  <data name="DataPage_Exported" xml:space="preserve"><value>Informe PDF exportado: {0}</value></data>
+  <data name="DataPage_ExportFailed" xml:space="preserve"><value>No se pudo exportar el PDF: {0}</value></data>
+  <data name="DataPage_ExportSuccessTitle" xml:space="preserve"><value>Informe PDF exportado</value></data>
+  <data name="DataPage_ExportFailedTitle" xml:space="preserve"><value>Error al exportar el PDF</value></data>
+  <data name="Backpack_TabWeapon.Header" xml:space="preserve">
+    <value>Weapons</value>
+  </data>
+  <data name="Backpack_TabArtifact.Header" xml:space="preserve">
+    <value>Artifacts</value>
+  </data>
+  <data name="Backpack_TabMaterial.Header" xml:space="preserve">
+    <value>Materials</value>
+  </data>
+  <data name="Backpack_TabFood.Header" xml:space="preserve">
+    <value>Food</value>
+  </data>
+  <data name="Backpack_StatusWaiting" xml:space="preserve">
+    <value>Waiting for data…</value>
+  </data>
+  <data name="Backpack_StatusReceived" xml:space="preserve">
+    <value>Received</value>
+  </data>
+  <data name="Backpack_StatusLaunching" xml:space="preserve">
+    <value>Launching…</value>
+  </data>
+  <data name="Backpack_StatusLaunched" xml:space="preserve">
+    <value>Game launched, waiting for data…</value>
+  </data>
+  <data name="Backpack_BtnSelectPath.Label" xml:space="preserve">
+    <value>Select Game Path</value>
+  </data>
+  <data name="Backpack_BtnKillGame.Label" xml:space="preserve">
+    <value>Kill Process</value>
+  </data>
+  <data name="Backpack_BtnSyncBag.Label" xml:space="preserve">
+    <value>Sync Backpack</value>
+  </data>
+  <data name="Backpack_SyncBagDialogTitle" xml:space="preserve">
+    <value>Sync Backpack</value>
+  </data>
+  <data name="Backpack_SyncBagDialogWaiting" xml:space="preserve">
+    <value>Game launched, waiting for backpack data…</value>
+  </data>
+  <data name="Backpack_SyncBagDialogCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Backpack_Locked" xml:space="preserve">
+    <value>Locked</value>
+  </data>
+  <data name="Backpack_SlotFlower" xml:space="preserve">
+    <value>Flower of Life</value>
+  </data>
+  <data name="Backpack_SlotPlume" xml:space="preserve">
+    <value>Plume of Death</value>
+  </data>
+  <data name="Backpack_SlotSands" xml:space="preserve">
+    <value>Sands of Eon</value>
+  </data>
+  <data name="Backpack_SlotGoblet" xml:space="preserve">
+    <value>Goblet of Eonothem</value>
+  </data>
+  <data name="Backpack_SlotCirclet" xml:space="preserve">
+    <value>Circlet of Logos</value>
+  </data>
+  <data name="Backpack_PathInvalidMsg" xml:space="preserve">
+    <value>Invalid path. Please select YuanShen.exe (CN server only).</value>
+  </data>
+  <data name="Backpack_SelectPathTitle.Text" xml:space="preserve">
+    <value>Select Game Path</value>
+  </data>
+  <data name="Backpack_SelectPathHint.Text" xml:space="preserve">
+    <value>Click an entry below to switch to that path</value>
+  </data>
+  <data name="Backpack_AddPathHeader.Text" xml:space="preserve">
+    <value>Game Path</value>
+  </data>
+  <data name="Backpack_AddPathDesc.Text" xml:space="preserve">
+    <value>Select YuanShen.exe (CN only), not launcher.exe</value>
+  </data>
+  <data name="Backpack_WeaponBaseAtkLabel.Text" xml:space="preserve">
+    <value>Base ATK</value>
+  </data>
+  <data name="Backpack_ErrNoProcessPath" xml:space="preserve">
+    <value>Failed to resolve current process path</value>
+  </data>
+  <data name="Backpack_ErrElevationCancelled" xml:space="preserve">
+    <value>Elevation was cancelled by the user</value>
+  </data>
+  <data name="Backpack_ErrHelperStartFailed" xml:space="preserve">
+    <value>Failed to start the injection helper</value>
+  </data>
+  <data name="Backpack_ErrInvalidConfig" xml:space="preserve">
+    <value>Invalid configuration file</value>
+  </data>
+  <data name="Backpack_ErrGameCreateFailed" xml:space="preserve">
+    <value>Failed to create game process</value>
+  </data>
+  <data name="Backpack_ErrDllInjFailed" xml:space="preserve">
+    <value>DLL injection failed</value>
+  </data>
+  <data name="Backpack_ErrHelperExitCode" xml:space="preserve">
+    <value>Injection helper exited with code {0}</value>
+  </data>
+  <data name="Backpack_MatTabCharAscension" xml:space="preserve">
+    <value>Char Ascension</value>
+  </data>
+  <data name="Backpack_MatTabWeaponAscension" xml:space="preserve">
+    <value>Weapon Ascension</value>
+  </data>
+  <data name="Backpack_MatTabTalent" xml:space="preserve">
+    <value>Talent Materials</value>
+  </data>
+  <data name="Backpack_MatTabCharExp" xml:space="preserve">
+    <value>Char EXP</value>
+  </data>
+  <data name="Backpack_MatTabWeaponEnhance" xml:space="preserve">
+    <value>Weapon Enhancement</value>
+  </data>
+  <data name="Backpack_MatTabRefine" xml:space="preserve">
+    <value>Refinement</value>
+  </data>
+  <data name="Backpack_MatTabLocalSpecialty" xml:space="preserve">
+    <value>Local Specialty</value>
+  </data>
+  <data name="Backpack_MatTabIngredient" xml:space="preserve">
+    <value>Ingredients</value>
+  </data>
+  <data name="Backpack_FoodTabRecovery" xml:space="preserve">
+    <value>Recovery</value>
+  </data>
+  <data name="Backpack_FoodTabAttack" xml:space="preserve">
+    <value>Attack</value>
+  </data>
+  <data name="Backpack_FoodTabDefense" xml:space="preserve">
+    <value>Defense</value>
+  </data>
+  <data name="Backpack_FoodTabAdventure" xml:space="preserve">
+    <value>Adventure</value>
+  </data>
+  <data name="Backpack_FoodTabSpecialRecovery" xml:space="preserve">
+    <value>Special Recovery</value>
+  </data>
+  <data name="Backpack_FoodTabSpecialAttack" xml:space="preserve">
+    <value>Special Attack</value>
+  </data>
+  <data name="Backpack_FoodTabSpecialDefense" xml:space="preserve">
+    <value>Special Defense</value>
+  </data>
+  <data name="Backpack_FoodTabSpecialAdventure" xml:space="preserve">
+    <value>Special Adventure</value>
+  </data>
+  <data name="Backpack_FoodTabArlecchino" xml:space="preserve">
+    <value>Arlecchino Specials</value>
+  </data>
+  <data name="Backpack_FoodTabSweet" xml:space="preserve">
+    <value>Sweet Flowers</value>
+  </data>
+  <data name="Backpack_MatTabCommon" xml:space="preserve">
+    <value>Materials</value>
+  </data>
+  <data name="Backpack_MatTabOre" xml:space="preserve">
+    <value>Ores</value>
+  </data>
+  <data name="Backpack_MatTabFish" xml:space="preserve">
+    <value>Fish</value>
+  </data>
+  <data name="Backpack_MatTabBait" xml:space="preserve">
+    <value>Fishing Bait</value>
+  </data>
+  <data name="Backpack_TabGadget.Header" xml:space="preserve">
+    <value>Gadgets</value>
+  </data>
+  <data name="Backpack_TabAsset.Header" xml:space="preserve">
+    <value>Assets</value>
+  </data>
+  <data name="Backpack_AssetTabCurrency" xml:space="preserve">
+    <value>Rare Currency</value>
+  </data>
+  <data name="Backpack_AssetTabQiyu" xml:space="preserve">
+    <value>Imaginarium Theater</value>
+  </data>
+  <data name="Backpack_GadgetTabMisc" xml:space="preserve">
+    <value>Gadgets</value>
+  </data>
+  <data name="Backpack_GadgetTabConsumable" xml:space="preserve">
+    <value>Consumables</value>
+  </data>
+  <data name="Backpack_GadgetTabQuest" xml:space="preserve">
+    <value>Quest Items</value>
+  </data>
+  <data name="Backpack_GadgetTabPrecious" xml:space="preserve">
+    <value>Precious</value>
+  </data>
+  <data name="Backpack_GadgetTabQiyu" xml:space="preserve">
+    <value>Imaginarium Theater</value>
+  </data>
+  <data name="Backpack_GadgetTabAdventure" xml:space="preserve">
+    <value>Adventure</value>
+  </data>
+  <data name="Backpack_GadgetTabEmblem" xml:space="preserve">
+    <value>Nation Emblems</value>
+  </data>
+  <data name="Backpack_GadgetTabWish" xml:space="preserve">
+    <value>Wish Items</value>
+  </data>
+  <data name="Backpack_GadgetTabVoucherHi" xml:space="preserve">
+    <value>Starglitter</value>
+  </data>
+  <data name="Backpack_GadgetTabVoucherLo" xml:space="preserve">
+    <value>Stardust</value>
+  </data>
+  <data name="Backpack_GadgetTabCurrency" xml:space="preserve">
+    <value>Rare Currency</value>
+  </data>
+  <data name="Backpack_NavTitle" xml:space="preserve">
+    <value>Backpack Browser</value>
+  </data>
+  <data name="Backpack_ErrX64Required" xml:space="preserve">
+    <value>Backpack synchronization requires the x64 build.</value>
+  </data>
+  <data name="Backpack_ErrDllMissing" xml:space="preserve">
+    <value>The Backpack synchronization module modules/backpack.dll is missing.</value>
+  </data>
+<data name="Checkin_SignNow" xml:space="preserve"><value>Registrarse ahora</value></data><data name="Checkin_LoadingStatus" xml:space="preserve"><value>Cargando estado...</value></data><data name="Checkin_NotLoggedIn" xml:space="preserve"><value>No conectado</value></data><data name="Checkin_PleaseLogin" xml:space="preserve"><value>Inicie sesión primero</value></data><data name="Checkin_CredentialFailed" xml:space="preserve"><value>Error al cargar credenciales</value></data><data name="Checkin_CredentialUnavailable" xml:space="preserve"><value>No se pueden obtener las credenciales</value></data><data name="Checkin_CheckingIn" xml:space="preserve"><value>Registrando...</value></data><data name="Checkin_Executing" xml:space="preserve"><value>Realizando registro...</value></data><data name="Checkin_Complete" xml:space="preserve"><value>Registro completado</value></data><data name="Checkin_PartialFailed" xml:space="preserve"><value>Registro parcialmente fallido</value></data><data name="Checkin_LoadFailed" xml:space="preserve"><value>Error de carga</value></data><data name="Checkin_ExecuteFailed" xml:space="preserve"><value>Error de ejecución</value></data><data name="Checkin_AccountLabel" xml:space="preserve"><value>Cuenta: {0}</value></data></root>
