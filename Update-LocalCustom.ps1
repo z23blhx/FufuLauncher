@@ -81,7 +81,7 @@ try {
     }
 
     Write-Step 'Building the customized x64 Debug version'
-    & dotnet build $projectPath -c Debug '-p:Platform=x64' '-p:WarningLevel=0' --no-restore --nologo -v:minimal
+    & dotnet build $projectPath -c Debug '-p:Platform=x64' '-p:WarningLevel=0' --nologo -v:minimal
     if ($LASTEXITCODE -ne 0) {
         throw 'Build failed.'
     }
