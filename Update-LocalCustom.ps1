@@ -50,16 +50,20 @@ try {
     }
 
     Write-Step 'Stopping the locally built FufuLauncher'
-    Get-Process -Name 'FufuLauncher' -ErrorAction SilentlyContinue |
-        Where-Object {
-            try {
-                $_.Path -and $_.Path.StartsWith($repoRoot, [System.StringComparison]::OrdinalIgnoreCase)
-            }
-            catch {
-                $false
-            }
-        } |
-        Stop-Process -Force
+    $runningLaunchers = @(Get-Process -Name 'FufuLauncher' -ErrorAction SilentlyContinue)
+    if ($runningLaunchers.Count -gt 0) {
+        try {
+            $runningLaunchers | Stop-Process -Force -ErrorAction Stop
+            $runningLaunchers | Wait-Process -Timeout 10 -ErrorAction SilentlyContinue
+        }
+        catch {
+            throw 'Unable to stop FufuLauncher. Run the updater as administrator or exit the app from its tray icon.'
+        }
+    }
+
+    if (Get-Process -Name 'FufuLauncher' -ErrorAction SilentlyContinue) {
+        throw 'FufuLauncher is still running and would lock the build output.'
+    }
 
     Write-Step 'Downloading updates from the official repository'
     Invoke-Git -Arguments @('fetch', 'upstream')
