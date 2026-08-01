@@ -5,6 +5,7 @@ param(
 $ErrorActionPreference = 'Stop'
 [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new()
 $OutputEncoding = [System.Text.UTF8Encoding]::new()
+$env:GIT_MERGE_AUTOEDIT = 'no'
 
 $repoRoot = $PSScriptRoot
 $projectPath = Join-Path $repoRoot 'FufuLauncher\FufuLauncher.csproj'
@@ -73,7 +74,7 @@ try {
     Invoke-Git -Arguments @('switch', 'local-custom')
     Invoke-Git -Arguments @('pull', '--ff-only', 'origin', 'local-custom')
 
-    & git merge master
+    & git merge --no-edit master
     if ($LASTEXITCODE -ne 0) {
         & git merge --abort
         throw 'The official update conflicts with your customization. The merge was cancelled safely; send the conflict output to Codex.'
