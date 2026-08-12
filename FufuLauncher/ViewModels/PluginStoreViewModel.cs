@@ -10,8 +10,10 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
+using FufuLauncher.Contracts.Services;
 using FufuLauncher.Models;
 using FufuLauncher.Services;
+using FufuLauncher.Services.PluginMirror;
 using FufuLauncher.Helpers;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
@@ -23,6 +25,7 @@ public class PluginStoreViewModel : INotifyPropertyChanged
 {
     private readonly PluginStoreService _storeService;
     private readonly LuaPluginInstaller _luaInstaller;
+    private readonly ILocalSettingsService _localSettingsService;
     private readonly string _pluginsDir;
     private DispatcherQueue? _dispatcher;
 
@@ -42,6 +45,8 @@ public class PluginStoreViewModel : INotifyPropertyChanged
     
     private bool _hasContent;
 
+    private bool _isMirrorAccelerationEnabled = true;
+
     private CancellationTokenSource? _installCts;
     
     private readonly HashSet<string> _installingPluginIds = new(StringComparer.Ordinal);
@@ -49,14 +54,15 @@ public class PluginStoreViewModel : INotifyPropertyChanged
     private static readonly string CurrentAppVersion =
         Assembly.GetEntryAssembly()?.GetName().Version?.ToString() ?? "1.0.0.0";
 
-    public PluginStoreViewModel(PluginStoreService storeService, LuaPluginInstaller luaInstaller)
+    public PluginStoreViewModel(PluginStoreService storeService, LuaPluginInstaller luaInstaller,
+        ILocalSettingsService localSettingsService)
     {
         _pluginsDir = Path.Combine(AppContext.BaseDirectory, "Plugins");
         _storeService = storeService;
         _luaInstaller = luaInstaller;
+        _localSettingsService = localSettingsService;
 
         _luaInstaller.ProgressChanged += OnInstallProgress;
-        _luaInstaller.LogReceived += OnInstallLog;
 
         RefreshCommand = new RelayCommand(async () => await LoadPluginsAsync());
         SearchCommand = new RelayCommand(async () => await SearchAsync());
@@ -187,6 +193,33 @@ public class PluginStoreViewModel : INotifyPropertyChanged
     public bool CanGoNext => CurrentPage < TotalPages;
     public string PageInfo => TotalPages > 0 ? $"{CurrentPage} / {TotalPages}" : "";
 
+    /// <summary>插件商城镜像站加速开关（商城页可直接切换，与设置页共用同一持久化键）。</summary>
+    public bool IsMirrorAccelerationEnabled
+    {
+        get => _isMirrorAccelerationEnabled;
+        set
+        {
+            if (_isMirrorAccelerationEnabled == value) return;
+            _isMirrorAccelerationEnabled = value;
+            OnPropertyChanged();
+            _ = _localSettingsService.SaveSettingAsync(PluginMirrorDownloadService.SettingKey, value);
+        }
+    }
+
+    private async Task LoadMirrorAccelerationSettingAsync()
+    {
+        try
+        {
+            var json = await _localSettingsService.ReadSettingAsync(PluginMirrorDownloadService.SettingKey);
+            _isMirrorAccelerationEnabled = json == null || Convert.ToBoolean(json);
+            OnPropertyChanged(nameof(IsMirrorAccelerationEnabled));
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"[PluginStoreVM] Failed to load mirror acceleration setting: {ex.Message}");
+        }
+    }
+
     public ICommand RefreshCommand { get; }
     public ICommand SearchCommand { get; }
     public ICommand SortCommand { get; }
@@ -203,6 +236,7 @@ public class PluginStoreViewModel : INotifyPropertyChanged
     {
         _dispatcher = DispatcherQueue.GetForCurrentThread();
 
+        await LoadMirrorAccelerationSettingAsync();
         await LoadCategoriesAsync();
         await LoadPluginsAsync();
     }
@@ -512,6 +546,17 @@ public class PluginStoreViewModel : INotifyPropertyChanged
                 var pluginDir = Path.Combine(_pluginsDir, item.Id);
                 _luaInstaller.EnsureConfigFileEntry(pluginDir, item.DllFileName);
                 
+                if (!IsPluginInstalledOnDisk(item.Id, out _))
+                {
+                    Debug.WriteLine($"[PluginStoreVM] Install verification failed: plugin '{item.Id}' not found on disk after install script");
+                    item.State = StorePluginState.Available;
+                    item.InstallProgress = 0;
+                    item.InstallStatusText = "PluginStoreInstallFailedShort".GetLocalized();
+                    StatusMessage = string.Format("PluginStoreInstallFailed".GetLocalized(), "PluginStoreInstallVerifyFailed".GetLocalized());
+                    CleanupPluginDir(item.Id);
+                    return;
+                }
+
                 if (_dispatcher != null)
                 {
                     var capturedItem = item;
@@ -1120,21 +1165,25 @@ public class PluginStoreViewModel : INotifyPropertyChanged
         }
     }
 
-    private void UpdateLocalState(PluginStoreItem storeItem)
+    /// <summary>
+    /// 判定插件是否真实存在于磁盘上（目录 + config.ini + 引用的 DLL）。
+    /// 安装完成后的校验与刷新列表共用同一套判定，避免“脚本没报错但实际没装上”被误判为安装成功。
+    /// </summary>
+    private bool IsPluginInstalledOnDisk(string pluginId, out string? localVersion)
     {
-        if (!Directory.Exists(_pluginsDir)) return;
+        localVersion = null;
 
-        var pluginDir = Path.Combine(_pluginsDir, storeItem.Id);
+        if (string.IsNullOrWhiteSpace(pluginId) || !Directory.Exists(_pluginsDir)) return false;
 
-        if (!Directory.Exists(pluginDir)) return;
+        var pluginDir = Path.Combine(_pluginsDir, pluginId);
+        if (!Directory.Exists(pluginDir)) return false;
 
         var configPath = Path.Combine(pluginDir, "config.ini");
-        if (!File.Exists(configPath)) return;
+        if (!File.Exists(configPath)) return false;
 
         try
         {
             var lines = File.ReadAllLines(configPath);
-            string? localVersion = null;
             string? dllFileName = null;
             var inGeneral = false;
 
@@ -1163,30 +1212,35 @@ public class PluginStoreViewModel : INotifyPropertyChanged
                     dllFileName = value;
                 }
             }
-            
+
+            // config.ini 里声明了 DLL 就必须存在，否则视为未安装
             if (!string.IsNullOrEmpty(dllFileName))
             {
                 var dllPath = Path.Combine(pluginDir, dllFileName);
-                if (!File.Exists(dllPath))
-                {
-                    return;
-                }
+                if (!File.Exists(dllPath)) return false;
             }
 
-            if (!string.IsNullOrEmpty(localVersion))
-            {
-                storeItem.State = localVersion != storeItem.Version
-                    ? StorePluginState.UpdateAvailable
-                    : StorePluginState.Installed;
-            }
-            else
-            {
-                storeItem.State = StorePluginState.Installed;
-            }
+            return true;
         }
         catch
         {
-            // ignored
+            return false;
+        }
+    }
+
+    private void UpdateLocalState(PluginStoreItem storeItem)
+    {
+        if (!IsPluginInstalledOnDisk(storeItem.Id, out var localVersion)) return;
+
+        if (!string.IsNullOrEmpty(localVersion))
+        {
+            storeItem.State = localVersion != storeItem.Version
+                ? StorePluginState.UpdateAvailable
+                : StorePluginState.Installed;
+        }
+        else
+        {
+            storeItem.State = StorePluginState.Installed;
         }
     }
     
@@ -1232,11 +1286,6 @@ public class PluginStoreViewModel : INotifyPropertyChanged
                 }
             }
         });
-    }
-
-    private void OnInstallLog(string message)
-    {
-        Debug.WriteLine($"[PluginStore] {message}");
     }
 
     public async Task ExecuteLuaTestAsync()

@@ -52,6 +52,7 @@ namespace FufuLauncher.Constants
         public const string Hk4eQrCodeQueryUrl = "https://hk4e-sdk.mihoyo.com/hk4e_cn/combo/panda/qrcode/query";
         public const string GetTokenByGameTokenUrl = "https://api-takumi.mihoyo.com/account/ma-cn-session/app/getTokenByGameToken";
         public const string GetCookieAccountInfoBySTokenUrl = "https://passport-api.mihoyo.com/account/auth/api/getCookieAccountInfoBySToken";
+        public const string GetLTokenBySTokenUrl = "https://passport-api.mihoyo.com/account/auth/api/getLTokenBySToken";
         public const string UserMihoyoLoginPlatformUrl = "https://user.mihoyo.com/login-platform/index.html";
         public const string SeelieAchievementsUrl = "https://seelie.me/achievements";
         public const string HypCnApi = "https://hyp-api.mihoyo.com/hyp/hyp-connect/api";
@@ -77,6 +78,8 @@ namespace FufuLauncher.Constants
         public const string UpdateShareUrl = "https://wwaoi.lanzouu.com/b00wnb99ef";
         public const string CharVideoUrl = "https://baike.mihoyo.com/ys/obc/channel/map/80/212?bbs_presentation_style=no_header&visit_device=pc";
         public const string CutsceneVideoUrl = "https://baike.mihoyo.com/ys/obc/channel/map/80/81?bbs_presentation_style=no_header&visit_device=pc";
+        public const string CreateAuthTicketByGameBizUrl = "https://passport-api.mihoyo.com/account/ma-cn-verifier/app/createAuthTicketByGameBiz";
+        public const string CreateAuthTicketBySTokenUrl = "https://sg-public-api.hoyoverse.com/account/ma-verifier/api/createAuthTicketBySToken";
         public const string MicrosoftNetworkCheckUrl = "https://www.microsoft.com";
         public const string VcRedistDownloadUrl = "https://aka.ms/vc14/vc_redist.x64.exe";
         public const string TelegramContactUrl = "https://t.me/Adimisra6717";

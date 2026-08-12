@@ -13,55 +13,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Avatar_Batch_Fail_Title" xml:space="preserve">
-    <value>Batch Save Failed</value>
+    <value>批次儲存失敗</value>
   </data>
   <data name="Avatar_Batch_Success" xml:space="preserve">
-    <value>Batch generated and overwrote all avatar sizes</value>
+    <value>已批次生成並覆蓋全部尺寸的頭像</value>
   </data>
   <data name="Avatar_Clear_Fail_Title" xml:space="preserve">
-    <value>Clear Failed</value>
+    <value>清除失敗</value>
   </data>
   <data name="Avatar_Clear_Success_Format" xml:space="preserve">
-    <value>Avatar size {0}x{0} cleared</value>
+    <value>尺寸 {0}x{0} 頭像已清除</value>
   </data>
   <data name="Avatar_Crop_Success" xml:space="preserve">
-    <value>Avatar cropped and saved successfully</value>
+    <value>頭像裁切並儲存成功</value>
   </data>
   <data name="Avatar_EditNotFound_Content" xml:space="preserve">
-    <value>No avatar found to edit</value>
+    <value>未找到可供編輯的頭像</value>
   </data>
   <data name="Avatar_EditNotFound_Title" xml:space="preserve">
-    <value>Notice</value>
+    <value>提示</value>
   </data>
   <data name="Avatar_ImportFail_Title" xml:space="preserve">
-    <value>Import Failed</value>
+    <value>匯入失敗</value>
   </data>
   <data name="Avatar_LoadFail_Title" xml:space="preserve">
-    <value>Load Failed</value>
+    <value>載入失敗</value>
   </data>
   <data name="Avatar_SaveFail_Title" xml:space="preserve">
-    <value>Save Failed</value>
+    <value>儲存失敗</value>
   </data>
   <data name="Fps_CompatWarning_Content" xml:space="preserve">
-    <value>If you have NVIDIA RTX 40-series or newer AI frame generation enabled, or use frame display software such as RTSS or MSI Afterburner, it may cause the game to freeze or fail to start normally.</value>
+    <value>如果開啟了 NVIDIA RTX 40 系列以上顯示卡的 AI 插幀，或者使用了類似 RTSS、微星小飛機等幀數顯示軟體，都可能導致遊戲畫面卡死或遊戲無法正常啟動</value>
   </data>
   <data name="Fps_CompatWarning_DontShow" xml:space="preserve">
-    <value>Don't show this warning again</value>
+    <value>不再顯示此警告</value>
   </data>
   <data name="Fps_CompatWarning_Title" xml:space="preserve">
-    <value>Compatibility Warning</value>
+    <value>相容性警告</value>
   </data>
   <data name="Fps_HashMismatch_Content" xml:space="preserve">
-    <value>The frame rate display plugin hash does not match. It may have been tampered with or corrupted. Please reinstall the launcher.</value>
+    <value>幀數顯示插件雜湊不符，可能已被竄改或損壞，請重新安裝啟動器</value>
   </data>
   <data name="Fps_Repair_Fail_Title" xml:space="preserve">
-    <value>Repair Failed</value>
+    <value>修復失敗</value>
   </data>
   <data name="Fps_Repair_Success" xml:space="preserve">
-    <value>FPS display plugin has been successfully repaired and installed</value>
+    <value>FPS 顯示插件已成功修復並安裝</value>
   </data>
   <data name="Fps_Repair_Title" xml:space="preserve">
-    <value>Repairing FPS Plugin</value>
+    <value>正在修復 FPS 插件</value>
   </data>
   <data name="LanguageChangedTitle" xml:space="preserve">
     <value>語言已更改</value>
@@ -79,113 +79,113 @@
     <value>確認</value>
   </data>
   <data name="LanguageSelection_SystemDefault" xml:space="preserve">
-    <value>系統默認</value>
+    <value>系統預設</value>
   </data>
   <data name="LanguageSelection_Selected" xml:space="preserve">
     <value>已選中</value>
   </data>
   <data name="PR_Description" xml:space="preserve">
-    <value>This project is currently maintained by an individual developer (CodeCubist).
-We adhere to a player pain-point-driven development direction, promoting open, transparent, and efficient updates.
-Submitting Pull Requests is the core way for users with coding skills to help advance development, optimize structure, and share project maintenance responsibilities.
-If you can help, please use the button below to visit the code repository and submit your contribution.</value>
+    <value>本專案目前由個人開發者（CodeCubist）獨立維護
+我們堅持並積極落實以玩家痛點為核心的開發方向，開放透明且高效率地推動更新
+提交 Pull Requests 是讓具備程式開發能力的用戶協助推進開發進度、最佳化結構及分擔專案維護壓力的核心途徑
+如可提供協助，請透過下方按鈕前往程式碼倉庫提交你的貢獻</value>
   </data>
   <data name="PR_GitHubButton" xml:space="preserve">
-    <value>Visit GitHub Repository to Submit Pull Request</value>
+    <value>前往 GitHub 倉庫提交 Pull Request</value>
   </data>
   <data name="PR_Window_Title" xml:space="preserve">
     <value>Pull Request</value>
   </data>
   <data name="Plugin_ArchWarning_Content" xml:space="preserve">
-    <value>Your computer may be ARM-based. The injection feature is not available on ARM-based computers. Are you sure you want to continue enabling it?</value>
+    <value>您的電腦可能為 ARM 架構，注入功能在 ARM 架構的電腦中無法使用，是否確認繼續開啟？</value>
   </data>
   <data name="Plugin_ArchWarning_Continue" xml:space="preserve">
-    <value>Continue Enabling</value>
+    <value>繼續開啟</value>
   </data>
   <data name="Plugin_ArchWarning_Title" xml:space="preserve">
-    <value>Architecture Compatibility Warning</value>
+    <value>架構相容性警告</value>
   </data>
   <data name="Plugin_Corrupted_Content" xml:space="preserve">
-    <value>Plugin files are abnormal.
-This is usually because the plugin was falsely flagged and blocked by antivirus software (such as Windows Defender) or has been damaged.
+    <value>插件檔案異常
+這通常是因為插件被防毒軟體（如 Windows Defender）誤判攔截或遭到破壞
 
-Recommendations:
-1. Add the software directory to the antivirus whitelist
-2. Re-download and install the plugin on this page</value>
+建議您：
+1. 將本軟體目錄加入防毒軟體白名單
+2. 在本頁面重新下載並安裝插件</value>
   </data>
   <data name="Plugin_Corrupted_Title" xml:space="preserve">
-    <value>Plugin May Be Corrupted</value>
+    <value>插件可能已損壞</value>
   </data>
   <data name="Plugin_Download_BackupLine" xml:space="preserve">
-    <value>Backup</value>
+    <value>備用</value>
   </data>
   <data name="Plugin_Download_Connecting" xml:space="preserve">
-    <value>Connecting...</value>
+    <value>正在連線...</value>
   </data>
   <data name="Plugin_Download_Extracting" xml:space="preserve">
-    <value>Extracting and installing...</value>
+    <value>正在解壓縮並安裝...</value>
   </data>
   <data name="Plugin_Download_Fail_Content_Format" xml:space="preserve">
-    <value>Installation failed: {0}</value>
+    <value>安裝失敗：{0}</value>
   </data>
   <data name="Plugin_Download_Fallback" xml:space="preserve">
-    <value>Connection failed, trying backup line...</value>
+    <value>連線失敗，正在嘗試備用線路...</value>
   </data>
   <data name="Plugin_Download_MainLine" xml:space="preserve">
-    <value>Main</value>
+    <value>主</value>
   </data>
   <data name="Plugin_Download_Manual" xml:space="preserve">
-    <value>Manual Download</value>
+    <value>手動下載</value>
   </data>
   <data name="Plugin_Download_Progress_Format" xml:space="preserve">
-    <value>{0} line downloading... {1}%</value>
+    <value>{0} 線路下載中... {1}%</value>
   </data>
   <data name="Plugin_Download_Success" xml:space="preserve">
-    <value>Plugin installed and refreshed</value>
+    <value>插件已安裝並重新整理</value>
   </data>
   <data name="Plugin_Download_Title" xml:space="preserve">
-    <value>Getting Plugin</value>
+    <value>正在取得插件</value>
   </data>
   <data name="Plugin_FileNotFound" xml:space="preserve">
-    <value>File not found, please confirm launcher files are complete</value>
+    <value>未找到檔案，請確認啟動器檔案完整</value>
   </data>
   <data name="Plugin_MainMissing_Content" xml:space="preserve">
-    <value>Main plugin DLL file not found. The plugin may not be installed, was accidentally deleted, or was blocked by antivirus software. Please re-download the plugin, or add the launcher directory to the antivirus whitelist and try again.</value>
+    <value>未找到主插件 DLL 檔案，插件可能未安裝、被誤刪或被防毒軟體攔截。請重新下載插件，或將啟動器目錄加入防毒軟體白名單後再試。</value>
   </data>
   <data name="Plugin_MainMissing_Title" xml:space="preserve">
-    <value>Main Plugin Missing</value>
+    <value>主插件缺失</value>
   </data>
   <data name="Preset_Create_Placeholder" xml:space="preserve">
-    <value>Enter new preset name</value>
+    <value>請輸入新預設名稱</value>
   </data>
   <data name="Preset_Create_Title" xml:space="preserve">
-    <value>Create New Preset</value>
+    <value>建立新預設</value>
   </data>
   <data name="Preset_Delete_ConfirmBtn" xml:space="preserve">
-    <value>Confirm Delete</value>
+    <value>確認刪除</value>
   </data>
   <data name="Preset_Delete_Confirm_Format" xml:space="preserve">
-    <value>Are you sure you want to delete the preset "{0}"? This action cannot be undone!</value>
+    <value>確定要刪除預設 "{0}" 嗎？此操作無法恢復！</value>
   </data>
   <data name="Preset_Locked_Content_Format" xml:space="preserve">
-    <value>Lock reason: {0}
+    <value>鎖定原因：{0}
 
-If you continue, this warning will be ignored and the preset's Hash will be updated to the current plugin Hash, unlocking the preset. Continue?</value>
+如果繼續使用，將忽略該警告並把此預設的 Hash 更新為目前插件 Hash，從而重新解鎖該預設。是否繼續？</value>
   </data>
   <data name="Preset_Locked_Continue" xml:space="preserve">
-    <value>Continue and Unlock</value>
+    <value>繼續使用並解鎖</value>
   </data>
   <data name="Preset_Locked_Title" xml:space="preserve">
-    <value>Configuration Preset Locked</value>
+    <value>設定預設已鎖定</value>
   </data>
   <data name="Preset_ResetAll_ConfirmBtn" xml:space="preserve">
-    <value>Confirm Reset</value>
+    <value>確認重設</value>
   </data>
   <data name="Preset_ResetAll_Content" xml:space="preserve">
-    <value>Remove all presets for the current plugin and re-download the defaults? This action cannot be undone!</value>
+    <value>確定要移除目前插件的所有預設並重新下載恢復預設嗎？此操作無法恢復！</value>
   </data>
   <data name="Preset_ResetAll_Title" xml:space="preserve">
-    <value>Reset All Presets</value>
+    <value>重設全部預設</value>
   </data>
   <data name="RestartNowBtn" xml:space="preserve">
     <value>立即重新啟動</value>
@@ -2608,7 +2608,7 @@ If you continue, this warning will be ignored and the preset's Hash will be upda
     <value>角色資料</value>
   </data>
   <data name="DataPage_AbyssData" xml:space="preserve">
-    <value>深境螺旋</value>
+    <value>幽境危戰</value>
   </data>
   <data name="DataPage_SpiralAbyss" xml:space="preserve">
     <value>深境螺旋</value>
@@ -2944,16 +2944,16 @@ If you continue, this warning will be ignored and the preset's Hash will be upda
     <value>共 </value>
   </data>
   <data name="GachaAnalysis_Pity5Star" xml:space="preserve">
-    <value>五星已墊底: </value>
+    <value>五星已墊: </value>
   </data>
   <data name="GachaAnalysis_Pity4Star" xml:space="preserve">
-    <value>四星已墊底: </value>
+    <value>四星已墊: </value>
   </data>
   <data name="GachaAnalysis_Pity5StarShort" xml:space="preserve">
-    <value>五星已墊底 </value>
+    <value>五星已墊 </value>
   </data>
   <data name="GachaAnalysis_Pity4StarShort" xml:space="preserve">
-    <value>四星已墊底 </value>
+    <value>四星已墊 </value>
   </data>
   <data name="GachaAnalysis_CharacterEvent" xml:space="preserve">
     <value>角色活動祈願</value>
@@ -3122,7 +3122,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>四星出貨 Top10</value>
   </data>
   <data name="GachaAnalysis_PityInterval" xml:space="preserve">
-    <value>五星墊底區間</value>
+    <value>五星墊數區間</value>
   </data>
   <data name="GachaAnalysis_MonthlyTrend" xml:space="preserve">
     <value>月度祈願趨勢</value>
@@ -3616,7 +3616,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>解析簽到狀態失敗</value>
   </data>
   <data name="Checkin_RequestSignStatusException" xml:space="preserve">
-    <value>請求籤到狀態異常: {0}</value>
+    <value>請求簽到狀態異常: {0}</value>
   </data>
   <data name="Checkin_ParseResponseDataFailed" xml:space="preserve">
     <value>解析帳號清單回應資料失敗</value>
@@ -3915,7 +3915,7 @@ UIGF v4.x/3.0/2.x</value>
   <data name="User_GenderPrivate" xml:space="preserve">
     <value>保密</value>
   </data>
-  <data name="Gacha_Won5050" xml:space="preserve">
+  <data name="Gacha_Lost5050" xml:space="preserve">
     <value>歪</value>
   </data>
   <data name="Gacha_Guaranteed" xml:space="preserve">
@@ -3928,7 +3928,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>0 抽</value>
   </data>
   <data name="Gacha_No5StarPity" xml:space="preserve">
-    <value>暫無五星墊底數</value>
+    <value>暫無五星墊數</value>
   </data>
   <data name="Gacha_No5StarRecord" xml:space="preserve">
     <value>暫無五星記錄</value>
@@ -3952,7 +3952,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>五星均抽</value>
   </data>
   <data name="Gacha_DeepestPity" xml:space="preserve">
-    <value>目前最深墊底</value>
+    <value>目前最深墊數</value>
   </data>
   <data name="Gacha_Best5Star" xml:space="preserve">
     <value>最歐五星</value>
@@ -4257,7 +4257,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>數據中心</value>
   </data>
   <data name="DataPage_Subtitle" xml:space="preserve">
-    <value>彙總全服榜單，交叉分析成可直接照做的培養與抽卡結論</value>
+    <value>彙總全服榜單，交叉分析培養與抽卡趨勢以供決策參考</value>
   </data>
   <data name="DataPage_TabOverview" xml:space="preserve">
     <value>總覽</value>
@@ -4752,223 +4752,223 @@ UIGF v4.x/3.0/2.x</value>
     <value>PDF 匯出失敗</value>
   </data>
   <data name="Backpack_TabWeapon.Header" xml:space="preserve">
-    <value>Weapons</value>
+    <value>武器</value>
   </data>
   <data name="Backpack_TabArtifact.Header" xml:space="preserve">
-    <value>Artifacts</value>
+    <value>聖遺物</value>
   </data>
   <data name="Backpack_TabMaterial.Header" xml:space="preserve">
-    <value>Materials</value>
+    <value>材料</value>
   </data>
   <data name="Backpack_TabFood.Header" xml:space="preserve">
-    <value>Food</value>
+    <value>食物</value>
   </data>
   <data name="Backpack_StatusWaiting" xml:space="preserve">
-    <value>Waiting for data…</value>
+    <value>等待資料…</value>
   </data>
   <data name="Backpack_StatusReceived" xml:space="preserve">
-    <value>Received</value>
+    <value>已接收</value>
   </data>
   <data name="Backpack_StatusLaunching" xml:space="preserve">
-    <value>Launching…</value>
+    <value>啟動中…</value>
   </data>
   <data name="Backpack_StatusLaunched" xml:space="preserve">
-    <value>Game launched, waiting for data…</value>
+    <value>遊戲已啟動，等待資料…</value>
   </data>
   <data name="Backpack_BtnSelectPath.Label" xml:space="preserve">
-    <value>Select Game Path</value>
+    <value>選擇遊戲路徑</value>
   </data>
   <data name="Backpack_BtnKillGame.Label" xml:space="preserve">
-    <value>Kill Process</value>
+    <value>結束處理程序</value>
   </data>
   <data name="Backpack_BtnSyncBag.Label" xml:space="preserve">
-    <value>Sync Backpack</value>
+    <value>同步背包</value>
   </data>
   <data name="Backpack_SyncBagDialogTitle" xml:space="preserve">
-    <value>Sync Backpack</value>
+    <value>同步背包</value>
   </data>
   <data name="Backpack_SyncBagDialogWaiting" xml:space="preserve">
-    <value>Game launched, waiting for backpack data…</value>
+    <value>遊戲已啟動，正在等待背包資料…</value>
   </data>
   <data name="Backpack_SyncBagDialogCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>取消</value>
   </data>
   <data name="Backpack_Locked" xml:space="preserve">
-    <value>Locked</value>
+    <value>已鎖定</value>
   </data>
   <data name="Backpack_SlotFlower" xml:space="preserve">
-    <value>Flower of Life</value>
+    <value>生之花</value>
   </data>
   <data name="Backpack_SlotPlume" xml:space="preserve">
-    <value>Plume of Death</value>
+    <value>死之羽</value>
   </data>
   <data name="Backpack_SlotSands" xml:space="preserve">
-    <value>Sands of Eon</value>
+    <value>時之沙</value>
   </data>
   <data name="Backpack_SlotGoblet" xml:space="preserve">
-    <value>Goblet of Eonothem</value>
+    <value>空之杯</value>
   </data>
   <data name="Backpack_SlotCirclet" xml:space="preserve">
-    <value>Circlet of Logos</value>
+    <value>理之冠</value>
   </data>
   <data name="Backpack_PathInvalidMsg" xml:space="preserve">
-    <value>Invalid path. Please select YuanShen.exe (CN server only).</value>
+    <value>路徑無效，請選擇陸服遊戲本體（YuanShen.exe）。</value>
   </data>
   <data name="Backpack_SelectPathTitle.Text" xml:space="preserve">
-    <value>Select Game Path</value>
+    <value>選擇遊戲路徑</value>
   </data>
   <data name="Backpack_SelectPathHint.Text" xml:space="preserve">
-    <value>Click an entry below to switch to that path</value>
+    <value>在下方清單中選取以切換到該路徑</value>
   </data>
   <data name="Backpack_AddPathHeader.Text" xml:space="preserve">
-    <value>Game Path</value>
+    <value>遊戲路徑</value>
   </data>
   <data name="Backpack_AddPathDesc.Text" xml:space="preserve">
-    <value>Select YuanShen.exe (CN only), not launcher.exe</value>
+    <value>請選擇陸服遊戲本體（YuanShen.exe）而非啟動器（launcher.exe）</value>
   </data>
   <data name="Backpack_WeaponBaseAtkLabel.Text" xml:space="preserve">
-    <value>Base ATK</value>
+    <value>基礎攻擊力</value>
   </data>
   <data name="Backpack_ErrNoProcessPath" xml:space="preserve">
-    <value>Failed to resolve current process path</value>
+    <value>無法取得目前處理程序路徑</value>
   </data>
   <data name="Backpack_ErrElevationCancelled" xml:space="preserve">
-    <value>Elevation was cancelled by the user</value>
+    <value>使用者取消了權限提升</value>
   </data>
   <data name="Backpack_ErrHelperStartFailed" xml:space="preserve">
-    <value>Failed to start the injection helper</value>
+    <value>無法啟動注入處理程序</value>
   </data>
   <data name="Backpack_ErrInvalidConfig" xml:space="preserve">
-    <value>Invalid configuration file</value>
+    <value>設定檔無效</value>
   </data>
   <data name="Backpack_ErrGameCreateFailed" xml:space="preserve">
-    <value>Failed to create game process</value>
+    <value>無法建立遊戲處理程序</value>
   </data>
   <data name="Backpack_ErrDllInjFailed" xml:space="preserve">
-    <value>DLL injection failed</value>
+    <value>DLL 注入失敗</value>
   </data>
   <data name="Backpack_ErrHelperExitCode" xml:space="preserve">
-    <value>Injection helper exited with code {0}</value>
+    <value>注入處理程序異常退出 ({0})</value>
   </data>
   <data name="Backpack_MatTabCharAscension" xml:space="preserve">
-    <value>Char Ascension</value>
+    <value>角色突破</value>
   </data>
   <data name="Backpack_MatTabWeaponAscension" xml:space="preserve">
-    <value>Weapon Ascension</value>
+    <value>武器突破</value>
   </data>
   <data name="Backpack_MatTabTalent" xml:space="preserve">
-    <value>Talent Materials</value>
+    <value>天賦材料</value>
   </data>
   <data name="Backpack_MatTabCharExp" xml:space="preserve">
-    <value>Char EXP</value>
+    <value>角色培養</value>
   </data>
   <data name="Backpack_MatTabWeaponEnhance" xml:space="preserve">
-    <value>Weapon Enhancement</value>
+    <value>武器強化</value>
   </data>
   <data name="Backpack_MatTabRefine" xml:space="preserve">
-    <value>Refinement</value>
+    <value>精煉材料</value>
   </data>
   <data name="Backpack_MatTabLocalSpecialty" xml:space="preserve">
-    <value>Local Specialty</value>
+    <value>地區特產</value>
   </data>
   <data name="Backpack_MatTabIngredient" xml:space="preserve">
-    <value>Ingredients</value>
+    <value>食材</value>
   </data>
   <data name="Backpack_FoodTabRecovery" xml:space="preserve">
-    <value>Recovery</value>
+    <value>恢復類料理</value>
   </data>
   <data name="Backpack_FoodTabAttack" xml:space="preserve">
-    <value>Attack</value>
+    <value>攻擊類料理</value>
   </data>
   <data name="Backpack_FoodTabDefense" xml:space="preserve">
-    <value>Defense</value>
+    <value>防禦類料理</value>
   </data>
   <data name="Backpack_FoodTabAdventure" xml:space="preserve">
-    <value>Adventure</value>
+    <value>冒險類料理</value>
   </data>
   <data name="Backpack_FoodTabSpecialRecovery" xml:space="preserve">
-    <value>Special Recovery</value>
+    <value>特殊恢復</value>
   </data>
   <data name="Backpack_FoodTabSpecialAttack" xml:space="preserve">
-    <value>Special Attack</value>
+    <value>特殊攻擊</value>
   </data>
   <data name="Backpack_FoodTabSpecialDefense" xml:space="preserve">
-    <value>Special Defense</value>
+    <value>特殊防禦</value>
   </data>
   <data name="Backpack_FoodTabSpecialAdventure" xml:space="preserve">
-    <value>Special Adventure</value>
+    <value>特殊冒險</value>
   </data>
   <data name="Backpack_FoodTabArlecchino" xml:space="preserve">
-    <value>Arlecchino Specials</value>
+    <value>靈感之作</value>
   </data>
   <data name="Backpack_FoodTabSweet" xml:space="preserve">
-    <value>Sweet Flowers</value>
+    <value>糖雕</value>
   </data>
   <data name="Backpack_MatTabCommon" xml:space="preserve">
-    <value>Materials</value>
+    <value>素材</value>
   </data>
   <data name="Backpack_MatTabOre" xml:space="preserve">
-    <value>Ores</value>
+    <value>礦石</value>
   </data>
   <data name="Backpack_MatTabFish" xml:space="preserve">
-    <value>Fish</value>
+    <value>魚</value>
   </data>
   <data name="Backpack_MatTabBait" xml:space="preserve">
-    <value>Fishing Bait</value>
+    <value>魚餌</value>
   </data>
   <data name="Backpack_TabGadget.Header" xml:space="preserve">
-    <value>Gadgets</value>
+    <value>道具</value>
   </data>
   <data name="Backpack_TabAsset.Header" xml:space="preserve">
-    <value>Assets</value>
+    <value>個人資產</value>
   </data>
   <data name="Backpack_AssetTabCurrency" xml:space="preserve">
-    <value>Rare Currency</value>
+    <value>稀有貨幣</value>
   </data>
   <data name="Backpack_AssetTabQiyu" xml:space="preserve">
-    <value>Imaginarium Theater</value>
+    <value>幻想真境劇詩</value>
   </data>
   <data name="Backpack_GadgetTabMisc" xml:space="preserve">
-    <value>Gadgets</value>
+    <value>小道具</value>
   </data>
   <data name="Backpack_GadgetTabConsumable" xml:space="preserve">
-    <value>Consumables</value>
+    <value>消耗品</value>
   </data>
   <data name="Backpack_GadgetTabQuest" xml:space="preserve">
-    <value>Quest Items</value>
+    <value>任務道具</value>
   </data>
   <data name="Backpack_GadgetTabPrecious" xml:space="preserve">
-    <value>Precious</value>
+    <value>貴重物品</value>
   </data>
   <data name="Backpack_GadgetTabQiyu" xml:space="preserve">
-    <value>Imaginarium Theater</value>
+    <value>幻想真境劇詩</value>
   </data>
   <data name="Backpack_GadgetTabAdventure" xml:space="preserve">
-    <value>Adventure</value>
+    <value>冒險道具</value>
   </data>
   <data name="Backpack_GadgetTabEmblem" xml:space="preserve">
-    <value>Nation Emblems</value>
+    <value>七國徽印</value>
   </data>
   <data name="Backpack_GadgetTabWish" xml:space="preserve">
-    <value>Wish Items</value>
+    <value>祈願道具</value>
   </data>
   <data name="Backpack_GadgetTabVoucherHi" xml:space="preserve">
-    <value>Starglitter</value>
+    <value>高級兌換券</value>
   </data>
   <data name="Backpack_GadgetTabVoucherLo" xml:space="preserve">
-    <value>Stardust</value>
+    <value>普通兌換券</value>
   </data>
   <data name="Backpack_GadgetTabCurrency" xml:space="preserve">
-    <value>Rare Currency</value>
+    <value>稀有貨幣</value>
   </data>
   <data name="Backpack_NavTitle" xml:space="preserve">
-    <value>Backpack Browser</value>
+    <value>背包瀏覽器</value>
   </data>
   <data name="Backpack_ErrX64Required" xml:space="preserve">
-    <value>Backpack synchronization requires the x64 build.</value>
+    <value>背包同步僅支援 x64 版本。</value>
   </data>
   <data name="Backpack_ErrDllMissing" xml:space="preserve">
-    <value>The Backpack synchronization module modules/backpack.dll is missing.</value>
+    <value>缺少背包同步模組 modules/backpack.dll。</value>
   </data>
   <data name="Checkin_PartialFailed" xml:space="preserve">
     <value>簽到部分失敗</value>
@@ -5006,4 +5006,802 @@ UIGF v4.x/3.0/2.x</value>
   <data name="Checkin_CheckingIn" xml:space="preserve">
     <value>簽到中...</value>
   </data>
-<data name="Checkin_AccountLabel" xml:space="preserve"><value>帳號: {0}</value></data></root>
+  <data name="Checkin_AccountLabel" xml:space="preserve">
+    <value>帳號: {0}</value>
+  </data>
+  <data name="NotificationPositionTitle" xml:space="preserve">
+    <value>通知彈窗位置</value>
+  </data>
+  <data name="NotificationPositionCaption" xml:space="preserve">
+    <value>設定通知彈窗在視窗中的顯示位置</value>
+  </data>
+  <data name="PositionBottomRight" xml:space="preserve">
+    <value>右下角</value>
+  </data>
+  <data name="PositionTopRight" xml:space="preserve">
+    <value>右上角</value>
+  </data>
+  <data name="PositionTopLeft" xml:space="preserve">
+    <value>左上角</value>
+  </data>
+  <data name="PositionBottomLeft" xml:space="preserve">
+    <value>左下角</value>
+  </data>
+  <data name="UsingHoyolabAccountTitle" xml:space="preserve">
+    <value>使用米遊社/HoyoLAB 帳戶直接登入遊戲</value>
+  </data>
+  <data name="UsingHoyolabAccountCaption" xml:space="preserve">
+    <value>啟動遊戲時直接以目前選中的米遊社或 HoyoLAB 帳戶身分進入遊戲，無需在遊戲內再次輸入帳號密碼。</value>
+  </data>
+  <data name="HoyolabAccount_NoLoggedIn_Title" xml:space="preserve">
+    <value>無法開啟</value>
+  </data>
+  <data name="HoyolabAccount_NoLoggedIn_Message" xml:space="preserve">
+    <value>請先在帳戶設定中登入一個米遊社或 HoyoLAB 帳戶。</value>
+  </data>
+  <data name="HoyolabAccount_LoginExpired_Title" xml:space="preserve">
+    <value>帳戶登入已過期</value>
+  </data>
+  <data name="HoyolabAccount_LoginExpired_Message" xml:space="preserve">
+    <value>目前帳戶需要重新登入後才能使用此功能。</value>
+  </data>
+  <data name="HoyolabAccount_NoGamePath_Title" xml:space="preserve">
+    <value>未選擇遊戲</value>
+  </data>
+  <data name="HoyolabAccount_NoGamePath_Message" xml:space="preserve">
+    <value>請先在首頁選擇遊戲安裝目錄。</value>
+  </data>
+  <data name="HoyolabAccount_Enabled_Title" xml:space="preserve">
+    <value>已開啟</value>
+  </data>
+  <data name="HoyolabAccount_Enabled_Message" xml:space="preserve">
+    <value>下次啟動遊戲時將直接以米遊社/HoyoLAB 帳戶身分進入遊戲，無需再次輸入帳號密碼。</value>
+  </data>
+  <data name="HoyolabAccount_EnableFailed_Title" xml:space="preserve">
+    <value>無法開啟</value>
+  </data>
+  <data name="HoyolabAccount_EnableFailed_Message" xml:space="preserve">
+    <value>目前帳戶暫時無法使用此功能，請檢查帳戶登入狀態後重試。</value>
+  </data>
+  <data name="HoyolabAccount_TempUnavailable_Title" xml:space="preserve">
+    <value>暫時無法使用</value>
+  </data>
+  <data name="HoyolabAccount_TempUnavailable_Message" xml:space="preserve">
+    <value>網路或服務異常，請稍後再試。</value>
+  </data>
+  <data name="HoyolabAccount_ServerMismatch_Title" xml:space="preserve">
+    <value>帳戶與伺服器不相符</value>
+  </data>
+  <data name="HoyolabAccount_ServerMismatch_OverseaMsg" xml:space="preserve">
+    <value>目前選中的 HoyoLAB 國際服帳戶無法用於啟動國服遊戲，請切換到對應區域的帳戶。</value>
+  </data>
+  <data name="HoyolabAccount_ServerMismatch_CnMsg" xml:space="preserve">
+    <value>目前選中的米遊社國服帳戶無法用於啟動國際服遊戲，請切換到對應區域的帳戶。</value>
+  </data>
+  <data name="HelpPage_TranslateBtn" xml:space="preserve">
+    <value>翻譯</value>
+  </data>
+  <data name="HelpPage_ShowOriginalBtn" xml:space="preserve">
+    <value>查看原文</value>
+  </data>
+  <data name="HelpPage_Translating" xml:space="preserve">
+    <value>翻譯中 ({0}/{1})...</value>
+  </data>
+  <data name="HelpPage_TranslateFailed" xml:space="preserve">
+    <value>翻譯失敗</value>
+  </data>
+  <data name="HelpPage_TranslateComplete" xml:space="preserve">
+    <value>翻譯完成</value>
+  </data>
+  <data name="DisableFpsAutoDisableLabel" xml:space="preserve">
+    <value>關閉啟動時自動停用FPS</value>
+  </data>
+  <data name="PluginStoreTitle" xml:space="preserve">
+    <value>插件商城</value>
+  </data>
+  <data name="PluginStoreSearch" xml:space="preserve">
+    <value>搜尋插件...</value>
+  </data>
+  <data name="PluginStoreInstall" xml:space="preserve">
+    <value>安裝</value>
+  </data>
+  <data name="PluginStoreInstalled" xml:space="preserve">
+    <value>已安裝</value>
+  </data>
+  <data name="PluginStoreUpdate" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="PluginStoreUninstall" xml:space="preserve">
+    <value>解除安裝</value>
+  </data>
+  <data name="PluginStoreInstalling" xml:space="preserve">
+    <value>安裝中...</value>
+  </data>
+  <data name="PluginStoreRating" xml:space="preserve">
+    <value>評分</value>
+  </data>
+  <data name="PluginStoreDownloads" xml:space="preserve">
+    <value>下載</value>
+  </data>
+  <data name="PluginStoreSize" xml:space="preserve">
+    <value>大小</value>
+  </data>
+  <data name="PluginStoreVersion" xml:space="preserve">
+    <value>版本</value>
+  </data>
+  <data name="PluginStoreNoResults" xml:space="preserve">
+    <value>沒有找到插件</value>
+  </data>
+  <data name="PluginStoreError" xml:space="preserve">
+    <value>載入失敗</value>
+  </data>
+  <data name="PluginStoreLoading" xml:space="preserve">
+    <value>載入中...</value>
+  </data>
+  <data name="PluginStoreRetry" xml:space="preserve">
+    <value>重試</value>
+  </data>
+  <data name="PluginStorePrevious" xml:space="preserve">
+    <value>上一頁</value>
+  </data>
+  <data name="PluginStoreNext" xml:space="preserve">
+    <value>下一頁</value>
+  </data>
+  <data name="PluginStoreAll" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="PluginStoreSortPopular" xml:space="preserve">
+    <value>熱門</value>
+  </data>
+  <data name="PluginStoreSortNewest" xml:space="preserve">
+    <value>最新</value>
+  </data>
+  <data name="PluginStoreSortRating" xml:space="preserve">
+    <value>評分最高</value>
+  </data>
+  <data name="PluginStoreInstallSuccess" xml:space="preserve">
+    <value>已安裝: {0}</value>
+  </data>
+  <data name="PluginStoreInstallFailed" xml:space="preserve">
+    <value>安裝失敗: {0}</value>
+  </data>
+  <data name="PluginStoreUninstallSuccess" xml:space="preserve">
+    <value>已解除安裝: {0}</value>
+  </data>
+  <data name="PluginStoreVerifying" xml:space="preserve">
+    <value>驗證中...</value>
+  </data>
+  <data name="PluginStoreHashMismatch" xml:space="preserve">
+    <value>檔案完整性校驗失敗，下載可能已損壞或遭到篡改</value>
+  </data>
+  <data name="PluginStoreLuaHashMismatch" xml:space="preserve">
+    <value>安裝腳本完整性校驗失敗</value>
+  </data>
+  <data name="PluginStoreSecurityBlocked" xml:space="preserve">
+    <value>安裝已阻止: {0}</value>
+  </data>
+  <data name="PluginStoreSecurityBlockedShort" xml:space="preserve">
+    <value>安全性阻止</value>
+  </data>
+  <data name="PluginStorePathTraversal" xml:space="preserve">
+    <value>安全性: 已阻止路徑穿越嘗試</value>
+  </data>
+  <data name="PluginStoreHashVerified" xml:space="preserve">
+    <value>完整性校驗通過</value>
+  </data>
+  <data name="PluginStoreDiscover" xml:space="preserve">
+    <value>探索與發現</value>
+  </data>
+  <data name="PluginStoreSearchPlaceholder" xml:space="preserve">
+    <value>搜尋插件名稱或關鍵字...</value>
+  </data>
+  <data name="PluginStoreRefresh" xml:space="preserve">
+    <value>重新整理</value>
+  </data>
+  <data name="PluginStoreSyncing" xml:space="preserve">
+    <value>正在同步插件列表...</value>
+  </data>
+  <data name="PluginStoreDeveloper" xml:space="preserve">
+    <value>開發提供</value>
+  </data>
+  <data name="PluginStoreDetails" xml:space="preserve">
+    <value>功能詳情</value>
+  </data>
+  <data name="PluginStoreUpdateNow" xml:space="preserve">
+    <value>立即更新</value>
+  </data>
+  <data name="PluginStoreInstallPlugin" xml:space="preserve">
+    <value>安裝此插件</value>
+  </data>
+  <data name="PluginStoreCancel" xml:space="preserve">
+    <value>取消返回</value>
+  </data>
+  <data name="PluginStoreNoMatch" xml:space="preserve">
+    <value>沒有找到相符的插件</value>
+  </data>
+  <data name="PluginStoreNoAvailable" xml:space="preserve">
+    <value>暫無可用的插件</value>
+  </data>
+  <data name="PluginStoreTotalPlugins" xml:space="preserve">
+    <value>共 {0} 個插件</value>
+  </data>
+  <data name="PluginStoreConnectionFailed" xml:space="preserve">
+    <value>連線失敗</value>
+  </data>
+  <data name="PluginStoreLoadFailed" xml:space="preserve">
+    <value>載入插件列表失敗，請稍後重試</value>
+  </data>
+  <data name="PluginStoreInstallComplete" xml:space="preserve">
+    <value>安裝完成</value>
+  </data>
+  <data name="PluginStoreHashFailed" xml:space="preserve">
+    <value>校驗失敗</value>
+  </data>
+  <data name="PluginStoreCancelled" xml:space="preserve">
+    <value>已取消</value>
+  </data>
+  <data name="PluginStoreInstallFailedShort" xml:space="preserve">
+    <value>安裝失敗</value>
+  </data>
+  <data name="PluginStoreInstallVerifyFailed" xml:space="preserve">
+    <value>安裝後未偵測到插件檔案，可能未成功安裝</value>
+  </data>
+
+  <data name="PluginStoreUninstalling" xml:space="preserve">
+    <value>解除安裝中...</value>
+  </data>
+  <data name="PluginStoreUninstallComplete" xml:space="preserve">
+    <value>已解除安裝</value>
+  </data>
+  <data name="PluginStoreUninstallFailed" xml:space="preserve">
+    <value>解除安裝失敗</value>
+  </data>
+  <data name="PluginStoreServerUnreachable" xml:space="preserve">
+    <value>無法連線到插件商城伺服器，請檢查網路或伺服器狀態</value>
+  </data>
+  <data name="PluginStoreServerTimeout" xml:space="preserve">
+    <value>連線插件商城逾時，請稍後重試</value>
+  </data>
+  <data name="PluginStoreLoadListFailed" xml:space="preserve">
+    <value>載入插件列表失敗: {0}</value>
+  </data>
+  <data name="PluginStoreDownloadLuaFailed" xml:space="preserve">
+    <value>無法下載安裝腳本，伺服器目前無法使用</value>
+  </data>
+  <data name="PluginStoreDownloadLuaError" xml:space="preserve">
+    <value>下載安裝腳本失敗: {0}</value>
+  </data>
+  <data name="PluginStoreDownloading" xml:space="preserve">
+    <value>下載中 {0}%</value>
+  </data>
+  <data name="PluginStoreDownloadFileFailed" xml:space="preserve">
+    <value>無法下載插件檔案，伺服器目前無法使用</value>
+  </data>
+  <data name="PluginStoreDownloadFileError" xml:space="preserve">
+    <value>下載插件檔案失敗: {0}</value>
+  </data>
+  <data name="PluginStoreDownloadCountWan" xml:space="preserve">
+    <value>{0:F1}萬</value>
+  </data>
+  <data name="PluginStoreDownloadCountK" xml:space="preserve">
+    <value>{0:F1}k</value>
+  </data>
+  <data name="PluginStoreScriptDownloading" xml:space="preserve">
+    <value>下載安裝腳本...</value>
+  </data>
+  <data name="PluginStoreScriptScanning" xml:space="preserve">
+    <value>掃描中...</value>
+  </data>
+  <data name="PluginStoreScriptExecuting" xml:space="preserve">
+    <value>執行安裝腳本...</value>
+  </data>
+  <data name="PluginStoreLuaSecurityFailed" xml:space="preserve">
+    <value>Lua腳本未通過安全性驗證。</value>
+  </data>
+  <data name="PluginStoreLuaScriptError" xml:space="preserve">
+    <value>Lua腳本錯誤: {0}</value>
+  </data>
+  <data name="PluginStoreLuaScriptFailed" xml:space="preserve">
+    <value>Lua腳本執行失敗: {0}</value>
+  </data>
+  <data name="PluginStoreDialogClose" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="PluginStoreSecurityEmptyPath" xml:space="preserve">
+    <value>安全性: {0} 操作傳入了空路徑。</value>
+  </data>
+  <data name="PluginStoreSecurityInvalidPath" xml:space="preserve">
+    <value>安全性: 無效路徑 ({0}): {1}</value>
+  </data>
+  <data name="PluginStoreSecurityOutsideDir" xml:space="preserve">
+    <value>安全性: 路徑必須在插件目錄內 ({0})。</value>
+  </data>
+  <data name="PluginStoreSecurityBannedOp" xml:space="preserve">
+    <value>腳本包含禁止的操作 ({0})。</value>
+  </data>
+  <data name="PluginStoreSecurityPathTraversalShort" xml:space="preserve">
+    <value>路徑穿越嘗試</value>
+  </data>
+  <data name="PluginStoreSecurityScriptTooLarge" xml:space="preserve">
+    <value>腳本過大</value>
+  </data>
+  <data name="PluginStoreUpload" xml:space="preserve">
+    <value>上傳插件</value>
+  </data>
+  <data name="PluginStoreUploadTooltip" xml:space="preserve">
+    <value>前往 GitHub 提交你的插件</value>
+  </data>
+  <data name="PluginStoreLuaTestButton" xml:space="preserve">
+    <value>Lua測試</value>
+  </data>
+  <data name="PluginStoreLuaTestTitle" xml:space="preserve">
+    <value>Lua 插件安裝腳本測試</value>
+  </data>
+  <data name="PluginStoreLuaTestDescription" xml:space="preserve">
+    <value>在下方輸入 Lua 插件安裝腳本，點擊執行測試來驗證腳本。腳本將在沙箱環境中執行，所有檔案操作限制在 Plugins 目錄內。</value>
+  </data>
+  <data name="PluginStoreLuaTestInputHint" xml:space="preserve">
+    <value>-- 在此輸入 Lua 插件安裝腳本
+-- 可使用的 API: install.download(), install.extract(), install.download_plugin(id) 等
+-- 詳見 Lua 插件開發指南</value>
+  </data>
+  <data name="PluginStoreLuaTestRun" xml:space="preserve">
+    <value>執行測試</value>
+  </data>
+  <data name="PluginStoreLuaTestSecurityWarning" xml:space="preserve">
+    <value>安全性警告</value>
+  </data>
+  <data name="PluginStoreLuaTestSecurityBlocked" xml:space="preserve">
+    <value>腳本未通過安全性驗證：{0}
+
+是否仍要執行？（不建議）</value>
+  </data>
+  <data name="PluginStoreLuaTestExecuting" xml:space="preserve">
+    <value>正在執行 Lua 腳本...</value>
+  </data>
+  <data name="PluginStoreLuaTestSuccess" xml:space="preserve">
+    <value>Lua 腳本執行成功</value>
+  </data>
+  <data name="PluginStoreLuaTestFailed" xml:space="preserve">
+    <value>Lua 腳本執行失敗</value>
+  </data>
+  <data name="PluginStoreLuaTestLogSaved" xml:space="preserve">
+    <value>日誌已儲存至：
+{0}</value>
+  </data>
+  <data name="PluginStoreLuaTestOpenLog" xml:space="preserve">
+    <value>開啟日誌檔案</value>
+  </data>
+  <data name="PluginStoreLuaTestClose" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="PluginStoreCategoryUtility" xml:space="preserve">
+    <value>實用工具</value>
+  </data>
+  <data name="PluginStoreCategoryGameplay" xml:space="preserve">
+    <value>遊戲玩法</value>
+  </data>
+  <data name="PluginStoreCategoryVisuals" xml:space="preserve">
+    <value>視覺美化</value>
+  </data>
+  <data name="Backpack_TabOverview" xml:space="preserve">
+    <value>總覽</value>
+  </data>
+  <data name="Backpack_PageSubtitle" xml:space="preserve">
+    <value>集中瀏覽裝備、材料與料理，輔助養成規劃。</value>
+  </data>
+  <data name="Backpack_LocalOnlyDisclaimer" xml:space="preserve">
+    <value>同步資料僅儲存在本機，不會上傳帳號或背包內容。</value>
+  </data>
+  <data name="Backpack_PathNoticeTitle" xml:space="preserve">
+    <value>尚未識別到有效的遊戲安裝目錄</value>
+  </data>
+  <data name="Backpack_PathNoticeBody" xml:space="preserve">
+    <value>請在軟體的遊戲設定中設定路徑；Backpack 不會儲存或要求第二份路徑。</value>
+  </data>
+  <data name="Backpack_OpenSettings" xml:space="preserve">
+    <value>開啟設定</value>
+  </data>
+  <data name="Backpack_GamePathFallback" xml:space="preserve">
+    <value>請在遊戲設定中設定安裝目錄</value>
+  </data>
+  <data name="Backpack_UsageTitle" xml:space="preserve">
+    <value>使用說明</value>
+  </data>
+  <data name="Backpack_UsageStep1" xml:space="preserve">
+    <value>點擊右上角『同步背包』以注入遊戲內真實庫存，並啟動資料同步。</value>
+  </data>
+  <data name="Backpack_UsageStep2" xml:space="preserve">
+    <value>頂部分欄可切換分類；點擊任何物品卡片查看詳細參數（套裝 / 詞條 / 武器技能）。</value>
+  </data>
+  <data name="Backpack_UsageStep3" xml:space="preserve">
+    <value>總覽卡片會基於目前庫存給出食材聯動與養成材料覆蓋。</value>
+  </data>
+  <data name="Backpack_KpiOwnedWeapons" xml:space="preserve">
+    <value>已擁有武器</value>
+  </data>
+  <data name="Backpack_KpiLockedArtifacts" xml:space="preserve">
+    <value>鎖定聖遺物</value>
+  </data>
+  <data name="Backpack_KpiCookableFood" xml:space="preserve">
+    <value>可製作料理</value>
+  </data>
+  <data name="Backpack_KpiMaterialTypes" xml:space="preserve">
+    <value>材料種類</value>
+  </data>
+  <data name="Backpack_KpiFiveStarWeapons" xml:space="preserve">
+    <value>五星武器</value>
+  </data>
+  <data name="Backpack_KpiTotalArtifacts" xml:space="preserve">
+    <value>聖遺物總數</value>
+  </data>
+  <data name="Backpack_InsightMaxRefine.Title" xml:space="preserve">
+    <value>滿精煉五星武器</value>
+  </data>
+  <data name="Backpack_InsightMaxRefine.Body" xml:space="preserve">
+    <value>共 {0} 把五星武器已滿精煉。</value>
+  </data>
+  <data name="Backpack_InsightMaxLevel.Title" xml:space="preserve">
+    <value>滿級五星聖遺物</value>
+  </data>
+  <data name="Backpack_InsightMaxLevel.Body" xml:space="preserve">
+    <value>{0} 件五星聖遺物已強化至 +20。</value>
+  </data>
+  <data name="Backpack_InsightIngredientsReady.Title" xml:space="preserve">
+    <value>食材充足</value>
+  </data>
+  <data name="Backpack_InsightIngredientsReady.Body" xml:space="preserve">
+    <value>目前有 {0} 道料理的食材已備齊，可以立即製作。</value>
+  </data>
+  <data name="Backpack_InsightEmptyCategories.Title" xml:space="preserve">
+    <value>材料類別空缺</value>
+  </data>
+  <data name="Backpack_InsightEmptyCategories.Body" xml:space="preserve">
+    <value>有 {0} 個材料分類庫存為零：{1}</value>
+  </data>
+  <data name="Backpack_InsightCatalogWeapons.Title" xml:space="preserve">
+    <value>武器圖鑑進度</value>
+  </data>
+  <data name="Backpack_InsightCatalogWeapons.Body" xml:space="preserve">
+    <value>還有 {0} 把武器僅在圖鑑中，尚未擁有。</value>
+  </data>
+  <data name="Backpack_InsightLowStock.Title" xml:space="preserve">
+    <value>低庫存材料</value>
+  </data>
+  <data name="Backpack_InsightLowStock.Body" xml:space="preserve">
+    <value>{0} 項材料庫存不足 5 個，注意及時補充。</value>
+  </data>
+  <data name="Backpack_InsightEmpty.Title" xml:space="preserve">
+    <value>資料概覽</value>
+  </data>
+  <data name="Backpack_InsightEmpty.Body" xml:space="preserve">
+    <value>同步背包資料後將在此展示庫存洞察與建議。</value>
+  </data>
+  <data name="Backpack_PlanHighTierTalent" xml:space="preserve">
+    <value>高階天賦材料</value>
+  </data>
+  <data name="Backpack_CookHeader" xml:space="preserve">
+    <value>料理準備情況</value>
+  </data>
+  <data name="Backpack_CookSubheader" xml:space="preserve">
+    <value>基於目前食材庫存</value>
+  </data>
+  <data name="Backpack_CookReady" xml:space="preserve">
+    <value>可製作</value>
+  </data>
+  <data name="Backpack_CookAlmost" xml:space="preserve">
+    <value>差一步</value>
+  </data>
+  <data name="Backpack_CookAlmostBody" xml:space="preserve">
+    <value>缺少 {0}（{1}）</value>
+  </data>
+  <data name="Backpack_CookEmptyName" xml:space="preserve">
+    <value>暫無料理資料</value>
+  </data>
+  <data name="Backpack_CookEmptyStatus" xml:space="preserve">
+    <value>等待同步</value>
+  </data>
+  <data name="Backpack_CookEmptyBody" xml:space="preserve">
+    <value>同步背包後即可查看料理準備情況。</value>
+  </data>
+  <data name="Backpack_BrowseTitle" xml:space="preserve">
+    <value>瀏覽與檢索</value>
+  </data>
+  <data name="Backpack_BrowseCaption" xml:space="preserve">
+    <value>使用關鍵字、細分分類、篩選與排序快速定位物品。</value>
+  </data>
+  <data name="Backpack_BrowseSearchPlaceholder" xml:space="preserve">
+    <value>搜尋名稱、套裝、詞條、角色或食材</value>
+  </data>
+  <data name="Backpack_BrowseReset" xml:space="preserve">
+    <value>重設</value>
+  </data>
+  <data name="Backpack_BrowseSubcategory" xml:space="preserve">
+    <value>細分分類</value>
+  </data>
+  <data name="Backpack_BrowseFilter" xml:space="preserve">
+    <value>篩選</value>
+  </data>
+  <data name="Backpack_BrowseSort" xml:space="preserve">
+    <value>排序</value>
+  </data>
+  <data name="Backpack_ResultCount" xml:space="preserve">
+    <value>{0} 項結果</value>
+  </data>
+  <data name="Backpack_EmptyTitle" xml:space="preserve">
+    <value>沒有找到相符的物品</value>
+  </data>
+  <data name="Backpack_EmptyBody" xml:space="preserve">
+    <value>調整關鍵字或清除篩選條件後再試。</value>
+  </data>
+  <data name="Backpack_EmptyClearBtn" xml:space="preserve">
+    <value>清除條件</value>
+  </data>
+  <data name="Backpack_PagerFormat" xml:space="preserve">
+    <value>第 {0} / {1} 頁</value>
+  </data>
+  <data name="Backpack_PagerRange" xml:space="preserve">
+    <value>第 {0}-{1} 項 / 共 {2} 項</value>
+  </data>
+  <data name="Backpack_ResultAll" xml:space="preserve">
+    <value>{0} 項結果</value>
+  </data>
+  <data name="Backpack_DetailWeaponRank" xml:space="preserve">
+    <value>武器品質</value>
+  </data>
+  <data name="Backpack_DetailLevel" xml:space="preserve">
+    <value>等級</value>
+  </data>
+  <data name="Backpack_DetailRefine" xml:space="preserve">
+    <value>精煉</value>
+  </data>
+  <data name="Backpack_DetailBaseAtk" xml:space="preserve">
+    <value>基礎攻擊力</value>
+  </data>
+  <data name="Backpack_DetailSubStat" xml:space="preserve">
+    <value>副屬性</value>
+  </data>
+  <data name="Backpack_DetailSkill" xml:space="preserve">
+    <value>武器技能</value>
+  </data>
+  <data name="Backpack_DetailLore" xml:space="preserve">
+    <value>武器故事</value>
+  </data>
+  <data name="Backpack_DetailEnhanceLevel" xml:space="preserve">
+    <value>強化等級</value>
+  </data>
+  <data name="Backpack_DetailMainStat" xml:space="preserve">
+    <value>主詞條</value>
+  </data>
+  <data name="Backpack_DetailSubStats" xml:space="preserve">
+    <value>副詞條</value>
+  </data>
+  <data name="Backpack_DetailSetBonus" xml:space="preserve">
+    <value>套裝效果</value>
+  </data>
+  <data name="Backpack_DetailCodexTitle" xml:space="preserve">
+    <value>圖鑑條目</value>
+  </data>
+  <data name="Backpack_DetailCodexBody" xml:space="preserve">
+    <value>匯入遊戲後，將自動填入聖遺物的強化等級、主詞條數值與副詞條 roll 明細。目前顯示的是該聖遺物的套裝分類與套裝效果基礎資訊。</value>
+  </data>
+  <data name="Backpack_DetailCookState" xml:space="preserve">
+    <value>製作狀態</value>
+  </data>
+  <data name="Backpack_DetailCookReady" xml:space="preserve">
+    <value>食材庫存已滿足，可立即製作</value>
+  </data>
+  <data name="Backpack_DetailCookMissing" xml:space="preserve">
+    <value>部分食材不足，補齊後即可製作</value>
+  </data>
+  <data name="Backpack_DetailIngredients" xml:space="preserve">
+    <value>所需食材</value>
+  </data>
+  <data name="Backpack_DetailInventoryItem" xml:space="preserve">
+    <value>背包物品</value>
+  </data>
+  <data name="Backpack_DetailCountBody" xml:space="preserve">
+    <value>目前背包中的實際數量。</value>
+  </data>
+  <data name="Backpack_DetailStockItem" xml:space="preserve">
+    <value>庫存物品</value>
+  </data>
+  <data name="Backpack_SectionOverviewKpi" xml:space="preserve">
+    <value>庫存概況</value>
+  </data>
+  <data name="Backpack_SectionInsights" xml:space="preserve">
+    <value>背包洞察</value>
+  </data>
+  <data name="Backpack_SectionCultivation" xml:space="preserve">
+    <value>養成材料覆蓋</value>
+  </data>
+  <data name="Backpack_SectionItems" xml:space="preserve">
+    <value>瀏覽與檢索</value>
+  </data>
+  <data name="Backpack_DetailCountLabel" xml:space="preserve">
+    <value>持有數量</value>
+  </data>
+  <data name="Backpack_DialogClose" xml:space="preserve">
+    <value>關閉</value>
+  </data>
+  <data name="Backpack_DialogConfirm" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="Backpack_NotifyImportTitle" xml:space="preserve">
+    <value>背包資料已匯入</value>
+  </data>
+  <data name="Backpack_NotifyImportBody" xml:space="preserve">
+    <value>已接收並儲存本次背包資料。總覽、材料覆蓋和料理建議已更新。</value>
+  </data>
+  <data name="Backpack_NotifyFailedTitle" xml:space="preserve">
+    <value>同步失敗</value>
+  </data>
+
+  <data name="Backpack_ModuleMissingTitle" xml:space="preserve">
+    <value>未偵測到同步模組</value>
+  </data>
+  <data name="Backpack_ModuleNoticeTitle" xml:space="preserve">
+    <value>關於同步模組</value>
+  </data>
+  <data name="Backpack_ModuleNoticeBody" xml:space="preserve">
+    <value>該同步模組由其他開發者製作，為單獨專案。開發者對於模組內建事宜並未與我們達成一致，因此導致了擱置。我們仍在盡可能爭取機會，敬請見諒。</value>
+  </data>
+  <data name="Backpack_MetaNoticeTitle" xml:space="preserve">
+    <value>資料與更新說明</value>
+  </data>
+  <data name="Backpack_MetaNoticeBody" xml:space="preserve">
+    <value>元資料不定期更新，可能無法即時取得更新資料；此功能目前僅提供圖鑑（瀏覽）功能。</value>
+  </data>
+  <data name="Backpack_DetailsButton" xml:space="preserve">
+    <value>詳情</value>
+  </data>
+  <data name="Backpack_ChipAll" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="Backpack_ChipCategoryGeneric" xml:space="preserve">
+    <value>分類</value>
+  </data>
+  <data name="Backpack_ChipFilterOwned" xml:space="preserve">
+    <value>已擁有</value>
+  </data>
+  <data name="Backpack_ChipFilterCatalog" xml:space="preserve">
+    <value>圖鑑</value>
+  </data>
+  <data name="Backpack_ChipFilterFive" xml:space="preserve">
+    <value>五星</value>
+  </data>
+  <data name="Backpack_ChipFilterLocked" xml:space="preserve">
+    <value>已鎖定</value>
+  </data>
+  <data name="Backpack_ChipFilterCookable" xml:space="preserve">
+    <value>可製作</value>
+  </data>
+  <data name="Backpack_ChipSortDefault" xml:space="preserve">
+    <value>預設</value>
+  </data>
+  <data name="Backpack_ChipSortName" xml:space="preserve">
+    <value>名稱</value>
+  </data>
+  <data name="Backpack_ChipSortRank" xml:space="preserve">
+    <value>品質</value>
+  </data>
+  <data name="Backpack_ChipSortLevel" xml:space="preserve">
+    <value>等級</value>
+  </data>
+  <data name="Backpack_ChipSortCount" xml:space="preserve">
+    <value>數量</value>
+  </data>
+  <data name="Backpack_ChipSubcategoryTemplate" xml:space="preserve">
+    <value>全部{0}</value>
+  </data>
+  <data name="RemoveCloudCredentialTooltip" xml:space="preserve">
+    <value>移除雲端遊戲憑證</value>
+  </data>
+  <data name="RemoveCloudCredentialConfirmTitle" xml:space="preserve">
+    <value>移除雲端遊戲憑證</value>
+  </data>
+  <data name="RemoveCloudCredentialConfirmContent" xml:space="preserve">
+    <value>確定要移除該帳戶的雲端遊戲簽到憑證嗎？</value>
+  </data>
+  <data name="PluginMirrorAccelerationTitle" xml:space="preserve">
+    <value>插件商城鏡像站加速</value>
+  </data>
+  <data name="PluginMirrorAccelerationCaption" xml:space="preserve">
+    <value>商城插件的 GitHub 下載連結將透過鏡像站加速下載</value>
+  </data>
+  <data name="PluginMirrorAccelerationShort" xml:space="preserve">
+    <value>鏡像加速</value>
+  </data>
+  <data name="PluginMirrorWindowTitle" xml:space="preserve">
+    <value>插件下載加速</value>
+  </data>
+  <data name="PluginMirrorWindowDesc" xml:space="preserve">
+    <value>選擇下載線路，開始鏡像站加速下載</value>
+  </data>
+  <data name="PluginMirrorTesting" xml:space="preserve">
+    <value>正在測速中...</value>
+  </data>
+  <data name="PluginMirrorTestingCount" xml:space="preserve">
+    <value>{0} / {1}</value>
+  </data>
+  <data name="PluginMirrorSelectSourceHint" xml:space="preserve">
+    <value>請選擇下載線路</value>
+  </data>
+  <data name="PluginMirrorSelectSourceFirst" xml:space="preserve">
+    <value>請先在清單中選擇一個下載節點</value>
+  </data>
+  <data name="PluginMirrorStartDownload" xml:space="preserve">
+    <value>開始下載</value>
+  </data>
+  <data name="PluginMirrorDirectOfficial" xml:space="preserve">
+    <value>直連官方源</value>
+  </data>
+  <data name="PluginMirrorRetest" xml:space="preserve">
+    <value>重新測速</value>
+  </data>
+  <data name="PluginMirrorStopDownload" xml:space="preserve">
+    <value>停止下載</value>
+  </data>
+  <data name="PluginMirrorSwitchSource" xml:space="preserve">
+    <value>換源</value>
+  </data>
+  <data name="PluginMirrorRetrySwitch" xml:space="preserve">
+    <value>換源重試</value>
+  </data>
+  <data name="PluginMirrorCancelInstall" xml:space="preserve">
+    <value>取消安裝</value>
+  </data>
+  <data name="PluginMirrorDownloading" xml:space="preserve">
+    <value>正在下載...</value>
+  </data>
+  <data name="PluginMirrorDownloadComplete" xml:space="preserve">
+    <value>下載完成</value>
+  </data>
+  <data name="PluginMirrorAllFailedTitle" xml:space="preserve">
+    <value>鏡像節點不可用</value>
+  </data>
+  <data name="PluginMirrorAllFailedMessage" xml:space="preserve">
+    <value>所有鏡像節點均未通過完整性驗證或網路逾時。
+
+可以嘗試直連官方源下載，或取消本次安裝。</value>
+  </data>
+  <data name="PluginMirrorHashFailedTitle" xml:space="preserve">
+    <value>檔案驗證失敗</value>
+  </data>
+  <data name="PluginMirrorHashFailedMessage" xml:space="preserve">
+    <value>下載的檔案 SHA-256 驗證未通過，檔案可能在傳輸中被損壞或竄改，已自動刪除。
+
+建議更換其他節點或使用官方源重新下載。</value>
+  </data>
+  <data name="PluginMirrorStuckTitle" xml:space="preserve">
+    <value>下載緩慢</value>
+  </data>
+  <data name="PluginMirrorStuckMessage" xml:space="preserve">
+    <value>下載進度長期未更新，可能是網路不佳。
+
+是否停止目前下載並換源重試？</value>
+  </data>
+  <data name="PluginMirrorStuckSwitch" xml:space="preserve">
+    <value>停止並換源</value>
+  </data>
+  <data name="PluginMirrorStuckContinue" xml:space="preserve">
+    <value>繼續等待</value>
+  </data>
+  <data name="PluginMirrorDownloadFailedTitle" xml:space="preserve">
+    <value>下載失敗</value>
+  </data>
+  <data name="PluginMirrorDownloadFailedMessage" xml:space="preserve">
+    <value>下載失敗：{0}
+
+可以更換其他節點重試，或使用官方源直連下載。</value>
+  </data>
+  <data name="PluginMirrorAbortedMessage" xml:space="preserve">
+    <value>插件安裝已中止</value>
+  </data>
+  <data name="PluginMirrorStatusExcellent" xml:space="preserve">
+    <value>極佳</value>
+  </data>
+  <data name="PluginMirrorStatusNormal" xml:space="preserve">
+    <value>正常</value>
+  </data>
+</root>

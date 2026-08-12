@@ -16,6 +16,8 @@ using FufuLauncher.Messages;
 using FufuLauncher.Models;
 using FufuLauncher.Services;
 using FufuLauncher.Services.Background;
+using FufuLauncher.Services.PluginMirror;
+using Microsoft.UI.Dispatching;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
@@ -62,6 +64,8 @@ namespace FufuLauncher.ViewModels
         private readonly IGameLauncherService _gameLauncherService;
         private readonly IFilePickerService _filePickerService;
         private readonly AccountManager _accountManager;
+        private readonly Services.AuthTicket.IAuthTicketService _authTicketService;
+        private readonly DispatcherQueue _dispatcherQueue;
         public record MonitorItem(string DisplayName, int Index);
 
         [ObservableProperty] private ElementTheme _elementTheme;
@@ -73,8 +77,8 @@ namespace FufuLauncher.ViewModels
         [ObservableProperty] private bool _minimizeToTray;
         [ObservableProperty] private string _customLaunchParameters = "";
         [ObservableProperty] private WindowModeType _launchArgsWindowMode = WindowModeType.Normal;
-        [ObservableProperty] private string _launchArgsWidth;
-        [ObservableProperty] private string _launchArgsHeight;
+        [ObservableProperty] private string _launchArgsWidth = "";
+        [ObservableProperty] private string _launchArgsHeight = "";
         [ObservableProperty] private string _launchArgsPreview = "";
         [ObservableProperty] private string _customBackgroundPath;
         [ObservableProperty] private bool _hasCustomBackground;
@@ -163,6 +167,8 @@ namespace FufuLauncher.ViewModels
 
         [ObservableProperty] private bool _isRedeemCodeNotificationEnabled = true;
         
+        [ObservableProperty] private bool _isUsingHoyolabAccount;
+        
         [ObservableProperty] private bool _isScreenshotEnabled;
         [ObservableProperty] private string _screenshotHotkey = "F12";
         [ObservableProperty] private string _screenshotSavePath;
@@ -170,12 +176,112 @@ namespace FufuLauncher.ViewModels
 
         [ObservableProperty] private bool _isUseThirdPartyCDNEnabled = true;
 
+        [ObservableProperty] private bool _isPluginMirrorAccelerationEnabled = true;
+
         [ObservableProperty] private bool _isCaptchaPopupDisabled;
 
         partial void OnIsCaptchaPopupDisabledChanged(bool value)
         {
             if (_isInitializing) return;
             _ = _localSettingsService.SaveSettingAsync("IsCaptchaPopupDisabled", value);
+        }
+
+        partial void OnIsUsingHoyolabAccountChanged(bool value)
+        {
+            if (_isInitializing) return;
+
+            if (value)
+            {
+                _ = ValidateAndEnableHoyolabAccountAsync();
+            }
+            else
+            {
+                _ = _localSettingsService.SaveSettingAsync("UsingHoyolabAccount", false);
+            }
+        }
+
+        private async Task ValidateAndEnableHoyolabAccountAsync()
+        {
+            try
+            {
+                var activeId = _accountManager.ActiveAccountId;
+                if (string.IsNullOrEmpty(activeId))
+                {
+                    _dispatcherQueue.TryEnqueue(() =>
+                    {
+                        IsUsingHoyolabAccount = false;
+                        WeakReferenceMessenger.Default.Send(new NotificationMessage(
+                            "HoyolabAccount_NoLoggedIn_Title".GetLocalized(),
+                            "HoyolabAccount_NoLoggedIn_Message".GetLocalized(),
+                            NotificationType.Warning));
+                    });
+                    return;
+                }
+
+                var cookies = await _accountManager.LoadCookiesAsync(activeId);
+                if (cookies == null || !cookies.ContainsKey("stoken") || string.IsNullOrEmpty(cookies["stoken"]))
+                {
+                    _dispatcherQueue.TryEnqueue(() =>
+                    {
+                        IsUsingHoyolabAccount = false;
+                        WeakReferenceMessenger.Default.Send(new NotificationMessage(
+                            "HoyolabAccount_LoginExpired_Title".GetLocalized(),
+                            "HoyolabAccount_LoginExpired_Message".GetLocalized(),
+                            NotificationType.Warning));
+                    });
+                    return;
+                }
+
+                if (!_gameLauncherService.IsGamePathSelected())
+                {
+                    _dispatcherQueue.TryEnqueue(() =>
+                    {
+                        IsUsingHoyolabAccount = false;
+                        WeakReferenceMessenger.Default.Send(new NotificationMessage(
+                            "HoyolabAccount_NoGamePath_Title".GetLocalized(),
+                            "HoyolabAccount_NoGamePath_Message".GetLocalized(),
+                            NotificationType.Warning));
+                    });
+                    return;
+                }
+
+                var result = await _authTicketService.CreateAuthTicketAsync(activeId);
+                if (result.Success)
+                {
+                    await _localSettingsService.SaveSettingAsync("UsingHoyolabAccount", true);
+                    _dispatcherQueue.TryEnqueue(() =>
+                    {
+                        WeakReferenceMessenger.Default.Send(new NotificationMessage(
+                            "HoyolabAccount_Enabled_Title".GetLocalized(),
+                            "HoyolabAccount_Enabled_Message".GetLocalized(),
+                            NotificationType.Success,
+                            5000));
+                    });
+                }
+                else
+                {
+                    _dispatcherQueue.TryEnqueue(() =>
+                    {
+                        IsUsingHoyolabAccount = false;
+                        WeakReferenceMessenger.Default.Send(new NotificationMessage(
+                            "HoyolabAccount_EnableFailed_Title".GetLocalized(),
+                            "HoyolabAccount_EnableFailed_Message".GetLocalized(),
+                            NotificationType.Error));
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"[SettingsVM] 验证时异常: {ex.Message}");
+                _dispatcherQueue.TryEnqueue(() =>
+                {
+                    IsUsingHoyolabAccount = false;
+                    WeakReferenceMessenger.Default.Send(new NotificationMessage(
+                        "HoyolabAccount_TempUnavailable_Title".GetLocalized(),
+                        "HoyolabAccount_TempUnavailable_Message".GetLocalized(),
+                        NotificationType.Error));
+                });
+            }
         }
 
         partial void OnIsScreenshotEnabledChanged(bool value)
@@ -188,6 +294,12 @@ namespace FufuLauncher.ViewModels
         {
             if (_isInitializing) return;
             _ = _localSettingsService.SaveSettingAsync("IsUseThirdPartyCDNEnabled", value);
+        }
+
+        partial void OnIsPluginMirrorAccelerationEnabledChanged(bool value)
+        {
+            if (_isInitializing) return;
+            _ = _localSettingsService.SaveSettingAsync(PluginMirrorDownloadService.SettingKey, value);
         }
 
         partial void OnScreenshotHotkeyChanged(string value)
@@ -235,19 +347,19 @@ namespace FufuLauncher.ViewModels
         {
             var allItems = new List<NavItemConfig>
             {
-                new() { ViewModelKey = "FufuLauncher.ViewModels.MainViewModel",       DisplayName = "主页",           IconGlyph = "\uE80F", IsForceVisible = true },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.PluginSettingsViewModel", DisplayName = "注入设置",    IconGlyph = "\uEA86" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.ControlPanelModel",   DisplayName = "控制面板",       IconGlyph = "\uE80A" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.BlankViewModel",      DisplayName = "游戏设置",       IconGlyph = "\uE7FC" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.AccountViewModel",    DisplayName = "账户设置",       IconGlyph = "\uE77B" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.OtherViewModel",      DisplayName = "其他功能",       IconGlyph = "\uE71D" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.PluginViewModel",     DisplayName = "插件管理",       IconGlyph = "\uE7B5" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.DataViewModel",       DisplayName = "数据中心",       IconGlyph = "\uE9D9" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.BackpackViewModel",   DisplayName = "背包浏览器",     IconGlyph = "\uE8EC" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.HelpViewModel",       DisplayName = "帮助文档",       IconGlyph = "\uE82D" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.CommunityViewModel",  DisplayName = "VanillaBBS",     IconGlyph = "\uE716" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.CalculatorViewModel",  DisplayName = "养成计算",      IconGlyph = "\uE1D0" },
-                new() { ViewModelKey = "FufuLauncher.ViewModels.SettingsViewModel",   DisplayName = "设置中心",       IconGlyph = "\uE713", IsForceVisible = true },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.MainViewModel",       DisplayNameKey = "NavHome",            IconGlyph = "\uE80F", IsForceVisible = true },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.PluginSettingsViewModel", DisplayNameKey = "InjectionSettingsNav", IconGlyph = "\uEA86" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.ControlPanelModel",   DisplayNameKey = "NavControlPanel",    IconGlyph = "\uE80A" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.BlankViewModel",      DisplayNameKey = "PageTitle_GameSettings", IconGlyph = "\uE7FC" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.AccountViewModel",    DisplayNameKey = "NavAccountSettings", IconGlyph = "\uE77B" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.OtherViewModel",      DisplayNameKey = "NavOtherFeatures",   IconGlyph = "\uE71D" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.PluginViewModel",     DisplayNameKey = "PluginMgmtTitle",    IconGlyph = "\uE7B5" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.DataViewModel",       DisplayNameKey = "NavDataCenter",      IconGlyph = "\uE9D9" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.BackpackViewModel",   DisplayNameKey = "Backpack_NavTitle",  IconGlyph = "\uE8EC" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.HelpViewModel",       DisplayNameKey = "NavHelpDocs",        IconGlyph = "\uE82D" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.CommunityViewModel",  DisplayNameKey = "NavCommunity",       IconGlyph = "\uE716" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.CalculatorViewModel", DisplayNameKey = "NavCalculator",      IconGlyph = "\uE1D0" },
+                new() { ViewModelKey = "FufuLauncher.ViewModels.SettingsViewModel",   DisplayNameKey = "NavSettings",        IconGlyph = "\uE713", IsForceVisible = true },
             };
 
             foreach (var item in allItems)
@@ -542,7 +654,8 @@ namespace FufuLauncher.ViewModels
             INavigationService navigationService,
             IGameLauncherService gameLauncherService,
             IFilePickerService filePickerService,
-            AccountManager accountManager)
+            AccountManager accountManager,
+            Services.AuthTicket.IAuthTicketService authTicketService)
         {
             _themeSelectorService = themeSelectorService;
             _backgroundRenderer = backgroundRenderer;
@@ -551,6 +664,8 @@ namespace FufuLauncher.ViewModels
             _gameLauncherService = gameLauncherService;
             _filePickerService = filePickerService;
             _accountManager = accountManager;
+            _authTicketService = authTicketService;
+            _dispatcherQueue = App.MainWindow.DispatcherQueue;
 
             InitializeDefaultResolution();
 
@@ -976,27 +1091,8 @@ namespace FufuLauncher.ViewModels
 
         private void InitializeDefaultResolution()
         {
-            try
-            {
-                var displayArea = DisplayArea.Primary;
-
-                if (displayArea != null)
-                {
-                    _launchArgsWidth = displayArea.OuterBounds.Width.ToString();
-                    _launchArgsHeight = displayArea.OuterBounds.Height.ToString();
-                }
-                else
-                {
-                    _launchArgsWidth = "1920";
-                    _launchArgsHeight = "1080";
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"获取屏幕分辨率失败: {ex.Message}，使用默认值。");
-                _launchArgsWidth = "1920";
-                _launchArgsHeight = "1080";
-            }
+            _launchArgsWidth = "";
+            _launchArgsHeight = "";
         }
 
         public async Task ReloadSettingsAsync()
@@ -1162,6 +1258,9 @@ namespace FufuLauncher.ViewModels
             var redeemNotifyJson = await _localSettingsService.ReadSettingAsync("IsRedeemCodeNotificationEnabled");
             IsRedeemCodeNotificationEnabled = redeemNotifyJson == null || Convert.ToBoolean(redeemNotifyJson);
 
+            var usingHoyolabJson = await _localSettingsService.ReadSettingAsync("UsingHoyolabAccount");
+            IsUsingHoyolabAccount = usingHoyolabJson != null && Convert.ToBoolean(usingHoyolabJson);
+
             var behaviorJson = await _localSettingsService.ReadSettingAsync("PostLaunchBehavior");
             PostLaunchBehavior postLaunchBehavior = PostLaunchBehavior.None;
             if (behaviorJson is string behaviorStr && Enum.TryParse<PostLaunchBehavior>(behaviorStr, out var parsed))
@@ -1181,6 +1280,9 @@ namespace FufuLauncher.ViewModels
 
             var useThirdPartyCDNJson = await _localSettingsService.ReadSettingAsync("IsUseThirdPartyCDNEnabled");
             IsUseThirdPartyCDNEnabled = useThirdPartyCDNJson == null || Convert.ToBoolean(useThirdPartyCDNJson);
+
+            var pluginMirrorJson = await _localSettingsService.ReadSettingAsync(PluginMirrorDownloadService.SettingKey);
+            IsPluginMirrorAccelerationEnabled = pluginMirrorJson == null || Convert.ToBoolean(pluginMirrorJson);
 
             var customExeJson = await _localSettingsService.ReadSettingAsync(GameExeManager.CustomExeNameKey);
             CustomGameExeName = customExeJson?.ToString() ?? string.Empty;
@@ -1522,6 +1624,27 @@ namespace FufuLauncher.ViewModels
             catch (Exception ex)
             {
                 Debug.WriteLine($"保存云游戏凭证失败: {ex.Message}");
+            }
+        }
+
+        public async Task RemoveCloudCredentialAsync(string uid)
+        {
+            try
+            {
+                string key = $"CloudComboToken_{uid}";
+                await _localSettingsService.RemoveSettingAsync(key);
+
+                var account = CheckinAccounts?.FirstOrDefault(a => a.Uid == uid);
+                if (account != null)
+                {
+                    account.HasCloudCredential = false;
+                }
+
+                WeakReferenceMessenger.Default.Send(new CloudCredentialUpdatedMessage(uid));
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"移除云游戏凭证失败: {ex.Message}");
             }
         }
 

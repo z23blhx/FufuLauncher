@@ -1427,6 +1427,23 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
+                                    <FontIcon Style="{StaticResource RowIconStyle}" Glyph="&#xE77B;" />
+                                    <StackPanel Grid.Column="1" Style="{StaticResource RowTextStyle}">
+                                        <TextBlock Style="{StaticResource RowTitleStyle}" Text="{helpers:Loc Key=UsingHoyolabAccountTitle}" />
+                                        <TextBlock Style="{StaticResource RowCaptionStyle}" Text="{helpers:Loc Key=UsingHoyolabAccountCaption}" />
+                                    </StackPanel>
+                                    <ToggleSwitch Grid.Column="2" Style="{StaticResource RowToggleStyle}"
+                                                  IsOn="{x:Bind ViewModel.IsUsingHoyolabAccount, Mode=TwoWay}" />
+                                </Grid>
+
+                                <Rectangle Style="{StaticResource RowDividerStyle}" />
+
+                                <Grid Style="{StaticResource SettingsRowStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
                                     <FontIcon Style="{StaticResource RowIconStyle}" Glyph="&#xE787;" />
                                     <StackPanel Grid.Column="1" Style="{StaticResource RowTextStyle}">
                                         <TextBlock Style="{StaticResource RowTitleStyle}" Text="{helpers:Loc Key=RedeemReminderTitle}" />
@@ -1728,24 +1745,37 @@
                                                                 <TextBlock Text="{Binding Nickname}" FontSize="14" />
                                                                 <TextBlock Text="{Binding Uid}" FontSize="12" Opacity="0.7" />
                                                             </StackPanel>
-                                                            <Button Grid.Column="2"
-                                                                    Click="OnCloudCredentialClick"
-                                                                    Tag="{Binding Uid}"
-                                                                    Padding="8" CornerRadius="6"
-                                                                    Background="Transparent"
-                                                                    BorderThickness="0">
-                                                                <ToolTipService.ToolTip>
-                                                                    <ToolTip Content="{helpers:Loc Key=AddCloudCredentialTooltip}" />
-                                                                </ToolTipService.ToolTip>
-                                                                <Grid>
-                                                                    <FontIcon Glyph="&#xE753;" FontSize="14"
-                                                                              Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                                                                              Visibility="{Binding HasCloudCredential, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=Inverse}" />
-                                                                    <FontIcon Glyph="&#xE753;" FontSize="14"
-                                                                              Foreground="{ThemeResource SystemAccentColor}"
-                                                                              Visibility="{Binding HasCloudCredential, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}" />
-                                                                </Grid>
-                                                            </Button>
+                                                            <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="4">
+                                                                <Button Click="OnCloudCredentialClick"
+                                                                        Tag="{Binding Uid}"
+                                                                        Padding="8" CornerRadius="6"
+                                                                        Background="Transparent"
+                                                                        BorderThickness="0">
+                                                                    <ToolTipService.ToolTip>
+                                                                        <ToolTip Content="{helpers:Loc Key=AddCloudCredentialTooltip}" />
+                                                                    </ToolTipService.ToolTip>
+                                                                    <Grid>
+                                                                        <FontIcon Glyph="&#xE753;" FontSize="14"
+                                                                                  Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                                                                  Visibility="{Binding HasCloudCredential, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}, ConverterParameter=Inverse}" />
+                                                                        <FontIcon Glyph="&#xE753;" FontSize="14"
+                                                                                  Foreground="{ThemeResource SystemAccentColor}"
+                                                                                  Visibility="{Binding HasCloudCredential, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}" />
+                                                                    </Grid>
+                                                                </Button>
+                                                                <Button Click="OnRemoveCloudCredentialClick"
+                                                                        Tag="{Binding Uid}"
+                                                                        Padding="8" CornerRadius="6"
+                                                                        Background="Transparent"
+                                                                        BorderThickness="0"
+                                                                        Visibility="{Binding HasCloudCredential, Mode=OneWay, Converter={StaticResource BoolToVisibilityConverter}}">
+                                                                    <ToolTipService.ToolTip>
+                                                                        <ToolTip Content="{helpers:Loc Key=RemoveCloudCredentialTooltip}" />
+                                                                    </ToolTipService.ToolTip>
+                                                                    <FontIcon Glyph="&#xE74D;" FontSize="14"
+                                                                              Foreground="{ThemeResource SystemFillColorCriticalBrush}" />
+                                                                </Button>
+                                                            </StackPanel>
                                                         </Grid>
                                                     </DataTemplate>
                                                 </ListView.ItemTemplate>
@@ -2253,6 +2283,23 @@
                                     </StackPanel>
                                     <ToggleSwitch Grid.Column="2" Style="{StaticResource RowToggleStyle}"
                                                   IsOn="{x:Bind ViewModel.IsUseThirdPartyCDNEnabled, Mode=TwoWay}" />
+                                </Grid>
+
+                                <Rectangle Style="{StaticResource RowDividerStyle}" />
+
+                                <Grid Style="{StaticResource SettingsRowStyle}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <FontIcon Style="{StaticResource RowIconStyle}" Glyph="&#xE896;" />
+                                    <StackPanel Grid.Column="1" Style="{StaticResource RowTextStyle}">
+                                        <TextBlock Style="{StaticResource RowTitleStyle}" Text="{helpers:Loc Key=PluginMirrorAccelerationTitle}" />
+                                        <TextBlock Style="{StaticResource RowCaptionStyle}" Text="{helpers:Loc Key=PluginMirrorAccelerationCaption}" />
+                                    </StackPanel>
+                                    <ToggleSwitch Grid.Column="2" Style="{StaticResource RowToggleStyle}"
+                                                  IsOn="{x:Bind ViewModel.IsPluginMirrorAccelerationEnabled, Mode=TwoWay}" />
                                 </Grid>
 
                             </StackPanel>

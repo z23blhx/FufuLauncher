@@ -162,6 +162,7 @@ public partial class App : Application
 
                     services.AddSingleton<IGameLauncherService, GameLauncherService>();
                     services.AddSingleton<IGameConfigService, GameConfigService>();
+                    services.AddSingleton<Services.AuthTicket.IAuthTicketService, Services.AuthTicket.AuthTicketService>();
 
                     services.AddSingleton<IHoyoverseCheckinService, HoyoverseCheckinService>();
                     services.AddSingleton<ICommunityCheckinService, CommunityCheckinService>();
@@ -188,6 +189,9 @@ public partial class App : Application
                     services.AddSingleton<IUidLookupService, Services.UID.UidLookupService>();
 
                     services.AddSingleton<AccountManager>();
+                    services.AddSingleton<Services.MiHoYo.Fingerprint.DeviceFpService>();
+                    services.AddSingleton<Services.MiHoYo.AccountIdentityService>();
+                    services.AddSingleton<Contracts.Services.IBbsRequestBuilder, Services.MiHoYo.Transport.BbsRequestBuilder>();
 
                     services.AddLogging(builder =>
                     {
@@ -215,6 +219,8 @@ public partial class App : Application
                     services.AddTransient<CommunityPage>();
                     services.AddSingleton<Services.PluginStoreService>();
                     services.AddSingleton<Services.LuaPluginInstaller>();
+                    services.AddSingleton<Services.PluginMirror.MirrorSiteProvider>();
+                    services.AddSingleton<Services.PluginMirror.PluginMirrorDownloadService>();
                     services.AddSingleton<ViewModels.PluginStoreViewModel>();
                     services.AddTransient<Views.PluginStorePage>();
 

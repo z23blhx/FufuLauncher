@@ -13,55 +13,55 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Avatar_Batch_Fail_Title" xml:space="preserve">
-    <value>Batch Save Failed</value>
+    <value>一括保存に失敗しました</value>
   </data>
   <data name="Avatar_Batch_Success" xml:space="preserve">
-    <value>Batch generated and overwrote all avatar sizes</value>
+    <value>全サイズのアバターを一括生成して上書きしました</value>
   </data>
   <data name="Avatar_Clear_Fail_Title" xml:space="preserve">
-    <value>Clear Failed</value>
+    <value>クリアに失敗しました</value>
   </data>
   <data name="Avatar_Clear_Success_Format" xml:space="preserve">
-    <value>Avatar size {0}x{0} cleared</value>
+    <value>サイズ {0}x{0} のアバターをクリアしました</value>
   </data>
   <data name="Avatar_Crop_Success" xml:space="preserve">
-    <value>Avatar cropped and saved successfully</value>
+    <value>アバターを切り抜いて保存しました</value>
   </data>
   <data name="Avatar_EditNotFound_Content" xml:space="preserve">
-    <value>No avatar found to edit</value>
+    <value>編集できるアバターが見つかりません</value>
   </data>
   <data name="Avatar_EditNotFound_Title" xml:space="preserve">
-    <value>Notice</value>
+    <value>お知らせ</value>
   </data>
   <data name="Avatar_ImportFail_Title" xml:space="preserve">
-    <value>Import Failed</value>
+    <value>インポートに失敗しました</value>
   </data>
   <data name="Avatar_LoadFail_Title" xml:space="preserve">
-    <value>Load Failed</value>
+    <value>読み込みに失敗しました</value>
   </data>
   <data name="Avatar_SaveFail_Title" xml:space="preserve">
-    <value>Save Failed</value>
+    <value>保存に失敗しました</value>
   </data>
   <data name="Fps_CompatWarning_Content" xml:space="preserve">
-    <value>If you have NVIDIA RTX 40-series or newer AI frame generation enabled, or use frame display software such as RTSS or MSI Afterburner, it may cause the game to freeze or fail to start normally.</value>
+    <value>NVIDIA RTX 40系以降のGPUでAIフレーム生成を有効にしている場合、またはRTSSやMSI Afterburnerなどのフレーム表示ソフトを使用している場合、ゲーム画面がフリーズしたり、ゲームが正常に起動できなくなる可能性があります</value>
   </data>
   <data name="Fps_CompatWarning_DontShow" xml:space="preserve">
-    <value>Don't show this warning again</value>
+    <value>この警告を今後表示しない</value>
   </data>
   <data name="Fps_CompatWarning_Title" xml:space="preserve">
-    <value>Compatibility Warning</value>
+    <value>互換性の警告</value>
   </data>
   <data name="Fps_HashMismatch_Content" xml:space="preserve">
-    <value>The frame rate display plugin hash does not match. It may have been tampered with or corrupted. Please reinstall the launcher.</value>
+    <value>フレーム表示プラグインのハッシュが一致しません。改ざんまたは破損している可能性があります。ランチャーを再インストールしてください</value>
   </data>
   <data name="Fps_Repair_Fail_Title" xml:space="preserve">
-    <value>Repair Failed</value>
+    <value>修復に失敗しました</value>
   </data>
   <data name="Fps_Repair_Success" xml:space="preserve">
-    <value>FPS display plugin has been successfully repaired and installed</value>
+    <value>FPS表示プラグインを修復してインストールしました</value>
   </data>
   <data name="Fps_Repair_Title" xml:space="preserve">
-    <value>Repairing FPS Plugin</value>
+    <value>FPSプラグインを修復中...</value>
   </data>
   <data name="LanguageChangedTitle" xml:space="preserve">
     <value>言語が変更されました</value>
@@ -85,107 +85,107 @@
     <value>選択済み</value>
   </data>
   <data name="PR_Description" xml:space="preserve">
-    <value>This project is currently maintained by an individual developer (CodeCubist).
-We adhere to a player pain-point-driven development direction, promoting open, transparent, and efficient updates.
-Submitting Pull Requests is the core way for users with coding skills to help advance development, optimize structure, and share project maintenance responsibilities.
-If you can help, please use the button below to visit the code repository and submit your contribution.</value>
+    <value>このプロジェクトは現在、個人開発者（CodeCubist）によって維持されています。
+プレイヤーの課題を中心とした開発方針を堅持し、オープンで透明性の高い効率的な更新を推進しています。
+Pull Requestを送信することは、コード開発能力を持つユーザーが開発の進捗を支援し、構造を最適化し、プロジェクトの保守負担を分担するための中心的な手段です。
+ご協力いただける場合は、下のボタンからコードリポジトリにアクセスして貢献を送信してください</value>
   </data>
   <data name="PR_GitHubButton" xml:space="preserve">
-    <value>Visit GitHub Repository to Submit Pull Request</value>
+    <value>GitHubリポジトリにアクセスしてPull Requestを提出</value>
   </data>
   <data name="PR_Window_Title" xml:space="preserve">
     <value>Pull Request</value>
   </data>
   <data name="Plugin_ArchWarning_Content" xml:space="preserve">
-    <value>Your computer may be ARM-based. The injection feature is not available on ARM-based computers. Are you sure you want to continue enabling it?</value>
+    <value>お使いのPCはARMアーキテクチャの可能性があります。ARMアーキテクチャでは注入機能を利用できません。有効化を続行しますか？</value>
   </data>
   <data name="Plugin_ArchWarning_Continue" xml:space="preserve">
-    <value>Continue Enabling</value>
+    <value>有効化を続行</value>
   </data>
   <data name="Plugin_ArchWarning_Title" xml:space="preserve">
-    <value>Architecture Compatibility Warning</value>
+    <value>アーキテクチャ互換性の警告</value>
   </data>
   <data name="Plugin_Corrupted_Content" xml:space="preserve">
-    <value>Plugin files are abnormal.
-This is usually because the plugin was falsely flagged and blocked by antivirus software (such as Windows Defender) or has been damaged.
+    <value>プラグインファイルが異常です。
+これは通常、プラグインがアンチウイルスソフト（Windows Defenderなど）に誤判定されてブロックされたか、破損したことを意味します。
 
-Recommendations:
-1. Add the software directory to the antivirus whitelist
-2. Re-download and install the plugin on this page</value>
+推奨事項：
+1. 本ソフトウェアのディレクトリをアンチウイルスのホワイトリストに追加する
+2. このページでプラグインを再ダウンロードしてインストールする</value>
   </data>
   <data name="Plugin_Corrupted_Title" xml:space="preserve">
-    <value>Plugin May Be Corrupted</value>
+    <value>プラグインが破損している可能性があります</value>
   </data>
   <data name="Plugin_Download_BackupLine" xml:space="preserve">
-    <value>Backup</value>
+    <value>バックアップ</value>
   </data>
   <data name="Plugin_Download_Connecting" xml:space="preserve">
-    <value>Connecting...</value>
+    <value>接続中...</value>
   </data>
   <data name="Plugin_Download_Extracting" xml:space="preserve">
-    <value>Extracting and installing...</value>
+    <value>解凍・インストール中...</value>
   </data>
   <data name="Plugin_Download_Fail_Content_Format" xml:space="preserve">
-    <value>Installation failed: {0}</value>
+    <value>インストールに失敗しました：{0}</value>
   </data>
   <data name="Plugin_Download_Fallback" xml:space="preserve">
-    <value>Connection failed, trying backup line...</value>
+    <value>接続に失敗しました。バックアップ回線を試行中...</value>
   </data>
   <data name="Plugin_Download_MainLine" xml:space="preserve">
-    <value>Main</value>
+    <value>メイン</value>
   </data>
   <data name="Plugin_Download_Manual" xml:space="preserve">
-    <value>Manual Download</value>
+    <value>手動ダウンロード</value>
   </data>
   <data name="Plugin_Download_Progress_Format" xml:space="preserve">
-    <value>{0} line downloading... {1}%</value>
+    <value>{0}回線でダウンロード中... {1}%</value>
   </data>
   <data name="Plugin_Download_Success" xml:space="preserve">
-    <value>Plugin installed and refreshed</value>
+    <value>プラグインをインストールして更新しました</value>
   </data>
   <data name="Plugin_Download_Title" xml:space="preserve">
-    <value>Getting Plugin</value>
+    <value>プラグインを取得中</value>
   </data>
   <data name="Plugin_FileNotFound" xml:space="preserve">
-    <value>File not found, please confirm launcher files are complete</value>
+    <value>ファイルが見つかりません。ランチャーのファイルが完全であるか確認してください</value>
   </data>
   <data name="Plugin_MainMissing_Content" xml:space="preserve">
-    <value>Main plugin DLL file not found. The plugin may not be installed, was accidentally deleted, or was blocked by antivirus software. Please re-download the plugin, or add the launcher directory to the antivirus whitelist and try again.</value>
+    <value>メインプラグインのDLLファイルが見つかりません。プラグインが未インストール、誤って削除された、またはアンチウイルスソフトにブロックされた可能性があります。プラグインを再ダウンロードするか、ランチャーディレクトリをアンチウイルスのホワイトリストに追加してから再試行してください</value>
   </data>
   <data name="Plugin_MainMissing_Title" xml:space="preserve">
-    <value>Main Plugin Missing</value>
+    <value>メインプラグインがありません</value>
   </data>
   <data name="Preset_Create_Placeholder" xml:space="preserve">
-    <value>Enter new preset name</value>
+    <value>新しいプリセット名を入力してください</value>
   </data>
   <data name="Preset_Create_Title" xml:space="preserve">
-    <value>Create New Preset</value>
+    <value>新規プリセットを作成</value>
   </data>
   <data name="Preset_Delete_ConfirmBtn" xml:space="preserve">
-    <value>Confirm Delete</value>
+    <value>削除を確認</value>
   </data>
   <data name="Preset_Delete_Confirm_Format" xml:space="preserve">
-    <value>Are you sure you want to delete the preset "{0}"? This action cannot be undone!</value>
+    <value>プリセット "{0}" を削除しますか？この操作は元に戻せません！</value>
   </data>
   <data name="Preset_Locked_Content_Format" xml:space="preserve">
-    <value>Lock reason: {0}
+    <value>ロック理由：{0}
 
-If you continue, this warning will be ignored and the preset's Hash will be updated to the current plugin Hash, unlocking the preset. Continue?</value>
+続行すると、この警告を無視してプリセットのHashを現在のプラグインHashに更新し、プリセットのロックを解除します。続行しますか？</value>
   </data>
   <data name="Preset_Locked_Continue" xml:space="preserve">
-    <value>Continue and Unlock</value>
+    <value>続行してロック解除</value>
   </data>
   <data name="Preset_Locked_Title" xml:space="preserve">
-    <value>Configuration Preset Locked</value>
+    <value>設定プリセットがロックされています</value>
   </data>
   <data name="Preset_ResetAll_ConfirmBtn" xml:space="preserve">
-    <value>Confirm Reset</value>
+    <value>リセットを確認</value>
   </data>
   <data name="Preset_ResetAll_Content" xml:space="preserve">
-    <value>Remove all presets for the current plugin and re-download the defaults? This action cannot be undone!</value>
+    <value>現在のプラグインのすべてのプリセットを削除して、デフォルトを再ダウンロードしますか？この操作は元に戻せません！</value>
   </data>
   <data name="Preset_ResetAll_Title" xml:space="preserve">
-    <value>Reset All Presets</value>
+    <value>全プリセットをリセット</value>
   </data>
   <data name="RestartNowBtn" xml:space="preserve">
     <value>今すぐ再起動</value>
@@ -356,7 +356,7 @@ If you continue, this warning will be ignored and the preset's Hash will be upda
     <value>注意</value>
   </data>
   <data name="NotesWarningMessage" xml:space="preserve">
-    <value>メモデータはHoYoLAB APIから取得。頻繁な更新はCAPTCHAを引き起こす可能性があります。</value>
+    <value>メモデータはMiYouSheのゲーム記録APIから取得しています。頻繁に更新するとCAPTCHAが発生する可能性があります。深刻な場合、アカウント制限により戦績ページに一時的にアクセスできなくなることがあります。その場合は更新頻度を下げ、時間をおいて再試行してください。</value>
   </data>
   <data name="HideNotesCard" xml:space="preserve">
     <value>メモカードを非表示</value>
@@ -374,7 +374,7 @@ If you continue, this warning will be ignored and the preset's Hash will be upda
     <value>探索派遣を表示</value>
   </data>
   <data name="ShowTransformer" xml:space="preserve">
-    <value>参量質変器を表示</value>
+    <value>パラメータ変換器を表示</value>
   </data>
   <data name="NavItemsTitle" xml:space="preserve">
     <value>ナビゲーションバー表示項目</value>
@@ -593,7 +593,7 @@ If you continue, this warning will be ignored and the preset's Hash will be upda
     <value>公式背景API</value>
   </data>
   <data name="OfficialBgApiCaption" xml:space="preserve">
-    <value>空欄で現在のサーバーのデフォルトAPIを使用。</value>
+    <value>空欄の場合は現在のサーバーのデフォルトAPIを使用します。カスタムAPIは公式のgetAllGameBasicInfoと同じデータ構造を返す必要があります。</value>
   </data>
   <data name="OfficialBgApiPlaceholder" xml:space="preserve">
     <value>カスタム公式背景APIのURLを入力</value>
@@ -713,10 +713,10 @@ If you continue, this warning will be ignored and the preset's Hash will be upda
     <value>クラウドゲーム認証情報を追加</value>
   </data>
   <data name="CaptchaQuestion" xml:space="preserve">
-    <value>CAPTCHAについて</value>
+    <value>CAPTCHAが発生したら？</value>
   </data>
   <data name="CaptchaTooltip" xml:space="preserve">
-    <value>チェックインでCAPTCHAが表示される場合があります。実デバイス情報の設定でリスク軽減。</value>
+    <value>ゲームチェックインやコミュニティチェックイン中（比較的発生しやすい）にCAPTCHAが表示される場合があります。実機のデバイス情報を設定して制限を受けにくくするか、スタンドアロン版でCAPTCHA解決サービスを設定してください。</value>
   </data>
   <data name="SelfHostedVersion" xml:space="preserve">
     <value>自己ホスト版</value>
@@ -1542,7 +1542,7 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>警告を無視</value>
   </data>
   <data name="AppDisplayNameAdmin" xml:space="preserve">
-    <value>FufuLauncher [Administrator]</value>
+    <value>FufuLauncher [管理者]</value>
   </data>
   <data name="HiddenFeatureTitle" xml:space="preserve">
     <value>アクセス不可</value>
@@ -1605,7 +1605,7 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>探索派遣</value>
   </data>
   <data name="Home_Transformer" xml:space="preserve">
-    <value>参量質変器</value>
+    <value>パラメータ変換器</value>
   </data>
   <data name="Home_ToggleBg" xml:space="preserve">
     <value>背景切替</value>
@@ -1737,7 +1737,7 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>動画ライブラリ: キャラクターデモやゲーム内カットシーンを閲覧</value>
   </data>
   <data name="Home_BBSTooltip" xml:space="preserve">
-    <value>戦績: 深境螺旋や幻想真境劇詩などの詳細戦績データを表示</value>
+    <value>戦績: 深境螺旋や幻想シアターなどの詳細戦績データを表示</value>
   </data>
   <data name="OtherPage_Title" xml:space="preserve">
     <value>その他の設定</value>
@@ -1890,19 +1890,19 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>返信</value>
   </data>
   <data name="Account_BoundCharacters" xml:space="preserve">
-    <value>紐付きキャラクター</value>
+    <value>連携済みキャラクター</value>
   </data>
   <data name="Account_NoCharacters" xml:space="preserve">
-    <value>紐付きキャラクターなし</value>
+    <value>連携済みキャラクターなし</value>
   </data>
   <data name="Account_BindHint" xml:space="preserve">
-    <value>MiYouSheまたはゲーム内でキャラクターを紐付けてから更新してください</value>
+    <value>MiYouSheまたはゲーム内でキャラクターを連携してから更新してください</value>
   </data>
   <data name="Account_PlayTime" xml:space="preserve">
     <value>プレイ時間</value>
   </data>
   <data name="Account_RecentDays_Format" xml:space="preserve">
-    <value>過去 {0} 日間</value>
+    <value>過去{0}日間のプレイ統計</value>
   </data>
   <data name="Account_InGame" xml:space="preserve">
     <value>ゲーム内</value>
@@ -1911,7 +1911,7 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>合計時間</value>
   </data>
   <data name="Account_DailyAvg" xml:space="preserve">
-    <value>日次平均</value>
+    <value>1日の平均プレイ時間</value>
   </data>
   <data name="Account_NoRecentRecords_Format" xml:space="preserve">
     <value>過去 {0} 日間のゲーム記録なし</value>
@@ -1947,7 +1947,7 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>その他の操作</value>
   </data>
   <data name="Account_RecentDays30" xml:space="preserve">
-    <value>過去 30 日間</value>
+    <value>過去30日間のプレイ統計</value>
   </data>
   <data name="Account_NoRecentRecords30" xml:space="preserve">
     <value>過去 30 日間のゲーム記録なし</value>
@@ -2013,7 +2013,7 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>リソース</value>
   </data>
   <data name="Panel_ResourcesDesc" xml:space="preserve">
-    <value>メディアとリソースライブラリ</value>
+    <value>管理とリソース取得</value>
   </data>
   <data name="LaunchBtn_SelectPath" xml:space="preserve">
     <value>ゲームパスを選択</value>
@@ -2166,7 +2166,7 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>プリセット管理</value>
   </data>
   <data name="PresetManager_SelectHint" xml:space="preserve">
-    <value>ホームページに固定するプリセットを選択（最大5つ）</value>
+    <value>ホームに固定するプリセットを選択（最大5つ）</value>
   </data>
   <data name="SecurityWeb_Title" xml:space="preserve">
     <value>開発者ライセンス認証</value>
@@ -2238,7 +2238,7 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>戦績</value>
   </data>
   <data name="BBSWindow_SwitchIdentity" xml:space="preserve">
-    <value>識別切替</value>
+    <value>アカウント切替</value>
   </data>
   <data name="BBSWindow_EnterUrl" xml:space="preserve">
     <value>URLを入力...</value>
@@ -2265,7 +2265,7 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>設定</value>
   </data>
   <data name="BrowserWindow_PinWindow" xml:space="preserve">
-    <value>ウィンドウ固定</value>
+    <value>最前面に固定</value>
   </data>
   <data name="BrowserWindow_SettingsTitle" xml:space="preserve">
     <value>ブラウザ設定</value>
@@ -2608,7 +2608,7 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
     <value>キャラデータ</value>
   </data>
   <data name="DataPage_AbyssData" xml:space="preserve">
-    <value>深境螺旋</value>
+    <value>幽境の戦い</value>
   </data>
   <data name="DataPage_SpiralAbyss" xml:space="preserve">
     <value>深境螺旋</value>
@@ -3056,7 +3056,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>画像保存</value>
   </data>
   <data name="GachaAnalysis_GoldPullStats" xml:space="preserve">
-    <value>金祈願方法統計</value>
+    <value>星5排出統計</value>
   </data>
   <data name="GachaAnalysis_GoldPullStatsDesc" xml:space="preserve">
     <value>同じガチャの同時期の記録を1グループとしてカウント</value>
@@ -3065,13 +3065,13 @@ UIGF v4.x/3.0/2.x</value>
     <value>10連★5率</value>
   </data>
   <data name="GachaAnalysis_GroupsWith5Star" xml:space="preserve">
-    <value>グループで★5</value>
+    <value>★5が出たグループ</value>
   </data>
   <data name="GachaAnalysis_SinglePullGoldRate" xml:space="preserve">
     <value>単発★5率</value>
   </data>
   <data name="GachaAnalysis_TimesWith5Star" xml:space="preserve">
-    <value>回で★5</value>
+    <value>★5が出た回数</value>
   </data>
   <data name="GachaAnalysis_Avg5StarCost" xml:space="preserve">
     <value>平均★5コスト</value>
@@ -3119,7 +3119,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>最近の★5祈願回数</value>
   </data>
   <data name="GachaAnalysis_4StarTop10" xml:space="preserve">
-    <value>★4天井トップ10</value>
+    <value>★4排出トップ10</value>
   </data>
   <data name="GachaAnalysis_PityInterval" xml:space="preserve">
     <value>★5天井間隔</value>
@@ -3915,8 +3915,8 @@ UIGF v4.x/3.0/2.x</value>
   <data name="User_GenderPrivate" xml:space="preserve">
     <value>非公開</value>
   </data>
-  <data name="Gacha_Won5050" xml:space="preserve">
-    <value>50/50敗北</value>
+  <data name="Gacha_Lost5050" xml:space="preserve">
+    <value>すり抜け</value>
   </data>
   <data name="Gacha_Guaranteed" xml:space="preserve">
     <value>確定</value>
@@ -3955,10 +3955,10 @@ UIGF v4.x/3.0/2.x</value>
     <value>最深天井</value>
   </data>
   <data name="Gacha_Best5Star" xml:space="preserve">
-    <value>最良★5</value>
+    <value>一番運が良かった★5</value>
   </data>
   <data name="Gacha_Worst5Star" xml:space="preserve">
-    <value>最悪★5</value>
+    <value>一番ハマった★5</value>
   </data>
   <data name="Gacha_ActiveMonths" xml:space="preserve">
     <value>アクティブ月数</value>
@@ -4185,10 +4185,10 @@ UIGF v4.x/3.0/2.x</value>
     <value>設定を検索…</value>
   </data>
   <data name="DisableCaptchaPopup" xml:space="preserve">
-    <value>リスク管理の認証コードポップアップを無効化</value>
+    <value>セキュリティチェックのCAPTCHAポップアップを無効化</value>
   </data>
   <data name="DisableCaptchaPopupCaption" xml:space="preserve">
-    <value>有効にすると、アカウントのリスク管理認証コードウィンドウが表示されなくなります。認証をスキップすると、リアルタイムノートなどの機能が一時的に利用できなくなる場合があります。</value>
+    <value>有効にすると、アカウントのセキュリティチェックCAPTCHAウィンドウが表示されなくなります。CAPTCHAをスキップすると、リアルタイムノートなどの機能が一時的に利用できなくなる場合があります。</value>
   </data>
   <data name="UseThirdPartyCDNTitle" xml:space="preserve">
     <value>サードパーティ CDN で更新をダウンロード</value>
@@ -4326,7 +4326,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>開催中の祈願</value>
   </data>
   <data name="DataPage_SectionValuePick" xml:space="preserve">
-    <value>抽く価値が高い</value>
+    <value>引く価値が高い</value>
   </data>
   <data name="DataPage_SectionOverdue" xml:space="preserve">
     <value>復刻から最も遠い</value>
@@ -4377,7 +4377,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>キャラ祈願</value>
   </data>
   <data name="DataPage_KpiWeaponBanner" xml:space="preserve">
-    <value>武器祈願 {0} 件</value>
+    <value>武器祈願 {0} 期</value>
   </data>
   <data name="DataPage_UnitTimesShort" xml:space="preserve">
     <value>回</value>
@@ -4398,7 +4398,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>深淵登場率</value>
   </data>
   <data name="DataPage_SortValue" xml:space="preserve">
-    <value>抽く優先度</value>
+    <value>引く優先度</value>
   </data>
   <data name="DataPage_SortOwn" xml:space="preserve">
     <value>所持率</value>
@@ -4431,7 +4431,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>平均レベル</value>
   </data>
   <data name="DataPage_MetricAvgConst" xml:space="preserve">
-    <value>平均凸数</value>
+    <value>平均命ノ星座</value>
   </data>
   <data name="DataPage_MetricSample" xml:space="preserve">
     <value>統計サンプル</value>
@@ -4551,7 +4551,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>復刻回数が多い</value>
   </data>
   <data name="DataPage_WishTopCompanion" xml:space="preserve">
-    <value>星4同時登場が多い</value>
+    <value>★4同時登場が多い</value>
   </data>
   <data name="DataPage_WishSearchPlaceholder" xml:space="preserve">
     <value>キャラ名・バージョンで検索…</value>
@@ -4566,16 +4566,16 @@ UIGF v4.x/3.0/2.x</value>
     <value>祈願履歴の記録はありません。</value>
   </data>
   <data name="DataPage_RerunChar5" xml:space="preserve">
-    <value>星5キャラ</value>
+    <value>★5キャラ</value>
   </data>
   <data name="DataPage_RerunChar4" xml:space="preserve">
-    <value>星4キャラ</value>
+    <value>★4キャラ</value>
   </data>
   <data name="DataPage_RerunWeapon5" xml:space="preserve">
-    <value>星5武器</value>
+    <value>★5武器</value>
   </data>
   <data name="DataPage_RerunWeapon4" xml:space="preserve">
-    <value>星4武器</value>
+    <value>★4武器</value>
   </data>
   <data name="DataPage_RerunCategory" xml:space="preserve">
     <value>分類</value>
@@ -4602,7 +4602,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>時期到来</value>
   </data>
   <data name="DataPage_RerunSoon" xml:space="preserve">
-    <value>接近中</value>
+    <value>復刻間近</value>
   </data>
   <data name="DataPage_RerunFresh" xml:space="preserve">
     <value>復刻直後</value>
@@ -4665,7 +4665,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>{0} の使用率が {1} から {2} へ低下。今期は明確に出番が減りました。</value>
   </data>
   <data name="DataPage_InsightValueTitle" xml:space="preserve">
-    <value>抽く優先度</value>
+    <value>引く優先度</value>
   </data>
   <data name="DataPage_InsightValueBody" xml:space="preserve">
     <value>{0} は所持者の {1} が起用しているのに、所持率は {2} のみ。強力なのに普及していないため、優先度は最高です。</value>
@@ -4692,13 +4692,13 @@ UIGF v4.x/3.0/2.x</value>
     <value>ほぼ一択の武器</value>
   </data>
   <data name="DataPage_InsightWeaponBody" xml:space="preserve">
-    <value>{0} は {2} の配装の {1} に採用されており、実質的な既定解です。</value>
+    <value>{0} は {2} の装備構成の {1} に採用されており、実質的な既定解です。</value>
   </data>
   <data name="DataPage_InsightArtifactTitle" xml:space="preserve">
     <value>聖遺物の第一候補</value>
   </data>
   <data name="DataPage_InsightArtifactBody" xml:space="preserve">
-    <value>{0} が配装の {1} を占めており、基準構成として扱えます。</value>
+    <value>{0} が装備構成の {1} を占めており、基準構成として扱えます。</value>
   </data>
   <data name="DataPage_InsightOverdueTitle" xml:space="preserve">
     <value>復刻ウォッチ</value>
@@ -4752,241 +4752,241 @@ UIGF v4.x/3.0/2.x</value>
     <value>PDFのエクスポートに失敗しました</value>
   </data>
   <data name="Backpack_TabWeapon.Header" xml:space="preserve">
-    <value>Weapons</value>
+    <value>武器</value>
   </data>
   <data name="Backpack_TabArtifact.Header" xml:space="preserve">
-    <value>Artifacts</value>
+    <value>聖遺物</value>
   </data>
   <data name="Backpack_TabMaterial.Header" xml:space="preserve">
-    <value>Materials</value>
+    <value>素材</value>
   </data>
   <data name="Backpack_TabFood.Header" xml:space="preserve">
-    <value>Food</value>
+    <value>料理</value>
   </data>
   <data name="Backpack_StatusWaiting" xml:space="preserve">
-    <value>Waiting for data…</value>
+    <value>データ待機中…</value>
   </data>
   <data name="Backpack_StatusReceived" xml:space="preserve">
-    <value>Received</value>
+    <value>受信済み</value>
   </data>
   <data name="Backpack_StatusLaunching" xml:space="preserve">
-    <value>Launching…</value>
+    <value>起動中…</value>
   </data>
   <data name="Backpack_StatusLaunched" xml:space="preserve">
-    <value>Game launched, waiting for data…</value>
+    <value>ゲーム起動済み、データ待機中…</value>
   </data>
   <data name="Backpack_BtnSelectPath.Label" xml:space="preserve">
-    <value>Select Game Path</value>
+    <value>ゲームパスを選択</value>
   </data>
   <data name="Backpack_BtnKillGame.Label" xml:space="preserve">
-    <value>Kill Process</value>
+    <value>プロセスを終了</value>
   </data>
   <data name="Backpack_BtnSyncBag.Label" xml:space="preserve">
-    <value>Sync Backpack</value>
+    <value>バッグを同期</value>
   </data>
   <data name="Backpack_SyncBagDialogTitle" xml:space="preserve">
-    <value>Sync Backpack</value>
+    <value>バッグを同期</value>
   </data>
   <data name="Backpack_SyncBagDialogWaiting" xml:space="preserve">
-    <value>Game launched, waiting for backpack data…</value>
+    <value>ゲーム起動済み、バッグデータ待機中…</value>
   </data>
   <data name="Backpack_SyncBagDialogCancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>キャンセル</value>
   </data>
   <data name="Backpack_Locked" xml:space="preserve">
-    <value>Locked</value>
+    <value>ロック中</value>
   </data>
   <data name="Backpack_SlotFlower" xml:space="preserve">
-    <value>Flower of Life</value>
+    <value>生の花</value>
   </data>
   <data name="Backpack_SlotPlume" xml:space="preserve">
-    <value>Plume of Death</value>
+    <value>死の羽</value>
   </data>
   <data name="Backpack_SlotSands" xml:space="preserve">
-    <value>Sands of Eon</value>
+    <value>時の砂</value>
   </data>
   <data name="Backpack_SlotGoblet" xml:space="preserve">
-    <value>Goblet of Eonothem</value>
+    <value>空の杯</value>
   </data>
   <data name="Backpack_SlotCirclet" xml:space="preserve">
-    <value>Circlet of Logos</value>
+    <value>理の冠</value>
   </data>
   <data name="Backpack_PathInvalidMsg" xml:space="preserve">
-    <value>Invalid path. Please select YuanShen.exe (CN server only).</value>
+    <value>パスが無効です。中国サーバー版のゲーム本体（YuanShen.exe）を選択してください。</value>
   </data>
   <data name="Backpack_SelectPathTitle.Text" xml:space="preserve">
-    <value>Select Game Path</value>
+    <value>ゲームパスを選択</value>
   </data>
   <data name="Backpack_SelectPathHint.Text" xml:space="preserve">
-    <value>Click an entry below to switch to that path</value>
+    <value>下のリストから項目を選択すると、そのパスに切り替わります</value>
   </data>
   <data name="Backpack_AddPathHeader.Text" xml:space="preserve">
-    <value>Game Path</value>
+    <value>ゲームパス</value>
   </data>
   <data name="Backpack_AddPathDesc.Text" xml:space="preserve">
-    <value>Select YuanShen.exe (CN only), not launcher.exe</value>
+    <value>中国サーバー版のゲーム本体（YuanShen.exe）を選択してください。ランチャー（launcher.exe）ではありません。</value>
   </data>
   <data name="Backpack_WeaponBaseAtkLabel.Text" xml:space="preserve">
-    <value>Base ATK</value>
+    <value>基礎攻撃力</value>
   </data>
   <data name="Backpack_ErrNoProcessPath" xml:space="preserve">
-    <value>Failed to resolve current process path</value>
+    <value>現在のプロセスパスを取得できませんでした</value>
   </data>
   <data name="Backpack_ErrElevationCancelled" xml:space="preserve">
-    <value>Elevation was cancelled by the user</value>
+    <value>ユーザーが権限昇格をキャンセルしました</value>
   </data>
   <data name="Backpack_ErrHelperStartFailed" xml:space="preserve">
-    <value>Failed to start the injection helper</value>
+    <value>注入プロセスを起動できませんでした</value>
   </data>
   <data name="Backpack_ErrInvalidConfig" xml:space="preserve">
-    <value>Invalid configuration file</value>
+    <value>設定ファイルが無効です</value>
   </data>
   <data name="Backpack_ErrGameCreateFailed" xml:space="preserve">
-    <value>Failed to create game process</value>
+    <value>ゲームプロセスを作成できませんでした</value>
   </data>
   <data name="Backpack_ErrDllInjFailed" xml:space="preserve">
-    <value>DLL injection failed</value>
+    <value>DLL注入に失敗しました</value>
   </data>
   <data name="Backpack_ErrHelperExitCode" xml:space="preserve">
-    <value>Injection helper exited with code {0}</value>
+    <value>注入プロセスが異常終了しました（{0}）</value>
   </data>
   <data name="Backpack_MatTabCharAscension" xml:space="preserve">
-    <value>Char Ascension</value>
+    <value>キャラ突破</value>
   </data>
   <data name="Backpack_MatTabWeaponAscension" xml:space="preserve">
-    <value>Weapon Ascension</value>
+    <value>武器突破</value>
   </data>
   <data name="Backpack_MatTabTalent" xml:space="preserve">
-    <value>Talent Materials</value>
+    <value>天賦素材</value>
   </data>
   <data name="Backpack_MatTabCharExp" xml:space="preserve">
-    <value>Char EXP</value>
+    <value>キャラ育成</value>
   </data>
   <data name="Backpack_MatTabWeaponEnhance" xml:space="preserve">
-    <value>Weapon Enhancement</value>
+    <value>武器強化</value>
   </data>
   <data name="Backpack_MatTabRefine" xml:space="preserve">
-    <value>Refinement</value>
+    <value>精錬素材</value>
   </data>
   <data name="Backpack_MatTabLocalSpecialty" xml:space="preserve">
-    <value>Local Specialty</value>
+    <value>地域特産</value>
   </data>
   <data name="Backpack_MatTabIngredient" xml:space="preserve">
-    <value>Ingredients</value>
+    <value>食材</value>
   </data>
   <data name="Backpack_FoodTabRecovery" xml:space="preserve">
-    <value>Recovery</value>
+    <value>回復系料理</value>
   </data>
   <data name="Backpack_FoodTabAttack" xml:space="preserve">
-    <value>Attack</value>
+    <value>攻撃系料理</value>
   </data>
   <data name="Backpack_FoodTabDefense" xml:space="preserve">
-    <value>Defense</value>
+    <value>防御系料理</value>
   </data>
   <data name="Backpack_FoodTabAdventure" xml:space="preserve">
-    <value>Adventure</value>
+    <value>冒険系料理</value>
   </data>
   <data name="Backpack_FoodTabSpecialRecovery" xml:space="preserve">
-    <value>Special Recovery</value>
+    <value>特殊回復</value>
   </data>
   <data name="Backpack_FoodTabSpecialAttack" xml:space="preserve">
-    <value>Special Attack</value>
+    <value>特殊攻撃</value>
   </data>
   <data name="Backpack_FoodTabSpecialDefense" xml:space="preserve">
-    <value>Special Defense</value>
+    <value>特殊防御</value>
   </data>
   <data name="Backpack_FoodTabSpecialAdventure" xml:space="preserve">
-    <value>Special Adventure</value>
+    <value>特殊冒険</value>
   </data>
   <data name="Backpack_FoodTabArlecchino" xml:space="preserve">
-    <value>Arlecchino Specials</value>
+    <value>アルレッキーノ特製料理</value>
   </data>
   <data name="Backpack_FoodTabSweet" xml:space="preserve">
-    <value>Sweet Flowers</value>
+    <value>糖彫り</value>
   </data>
   <data name="Backpack_MatTabCommon" xml:space="preserve">
-    <value>Materials</value>
+    <value>素材</value>
   </data>
   <data name="Backpack_MatTabOre" xml:space="preserve">
-    <value>Ores</value>
+    <value>鉱石</value>
   </data>
   <data name="Backpack_MatTabFish" xml:space="preserve">
-    <value>Fish</value>
+    <value>魚</value>
   </data>
   <data name="Backpack_MatTabBait" xml:space="preserve">
-    <value>Fishing Bait</value>
+    <value>釣り餌</value>
   </data>
   <data name="Backpack_TabGadget.Header" xml:space="preserve">
-    <value>Gadgets</value>
+    <value>道具</value>
   </data>
   <data name="Backpack_TabAsset.Header" xml:space="preserve">
-    <value>Assets</value>
+    <value>個人資産</value>
   </data>
   <data name="Backpack_AssetTabCurrency" xml:space="preserve">
-    <value>Rare Currency</value>
+    <value>レア通貨</value>
   </data>
   <data name="Backpack_AssetTabQiyu" xml:space="preserve">
-    <value>Imaginarium Theater</value>
+    <value>幻想シアター</value>
   </data>
   <data name="Backpack_GadgetTabMisc" xml:space="preserve">
-    <value>Gadgets</value>
+    <value>小道具</value>
   </data>
   <data name="Backpack_GadgetTabConsumable" xml:space="preserve">
-    <value>Consumables</value>
+    <value>消耗品</value>
   </data>
   <data name="Backpack_GadgetTabQuest" xml:space="preserve">
-    <value>Quest Items</value>
+    <value>任務道具</value>
   </data>
   <data name="Backpack_GadgetTabPrecious" xml:space="preserve">
-    <value>Precious</value>
+    <value>貴重品</value>
   </data>
   <data name="Backpack_GadgetTabQiyu" xml:space="preserve">
-    <value>Imaginarium Theater</value>
+    <value>幻想シアター</value>
   </data>
   <data name="Backpack_GadgetTabAdventure" xml:space="preserve">
-    <value>Adventure</value>
+    <value>冒険道具</value>
   </data>
   <data name="Backpack_GadgetTabEmblem" xml:space="preserve">
-    <value>Nation Emblems</value>
+    <value>七国の紋章</value>
   </data>
   <data name="Backpack_GadgetTabWish" xml:space="preserve">
-    <value>Wish Items</value>
+    <value>祈願道具</value>
   </data>
   <data name="Backpack_GadgetTabVoucherHi" xml:space="preserve">
-    <value>Starglitter</value>
+    <value>スターライト</value>
   </data>
   <data name="Backpack_GadgetTabVoucherLo" xml:space="preserve">
-    <value>Stardust</value>
+    <value>スターダスト</value>
   </data>
   <data name="Backpack_GadgetTabCurrency" xml:space="preserve">
-    <value>Rare Currency</value>
+    <value>レア通貨</value>
   </data>
   <data name="Backpack_NavTitle" xml:space="preserve">
-    <value>Backpack Browser</value>
+    <value>バッグブラウザ</value>
   </data>
   <data name="Backpack_ErrX64Required" xml:space="preserve">
-    <value>Backpack synchronization requires the x64 build.</value>
+    <value>バッグ同期はx64版のみ対応しています。</value>
   </data>
   <data name="Backpack_ErrDllMissing" xml:space="preserve">
-    <value>The Backpack synchronization module modules/backpack.dll is missing.</value>
+    <value>バッグ同期モジュール modules/backpack.dll が見つかりません。</value>
   </data>
   <data name="Checkin_PartialFailed" xml:space="preserve">
-    <value>サインイン一部失敗</value>
+    <value>チェックイン一部失敗</value>
   </data>
   <data name="Checkin_SignNow" xml:space="preserve">
-    <value>今すぐサインイン</value>
+    <value>今すぐチェックイン</value>
   </data>
   <data name="Checkin_LoadingStatus" xml:space="preserve">
     <value>ステータスを読み込み中...</value>
   </data>
   <data name="Checkin_Executing" xml:space="preserve">
-    <value>サインインを実行中...</value>
+    <value>チェックインを実行中...</value>
   </data>
   <data name="Checkin_NotLoggedIn" xml:space="preserve">
     <value>未ログイン</value>
   </data>
   <data name="Checkin_Complete" xml:space="preserve">
-    <value>サインイン完了</value>
+    <value>チェックイン完了</value>
   </data>
   <data name="Checkin_CredentialFailed" xml:space="preserve">
     <value>認証情報の読み込み失敗</value>
@@ -5004,6 +5004,804 @@ UIGF v4.x/3.0/2.x</value>
     <value>先にログインしてください</value>
   </data>
   <data name="Checkin_CheckingIn" xml:space="preserve">
-    <value>サインイン中...</value>
+    <value>チェックイン中...</value>
   </data>
-<data name="Checkin_AccountLabel" xml:space="preserve"><value>アカウント: {0}</value></data></root>
+  <data name="Checkin_AccountLabel" xml:space="preserve">
+    <value>アカウント: {0}</value>
+  </data>
+  <data name="NotificationPositionTitle" xml:space="preserve">
+    <value>通知ポップアップの位置</value>
+  </data>
+  <data name="NotificationPositionCaption" xml:space="preserve">
+    <value>通知ポップアップを画面に表示する位置を設定します</value>
+  </data>
+  <data name="PositionBottomRight" xml:space="preserve">
+    <value>右下</value>
+  </data>
+  <data name="PositionTopRight" xml:space="preserve">
+    <value>右上</value>
+  </data>
+  <data name="PositionTopLeft" xml:space="preserve">
+    <value>左上</value>
+  </data>
+  <data name="PositionBottomLeft" xml:space="preserve">
+    <value>左下</value>
+  </data>
+  <data name="UsingHoyolabAccountTitle" xml:space="preserve">
+    <value>MiYouShe/HoyoLAB アカウントでゲームに直接ログイン</value>
+  </data>
+  <data name="UsingHoyolabAccountCaption" xml:space="preserve">
+    <value>ゲーム起動時に、現在選択中のMiYouSheまたは HoyoLAB アカウントとしてゲームに直接サインインできます。ゲーム内で再度アカウント情報を入力する必要はありません。</value>
+  </data>
+  <data name="HoyolabAccount_NoLoggedIn_Title" xml:space="preserve">
+    <value>有効化できません</value>
+  </data>
+  <data name="HoyolabAccount_NoLoggedIn_Message" xml:space="preserve">
+    <value>まずアカウント設定でMiYouSheまたは HoyoLAB アカウントにログインしてください。</value>
+  </data>
+  <data name="HoyolabAccount_LoginExpired_Title" xml:space="preserve">
+    <value>アカウントのログイン期限が切れました</value>
+  </data>
+  <data name="HoyolabAccount_LoginExpired_Message" xml:space="preserve">
+    <value>この機能を使用するには、現在のアカウントを再ログインする必要があります。</value>
+  </data>
+  <data name="HoyolabAccount_NoGamePath_Title" xml:space="preserve">
+    <value>ゲームが選択されていません</value>
+  </data>
+  <data name="HoyolabAccount_NoGamePath_Message" xml:space="preserve">
+    <value>まずホーム画面でゲームのインストールディレクトリを選択してください。</value>
+  </data>
+  <data name="HoyolabAccount_Enabled_Title" xml:space="preserve">
+    <value>有効化しました</value>
+  </data>
+  <data name="HoyolabAccount_Enabled_Message" xml:space="preserve">
+    <value>次回ゲーム起動時に、MiYouShe/HoyoLAB アカウントとしてゲームに直接サインインします。アカウント情報を再度入力する必要はありません。</value>
+  </data>
+  <data name="HoyolabAccount_EnableFailed_Title" xml:space="preserve">
+    <value>有効化できません</value>
+  </data>
+  <data name="HoyolabAccount_EnableFailed_Message" xml:space="preserve">
+    <value>現在のアカウントでは一時的にこの機能を使用できません。アカウントのログイン状態を確認してから再試行してください。</value>
+  </data>
+  <data name="HoyolabAccount_TempUnavailable_Title" xml:space="preserve">
+    <value>一時的に利用できません</value>
+  </data>
+  <data name="HoyolabAccount_TempUnavailable_Message" xml:space="preserve">
+    <value>ネットワークまたはサービスに異常があります。しばらくしてから再度お試しください。</value>
+  </data>
+  <data name="HoyolabAccount_ServerMismatch_Title" xml:space="preserve">
+    <value>アカウントとサーバーが一致しません</value>
+  </data>
+  <data name="HoyolabAccount_ServerMismatch_OverseaMsg" xml:space="preserve">
+    <value>現在選択中の HoyoLAB グローバル版アカウントでは中国版のゲームを起動できません。対応するリージョンのアカウントに切り替えてください。</value>
+  </data>
+  <data name="HoyolabAccount_ServerMismatch_CnMsg" xml:space="preserve">
+    <value>現在選択中のMiYouShe中国版アカウントではグローバル版のゲームを起動できません。対応するリージョンのアカウントに切り替えてください。</value>
+  </data>
+  <data name="HelpPage_TranslateBtn" xml:space="preserve">
+    <value>翻訳</value>
+  </data>
+  <data name="HelpPage_ShowOriginalBtn" xml:space="preserve">
+    <value>原文を表示</value>
+  </data>
+  <data name="HelpPage_Translating" xml:space="preserve">
+    <value>翻訳中 ({0}/{1})...</value>
+  </data>
+  <data name="HelpPage_TranslateFailed" xml:space="preserve">
+    <value>翻訳に失敗しました</value>
+  </data>
+  <data name="HelpPage_TranslateComplete" xml:space="preserve">
+    <value>翻訳完了</value>
+  </data>
+  <data name="DisableFpsAutoDisableLabel" xml:space="preserve">
+    <value>起動時の自動FPS無効化をオフ</value>
+  </data>
+  <data name="PluginStoreTitle" xml:space="preserve">
+    <value>プラグインストア</value>
+  </data>
+  <data name="PluginStoreSearch" xml:space="preserve">
+    <value>プラグインを検索...</value>
+  </data>
+  <data name="PluginStoreInstall" xml:space="preserve">
+    <value>インストール</value>
+  </data>
+  <data name="PluginStoreInstalled" xml:space="preserve">
+    <value>インストール済み</value>
+  </data>
+  <data name="PluginStoreUpdate" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="PluginStoreUninstall" xml:space="preserve">
+    <value>アンインストール</value>
+  </data>
+  <data name="PluginStoreInstalling" xml:space="preserve">
+    <value>インストール中...</value>
+  </data>
+  <data name="PluginStoreRating" xml:space="preserve">
+    <value>評価</value>
+  </data>
+  <data name="PluginStoreDownloads" xml:space="preserve">
+    <value>ダウンロード</value>
+  </data>
+  <data name="PluginStoreSize" xml:space="preserve">
+    <value>サイズ</value>
+  </data>
+  <data name="PluginStoreVersion" xml:space="preserve">
+    <value>バージョン</value>
+  </data>
+  <data name="PluginStoreNoResults" xml:space="preserve">
+    <value>プラグインが見つかりません</value>
+  </data>
+  <data name="PluginStoreError" xml:space="preserve">
+    <value>読み込みに失敗しました</value>
+  </data>
+  <data name="PluginStoreLoading" xml:space="preserve">
+    <value>読み込み中...</value>
+  </data>
+  <data name="PluginStoreRetry" xml:space="preserve">
+    <value>再試行</value>
+  </data>
+  <data name="PluginStorePrevious" xml:space="preserve">
+    <value>前のページ</value>
+  </data>
+  <data name="PluginStoreNext" xml:space="preserve">
+    <value>次のページ</value>
+  </data>
+  <data name="PluginStoreAll" xml:space="preserve">
+    <value>すべて</value>
+  </data>
+  <data name="PluginStoreSortPopular" xml:space="preserve">
+    <value>人気</value>
+  </data>
+  <data name="PluginStoreSortNewest" xml:space="preserve">
+    <value>最新</value>
+  </data>
+  <data name="PluginStoreSortRating" xml:space="preserve">
+    <value>評価が高い順</value>
+  </data>
+  <data name="PluginStoreInstallSuccess" xml:space="preserve">
+    <value>インストール完了: {0}</value>
+  </data>
+  <data name="PluginStoreInstallFailed" xml:space="preserve">
+    <value>インストール失敗: {0}</value>
+  </data>
+  <data name="PluginStoreUninstallSuccess" xml:space="preserve">
+    <value>アンインストール完了: {0}</value>
+  </data>
+  <data name="PluginStoreVerifying" xml:space="preserve">
+    <value>検証中...</value>
+  </data>
+  <data name="PluginStoreHashMismatch" xml:space="preserve">
+    <value>ファイルの整合性検証に失敗しました。ダウンロードファイルが破損または改ざんされている可能性があります</value>
+  </data>
+  <data name="PluginStoreLuaHashMismatch" xml:space="preserve">
+    <value>インストールスクリプトの整合性検証に失敗しました</value>
+  </data>
+  <data name="PluginStoreSecurityBlocked" xml:space="preserve">
+    <value>インストールがブロックされました: {0}</value>
+  </data>
+  <data name="PluginStoreSecurityBlockedShort" xml:space="preserve">
+    <value>セキュリティブロック</value>
+  </data>
+  <data name="PluginStorePathTraversal" xml:space="preserve">
+    <value>セキュリティ: パストラバーサル試行をブロックしました</value>
+  </data>
+  <data name="PluginStoreHashVerified" xml:space="preserve">
+    <value>整合性検証成功</value>
+  </data>
+  <data name="PluginStoreDiscover" xml:space="preserve">
+    <value>探索と発見</value>
+  </data>
+  <data name="PluginStoreSearchPlaceholder" xml:space="preserve">
+    <value>プラグイン名またはキーワードを検索...</value>
+  </data>
+  <data name="PluginStoreRefresh" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="PluginStoreSyncing" xml:space="preserve">
+    <value>プラグイン一覧を同期中...</value>
+  </data>
+  <data name="PluginStoreDeveloper" xml:space="preserve">
+    <value>提供元</value>
+  </data>
+  <data name="PluginStoreDetails" xml:space="preserve">
+    <value>機能詳細</value>
+  </data>
+  <data name="PluginStoreUpdateNow" xml:space="preserve">
+    <value>今すぐ更新</value>
+  </data>
+  <data name="PluginStoreInstallPlugin" xml:space="preserve">
+    <value>このプラグインをインストール</value>
+  </data>
+  <data name="PluginStoreCancel" xml:space="preserve">
+    <value>キャンセルして戻る</value>
+  </data>
+  <data name="PluginStoreNoMatch" xml:space="preserve">
+    <value>一致するプラグインが見つかりません</value>
+  </data>
+  <data name="PluginStoreNoAvailable" xml:space="preserve">
+    <value>利用可能なプラグインがありません</value>
+  </data>
+  <data name="PluginStoreTotalPlugins" xml:space="preserve">
+    <value>合計 {0} 件のプラグイン</value>
+  </data>
+  <data name="PluginStoreConnectionFailed" xml:space="preserve">
+    <value>接続に失敗しました</value>
+  </data>
+  <data name="PluginStoreLoadFailed" xml:space="preserve">
+    <value>プラグイン一覧の読み込みに失敗しました。しばらくしてから再度お試しください</value>
+  </data>
+  <data name="PluginStoreInstallComplete" xml:space="preserve">
+    <value>インストール完了</value>
+  </data>
+  <data name="PluginStoreHashFailed" xml:space="preserve">
+    <value>検証失敗</value>
+  </data>
+  <data name="PluginStoreCancelled" xml:space="preserve">
+    <value>キャンセルしました</value>
+  </data>
+  <data name="PluginStoreInstallFailedShort" xml:space="preserve">
+    <value>インストール失敗</value>
+  </data>
+  <data name="PluginStoreInstallVerifyFailed" xml:space="preserve">
+    <value>インストール後にプラグインファイルが見つかりません。プラグインが正しくインストールされていない可能性があります</value>
+  </data>
+
+  <data name="PluginStoreUninstalling" xml:space="preserve">
+    <value>アンインストール中...</value>
+  </data>
+  <data name="PluginStoreUninstallComplete" xml:space="preserve">
+    <value>アンインストール完了</value>
+  </data>
+  <data name="PluginStoreUninstallFailed" xml:space="preserve">
+    <value>アンインストール失敗</value>
+  </data>
+  <data name="PluginStoreServerUnreachable" xml:space="preserve">
+    <value>プラグインストアサーバーに接続できません。ネットワークまたはサーバーの状態を確認してください</value>
+  </data>
+  <data name="PluginStoreServerTimeout" xml:space="preserve">
+    <value>プラグインストアへの接続がタイムアウトしました。しばらくしてから再度お試しください</value>
+  </data>
+  <data name="PluginStoreLoadListFailed" xml:space="preserve">
+    <value>プラグイン一覧の読み込みに失敗しました: {0}</value>
+  </data>
+  <data name="PluginStoreDownloadLuaFailed" xml:space="preserve">
+    <value>インストールスクリプトをダウンロードできません。サーバーが利用できません</value>
+  </data>
+  <data name="PluginStoreDownloadLuaError" xml:space="preserve">
+    <value>インストールスクリプトのダウンロードに失敗しました: {0}</value>
+  </data>
+  <data name="PluginStoreDownloading" xml:space="preserve">
+    <value>ダウンロード中 {0}%</value>
+  </data>
+  <data name="PluginStoreDownloadFileFailed" xml:space="preserve">
+    <value>プラグインファイルをダウンロードできません。サーバーが利用できません</value>
+  </data>
+  <data name="PluginStoreDownloadFileError" xml:space="preserve">
+    <value>プラグインファイルのダウンロードに失敗しました: {0}</value>
+  </data>
+  <data name="PluginStoreDownloadCountWan" xml:space="preserve">
+    <value>{0:F1}万</value>
+  </data>
+  <data name="PluginStoreDownloadCountK" xml:space="preserve">
+    <value>{0:F1}k</value>
+  </data>
+  <data name="PluginStoreScriptDownloading" xml:space="preserve">
+    <value>インストールスクリプトをダウンロード中...</value>
+  </data>
+  <data name="PluginStoreScriptScanning" xml:space="preserve">
+    <value>スキャン中...</value>
+  </data>
+  <data name="PluginStoreScriptExecuting" xml:space="preserve">
+    <value>インストールスクリプトを実行中...</value>
+  </data>
+  <data name="PluginStoreLuaSecurityFailed" xml:space="preserve">
+    <value>Luaスクリプトはセキュリティ検証を通過しませんでした。</value>
+  </data>
+  <data name="PluginStoreLuaScriptError" xml:space="preserve">
+    <value>Luaスクリプトエラー: {0}</value>
+  </data>
+  <data name="PluginStoreLuaScriptFailed" xml:space="preserve">
+    <value>Luaスクリプトの実行に失敗しました: {0}</value>
+  </data>
+  <data name="PluginStoreDialogClose" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="PluginStoreSecurityEmptyPath" xml:space="preserve">
+    <value>セキュリティ: {0} の操作に空のパスが渡されました。</value>
+  </data>
+  <data name="PluginStoreSecurityInvalidPath" xml:space="preserve">
+    <value>セキュリティ: 無効なパス ({0}): {1}</value>
+  </data>
+  <data name="PluginStoreSecurityOutsideDir" xml:space="preserve">
+    <value>セキュリティ: パスはプラグインディレクトリ内 ({0}) にある必要があります。</value>
+  </data>
+  <data name="PluginStoreSecurityBannedOp" xml:space="preserve">
+    <value>スクリプトに禁止された操作 ({0}) が含まれています。</value>
+  </data>
+  <data name="PluginStoreSecurityPathTraversalShort" xml:space="preserve">
+    <value>パストラバーサル試行</value>
+  </data>
+  <data name="PluginStoreSecurityScriptTooLarge" xml:space="preserve">
+    <value>スクリプトが大きすぎます</value>
+  </data>
+  <data name="PluginStoreUpload" xml:space="preserve">
+    <value>プラグインをアップロード</value>
+  </data>
+  <data name="PluginStoreUploadTooltip" xml:space="preserve">
+    <value>GitHub でプラグインを提出する</value>
+  </data>
+  <data name="PluginStoreLuaTestButton" xml:space="preserve">
+    <value>Luaテスト</value>
+  </data>
+  <data name="PluginStoreLuaTestTitle" xml:space="preserve">
+    <value>Lua プラグインインストールスクリプトテスト</value>
+  </data>
+  <data name="PluginStoreLuaTestDescription" xml:space="preserve">
+    <value>下部に Lua プラグインインストールスクリプトを入力し、テスト実行をクリックしてスクリプトを検証してください。スクリプトはサンドボックス環境で実行され、すべてのファイル操作は Plugins ディレクトリ内に制限されます。</value>
+  </data>
+  <data name="PluginStoreLuaTestInputHint" xml:space="preserve">
+    <value>-- ここに Lua プラグインインストールスクリプトを入力してください
+-- 使用可能な API: install.download(), install.extract(), install.download_plugin(id) など
+-- 詳細は Lua プラグイン開発ガイドを参照してください</value>
+  </data>
+  <data name="PluginStoreLuaTestRun" xml:space="preserve">
+    <value>テストを実行</value>
+  </data>
+  <data name="PluginStoreLuaTestSecurityWarning" xml:space="preserve">
+    <value>セキュリティ警告</value>
+  </data>
+  <data name="PluginStoreLuaTestSecurityBlocked" xml:space="preserve">
+    <value>スクリプトはセキュリティ検証を通過しませんでした：{0}
+
+それでも実行しますか？（推奨されません）</value>
+  </data>
+  <data name="PluginStoreLuaTestExecuting" xml:space="preserve">
+    <value>Lua スクリプトを実行中...</value>
+  </data>
+  <data name="PluginStoreLuaTestSuccess" xml:space="preserve">
+    <value>Lua スクリプトの実行に成功しました</value>
+  </data>
+  <data name="PluginStoreLuaTestFailed" xml:space="preserve">
+    <value>Lua スクリプトの実行に失敗しました</value>
+  </data>
+  <data name="PluginStoreLuaTestLogSaved" xml:space="preserve">
+    <value>ログを保存しました：
+{0}</value>
+  </data>
+  <data name="PluginStoreLuaTestOpenLog" xml:space="preserve">
+    <value>ログファイルを開く</value>
+  </data>
+  <data name="PluginStoreLuaTestClose" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="PluginStoreCategoryUtility" xml:space="preserve">
+    <value>ユーティリティ</value>
+  </data>
+  <data name="PluginStoreCategoryGameplay" xml:space="preserve">
+    <value>ゲームプレイ</value>
+  </data>
+  <data name="PluginStoreCategoryVisuals" xml:space="preserve">
+    <value>ビジュアル</value>
+  </data>
+  <data name="Backpack_TabOverview" xml:space="preserve">
+    <value>概要</value>
+  </data>
+  <data name="Backpack_PageSubtitle" xml:space="preserve">
+    <value>装備、素材、料理を一括で確認し、育成計画をサポートします。</value>
+  </data>
+  <data name="Backpack_LocalOnlyDisclaimer" xml:space="preserve">
+    <value>同期データはこの端末のみに保存され、アカウントやバッグの内容はアップロードされません。</value>
+  </data>
+  <data name="Backpack_PathNoticeTitle" xml:space="preserve">
+    <value>有効なゲームインストールディレクトリが検出されていません</value>
+  </data>
+  <data name="Backpack_PathNoticeBody" xml:space="preserve">
+    <value>ソフトウェアのゲーム設定でパスを設定してください。Backpack は別途パスを保存したり要求したりすることはありません。</value>
+  </data>
+  <data name="Backpack_OpenSettings" xml:space="preserve">
+    <value>設定を開く</value>
+  </data>
+  <data name="Backpack_GamePathFallback" xml:space="preserve">
+    <value>ゲーム設定でインストールディレクトリを設定してください</value>
+  </data>
+  <data name="Backpack_UsageTitle" xml:space="preserve">
+    <value>使用方法</value>
+  </data>
+  <data name="Backpack_UsageStep1" xml:space="preserve">
+    <value>右上の「バッグを同期」をクリックすると、ゲーム内の実際のインベントリが読み込まれ、データ同期が開始されます。</value>
+  </data>
+  <data name="Backpack_UsageStep2" xml:space="preserve">
+    <value>上部のタブでカテゴリーを切り替えられます。アイテムカードをクリックして詳細パラメータ（セット / サブ効果 / 武器スキル）を確認できます。</value>
+  </data>
+  <data name="Backpack_UsageStep3" xml:space="preserve">
+    <value>概要カードでは、現在の在庫に基づく食材連携と育成素材のカバー率が表示されます。</value>
+  </data>
+  <data name="Backpack_KpiOwnedWeapons" xml:space="preserve">
+    <value>所持武器</value>
+  </data>
+  <data name="Backpack_KpiLockedArtifacts" xml:space="preserve">
+    <value>ロック中の聖遺物</value>
+  </data>
+  <data name="Backpack_KpiCookableFood" xml:space="preserve">
+    <value>調理可能な料理</value>
+  </data>
+  <data name="Backpack_KpiMaterialTypes" xml:space="preserve">
+    <value>素材の種類</value>
+  </data>
+  <data name="Backpack_KpiFiveStarWeapons" xml:space="preserve">
+    <value>★5 武器</value>
+  </data>
+  <data name="Backpack_KpiTotalArtifacts" xml:space="preserve">
+    <value>聖遺物の総数</value>
+  </data>
+  <data name="Backpack_InsightMaxRefine.Title" xml:space="preserve">
+    <value>★5 武器 精錬 MAX</value>
+  </data>
+  <data name="Backpack_InsightMaxRefine.Body" xml:space="preserve">
+    <value>★5 武器 {0} 丁が精錬 MAX です。</value>
+  </data>
+  <data name="Backpack_InsightMaxLevel.Title" xml:space="preserve">
+    <value>★5 聖遺物 強化 MAX</value>
+  </data>
+  <data name="Backpack_InsightMaxLevel.Body" xml:space="preserve">
+    <value>★5 聖遺物 {0} 個が +20 まで強化されています。</value>
+  </data>
+  <data name="Backpack_InsightIngredientsReady.Title" xml:space="preserve">
+    <value>食材が十分にあります</value>
+  </data>
+  <data name="Backpack_InsightIngredientsReady.Body" xml:space="preserve">
+    <value>現在 {0} 品の料理の食材が揃っており、すぐに調理できます。</value>
+  </data>
+  <data name="Backpack_InsightEmptyCategories.Title" xml:space="preserve">
+    <value>素材カテゴリーの欠落</value>
+  </data>
+  <data name="Backpack_InsightEmptyCategories.Body" xml:space="preserve">
+    <value>{0} 個の素材カテゴリーの在庫がゼロです：{1}</value>
+  </data>
+  <data name="Backpack_InsightCatalogWeapons.Title" xml:space="preserve">
+    <value>武器図鑑の進捗</value>
+  </data>
+  <data name="Backpack_InsightCatalogWeapons.Body" xml:space="preserve">
+    <value>あと {0} 丁の武器が図鑑にのみ登録されており、まだ未所持です。</value>
+  </data>
+  <data name="Backpack_InsightLowStock.Title" xml:space="preserve">
+    <value>在庫不足の素材</value>
+  </data>
+  <data name="Backpack_InsightLowStock.Body" xml:space="preserve">
+    <value>{0} 件の素材が在庫 5 個未満です。適時補充してください。</value>
+  </data>
+  <data name="Backpack_InsightEmpty.Title" xml:space="preserve">
+    <value>データ概要</value>
+  </data>
+  <data name="Backpack_InsightEmpty.Body" xml:space="preserve">
+    <value>バッグのデータを同期すると、ここに在庫の分析と提案が表示されます。</value>
+  </data>
+  <data name="Backpack_PlanHighTierTalent" xml:space="preserve">
+    <value>上位天賦素材</value>
+  </data>
+  <data name="Backpack_CookHeader" xml:space="preserve">
+    <value>料理の準備状況</value>
+  </data>
+  <data name="Backpack_CookSubheader" xml:space="preserve">
+    <value>現在の食材在庫に基づきます</value>
+  </data>
+  <data name="Backpack_CookReady" xml:space="preserve">
+    <value>調理可能</value>
+  </data>
+  <data name="Backpack_CookAlmost" xml:space="preserve">
+    <value>あと少し</value>
+  </data>
+  <data name="Backpack_CookAlmostBody" xml:space="preserve">
+    <value>{0}（{1}）が不足しています</value>
+  </data>
+  <data name="Backpack_CookEmptyName" xml:space="preserve">
+    <value>料理データがありません</value>
+  </data>
+  <data name="Backpack_CookEmptyStatus" xml:space="preserve">
+    <value>同期待ち</value>
+  </data>
+  <data name="Backpack_CookEmptyBody" xml:space="preserve">
+    <value>バッグを同期すると、料理の準備状況を確認できます。</value>
+  </data>
+  <data name="Backpack_BrowseTitle" xml:space="preserve">
+    <value>閲覧と検索</value>
+  </data>
+  <data name="Backpack_BrowseCaption" xml:space="preserve">
+    <value>キーワード、サブカテゴリー、フィルター、並び替えでアイテムを素早く検索できます。</value>
+  </data>
+  <data name="Backpack_BrowseSearchPlaceholder" xml:space="preserve">
+    <value>名前、セット、サブ効果、キャラクター、食材を検索</value>
+  </data>
+  <data name="Backpack_BrowseReset" xml:space="preserve">
+    <value>リセット</value>
+  </data>
+  <data name="Backpack_BrowseSubcategory" xml:space="preserve">
+    <value>サブカテゴリー</value>
+  </data>
+  <data name="Backpack_BrowseFilter" xml:space="preserve">
+    <value>フィルター</value>
+  </data>
+  <data name="Backpack_BrowseSort" xml:space="preserve">
+    <value>並び替え</value>
+  </data>
+  <data name="Backpack_ResultCount" xml:space="preserve">
+    <value>結果 {0} 件</value>
+  </data>
+  <data name="Backpack_EmptyTitle" xml:space="preserve">
+    <value>一致するアイテムが見つかりません</value>
+  </data>
+  <data name="Backpack_EmptyBody" xml:space="preserve">
+    <value>キーワードを調整するか、フィルターをクリアして再度お試しください。</value>
+  </data>
+  <data name="Backpack_EmptyClearBtn" xml:space="preserve">
+    <value>条件をクリア</value>
+  </data>
+  <data name="Backpack_PagerFormat" xml:space="preserve">
+    <value>{0} / {1} ページ</value>
+  </data>
+  <data name="Backpack_PagerRange" xml:space="preserve">
+    <value>{0}-{1} 件目 / 全 {2} 件</value>
+  </data>
+  <data name="Backpack_ResultAll" xml:space="preserve">
+    <value>結果 {0} 件</value>
+  </data>
+  <data name="Backpack_DetailWeaponRank" xml:space="preserve">
+    <value>武器ランク</value>
+  </data>
+  <data name="Backpack_DetailLevel" xml:space="preserve">
+    <value>レベル</value>
+  </data>
+  <data name="Backpack_DetailRefine" xml:space="preserve">
+    <value>精錬</value>
+  </data>
+  <data name="Backpack_DetailBaseAtk" xml:space="preserve">
+    <value>基礎攻撃力</value>
+  </data>
+  <data name="Backpack_DetailSubStat" xml:space="preserve">
+    <value>サブステータス</value>
+  </data>
+  <data name="Backpack_DetailSkill" xml:space="preserve">
+    <value>武器スキル</value>
+  </data>
+  <data name="Backpack_DetailLore" xml:space="preserve">
+    <value>武器物語</value>
+  </data>
+  <data name="Backpack_DetailEnhanceLevel" xml:space="preserve">
+    <value>強化レベル</value>
+  </data>
+  <data name="Backpack_DetailMainStat" xml:space="preserve">
+    <value>メインステータス</value>
+  </data>
+  <data name="Backpack_DetailSubStats" xml:space="preserve">
+    <value>サブステータス</value>
+  </data>
+  <data name="Backpack_DetailSetBonus" xml:space="preserve">
+    <value>セット効果</value>
+  </data>
+  <data name="Backpack_DetailCodexTitle" xml:space="preserve">
+    <value>図鑑項目</value>
+  </data>
+  <data name="Backpack_DetailCodexBody" xml:space="preserve">
+    <value>ゲームからインポートすると、聖遺物の強化レベル、メインステータスの数値、サブステータスのロール詳細が自動的に入力されます。現在表示しているのは、その聖遺物のセット分類とセット効果の基本情報です。</value>
+  </data>
+  <data name="Backpack_DetailCookState" xml:space="preserve">
+    <value>調理ステータス</value>
+  </data>
+  <data name="Backpack_DetailCookReady" xml:space="preserve">
+    <value>食材の在庫が満たされており、すぐに調理できます</value>
+  </data>
+  <data name="Backpack_DetailCookMissing" xml:space="preserve">
+    <value>一部の食材が不足しています。揃えれば調理できます</value>
+  </data>
+  <data name="Backpack_DetailIngredients" xml:space="preserve">
+    <value>必要な食材</value>
+  </data>
+  <data name="Backpack_DetailInventoryItem" xml:space="preserve">
+    <value>バッグ内のアイテム</value>
+  </data>
+  <data name="Backpack_DetailCountBody" xml:space="preserve">
+    <value>現在のバッグ内の実際の数量です。</value>
+  </data>
+  <data name="Backpack_DetailStockItem" xml:space="preserve">
+    <value>在庫アイテム</value>
+  </data>
+  <data name="Backpack_SectionOverviewKpi" xml:space="preserve">
+    <value>在庫概要</value>
+  </data>
+  <data name="Backpack_SectionInsights" xml:space="preserve">
+    <value>バッグ分析</value>
+  </data>
+  <data name="Backpack_SectionCultivation" xml:space="preserve">
+    <value>育成素材のカバー率</value>
+  </data>
+  <data name="Backpack_SectionItems" xml:space="preserve">
+    <value>閲覧と検索</value>
+  </data>
+  <data name="Backpack_DetailCountLabel" xml:space="preserve">
+    <value>所持数</value>
+  </data>
+  <data name="Backpack_DialogClose" xml:space="preserve">
+    <value>閉じる</value>
+  </data>
+  <data name="Backpack_DialogConfirm" xml:space="preserve">
+    <value>確定</value>
+  </data>
+  <data name="Backpack_NotifyImportTitle" xml:space="preserve">
+    <value>バッグデータをインポートしました</value>
+  </data>
+  <data name="Backpack_NotifyImportBody" xml:space="preserve">
+    <value>今回のバッグデータを受信して保存しました。概要、素材カバー率、料理のおすすめが更新されています。</value>
+  </data>
+  <data name="Backpack_NotifyFailedTitle" xml:space="preserve">
+    <value>同期に失敗しました</value>
+  </data>
+
+  <data name="Backpack_ModuleMissingTitle" xml:space="preserve">
+    <value>同期モジュールが見つかりません</value>
+  </data>
+  <data name="Backpack_ModuleNoticeTitle" xml:space="preserve">
+    <value>同期モジュールについて</value>
+  </data>
+  <data name="Backpack_ModuleNoticeBody" xml:space="preserve">
+    <value>この同期モジュールは別の開発者が制作した単独プロジェクトです。モジュールの組み込みについて開発者と合意に至っておらず、そのため保留となっています。引き続き機会を模索しておりますので、ご了承ください。</value>
+  </data>
+  <data name="Backpack_MetaNoticeTitle" xml:space="preserve">
+    <value>データと更新について</value>
+  </data>
+  <data name="Backpack_MetaNoticeBody" xml:space="preserve">
+    <value>メタデータの更新は不定期のため、最新データをすぐに取得できない場合があります。本機能は現在、図鑑（閲覧）機能のみを提供しています。</value>
+  </data>
+  <data name="Backpack_DetailsButton" xml:space="preserve">
+    <value>詳細</value>
+  </data>
+  <data name="Backpack_ChipAll" xml:space="preserve">
+    <value>すべて</value>
+  </data>
+  <data name="Backpack_ChipCategoryGeneric" xml:space="preserve">
+    <value>カテゴリー</value>
+  </data>
+  <data name="Backpack_ChipFilterOwned" xml:space="preserve">
+    <value>所持</value>
+  </data>
+  <data name="Backpack_ChipFilterCatalog" xml:space="preserve">
+    <value>図鑑</value>
+  </data>
+  <data name="Backpack_ChipFilterFive" xml:space="preserve">
+    <value>★5</value>
+  </data>
+  <data name="Backpack_ChipFilterLocked" xml:space="preserve">
+    <value>ロック中</value>
+  </data>
+  <data name="Backpack_ChipFilterCookable" xml:space="preserve">
+    <value>調理可能</value>
+  </data>
+  <data name="Backpack_ChipSortDefault" xml:space="preserve">
+    <value>デフォルト</value>
+  </data>
+  <data name="Backpack_ChipSortName" xml:space="preserve">
+    <value>名前</value>
+  </data>
+  <data name="Backpack_ChipSortRank" xml:space="preserve">
+    <value>ランク</value>
+  </data>
+  <data name="Backpack_ChipSortLevel" xml:space="preserve">
+    <value>レベル</value>
+  </data>
+  <data name="Backpack_ChipSortCount" xml:space="preserve">
+    <value>数量</value>
+  </data>
+  <data name="Backpack_ChipSubcategoryTemplate" xml:space="preserve">
+    <value>{0} すべて</value>
+  </data>
+  <data name="RemoveCloudCredentialTooltip" xml:space="preserve">
+    <value>クラウドゲーム認証情報を削除</value>
+  </data>
+  <data name="RemoveCloudCredentialConfirmTitle" xml:space="preserve">
+    <value>クラウドゲーム認証情報を削除</value>
+  </data>
+  <data name="RemoveCloudCredentialConfirmContent" xml:space="preserve">
+    <value>このアカウントのクラウドゲームチェックイン認証情報を削除してもよろしいですか？</value>
+  </data>
+  <data name="PluginMirrorAccelerationTitle" xml:space="preserve">
+    <value>プラグインストアのミラー加速</value>
+  </data>
+  <data name="PluginMirrorAccelerationCaption" xml:space="preserve">
+    <value>ストアプラグインのGitHubダウンロードリンクはミラーサイト経由で高速化されます</value>
+  </data>
+  <data name="PluginMirrorAccelerationShort" xml:space="preserve">
+    <value>ミラー加速</value>
+  </data>
+  <data name="PluginMirrorWindowTitle" xml:space="preserve">
+    <value>プラグイン高速ダウンロード</value>
+  </data>
+  <data name="PluginMirrorWindowDesc" xml:space="preserve">
+    <value>ダウンロード回線を選択して高速ダウンロードを開始</value>
+  </data>
+  <data name="PluginMirrorTesting" xml:space="preserve">
+    <value>速度測定中...</value>
+  </data>
+  <data name="PluginMirrorTestingCount" xml:space="preserve">
+    <value>{0} / {1}</value>
+  </data>
+  <data name="PluginMirrorSelectSourceHint" xml:space="preserve">
+    <value>ダウンロード回線を選択してください</value>
+  </data>
+  <data name="PluginMirrorSelectSourceFirst" xml:space="preserve">
+    <value>先にリストからダウンロードノードを選択してください</value>
+  </data>
+  <data name="PluginMirrorStartDownload" xml:space="preserve">
+    <value>ダウンロード開始</value>
+  </data>
+  <data name="PluginMirrorDirectOfficial" xml:space="preserve">
+    <value>公式ソース直結</value>
+  </data>
+  <data name="PluginMirrorRetest" xml:space="preserve">
+    <value>再測定</value>
+  </data>
+  <data name="PluginMirrorStopDownload" xml:space="preserve">
+    <value>停止</value>
+  </data>
+  <data name="PluginMirrorSwitchSource" xml:space="preserve">
+    <value>回線変更</value>
+  </data>
+  <data name="PluginMirrorRetrySwitch" xml:space="preserve">
+    <value>別回線で再試行</value>
+  </data>
+  <data name="PluginMirrorCancelInstall" xml:space="preserve">
+    <value>インストール中止</value>
+  </data>
+  <data name="PluginMirrorDownloading" xml:space="preserve">
+    <value>ダウンロード中...</value>
+  </data>
+  <data name="PluginMirrorDownloadComplete" xml:space="preserve">
+    <value>ダウンロード完了</value>
+  </data>
+  <data name="PluginMirrorAllFailedTitle" xml:space="preserve">
+    <value>ミラーノードが利用不可</value>
+  </data>
+  <data name="PluginMirrorAllFailedMessage" xml:space="preserve">
+    <value>すべてのミラーノードが整合性チェックに失敗したかタイムアウトしました。
+
+公式ソースからの直接ダウンロードを試すか、インストールをキャンセルできます。</value>
+  </data>
+  <data name="PluginMirrorHashFailedTitle" xml:space="preserve">
+    <value>ファイル検証失敗</value>
+  </data>
+  <data name="PluginMirrorHashFailedMessage" xml:space="preserve">
+    <value>ダウンロードしたファイルのSHA-256検証に失敗しました。転送中に破損または改ざんされた可能性があるため、自動的に削除しました。
+
+別のノードまたは公式ソースで再試行してください。</value>
+  </data>
+  <data name="PluginMirrorStuckTitle" xml:space="preserve">
+    <value>ダウンロードが遅い</value>
+  </data>
+  <data name="PluginMirrorStuckMessage" xml:space="preserve">
+    <value>ダウンロードの進行が長い間変わっていません。ネットワークが不安定な可能性があります。
+
+現在のダウンロードを停止して回線を変更しますか？</value>
+  </data>
+  <data name="PluginMirrorStuckSwitch" xml:space="preserve">
+    <value>停止して回線変更</value>
+  </data>
+  <data name="PluginMirrorStuckContinue" xml:space="preserve">
+    <value>待機を続ける</value>
+  </data>
+  <data name="PluginMirrorDownloadFailedTitle" xml:space="preserve">
+    <value>ダウンロード失敗</value>
+  </data>
+  <data name="PluginMirrorDownloadFailedMessage" xml:space="preserve">
+    <value>ダウンロードに失敗しました：{0}
+
+別のノードで再試行するか、公式ソースから直接ダウンロードできます。</value>
+  </data>
+  <data name="PluginMirrorAbortedMessage" xml:space="preserve">
+    <value>プラグインのインストールを中止しました</value>
+  </data>
+  <data name="PluginMirrorStatusExcellent" xml:space="preserve">
+    <value>極めて良好</value>
+  </data>
+  <data name="PluginMirrorStatusNormal" xml:space="preserve">
+    <value>良好</value>
+  </data>
+</root>

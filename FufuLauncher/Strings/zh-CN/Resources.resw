@@ -402,6 +402,57 @@
   <data name="InjectionCaption" xml:space="preserve">
     <value>内置注入通过启动器自身引擎加载插件；独立注入使用独立程序启动游戏并加载插件，适用于内置模式不兼容的情况。</value>
   </data>
+  <data name="UsingHoyolabAccountTitle" xml:space="preserve">
+    <value>使用米游社/HoyoLAB 账户直接登录游戏</value>
+  </data>
+  <data name="UsingHoyolabAccountCaption" xml:space="preserve">
+    <value>启动游戏时直接以当前选中的米游社或 HoyoLAB 账户身份进入游戏，无需在游戏内再次输入账号密码。</value>
+  </data>
+  <data name="HoyolabAccount_NoLoggedIn_Title" xml:space="preserve">
+    <value>无法开启</value>
+  </data>
+  <data name="HoyolabAccount_NoLoggedIn_Message" xml:space="preserve">
+    <value>请先在账户设置中登录一个米游社或 HoyoLAB 账户。</value>
+  </data>
+  <data name="HoyolabAccount_LoginExpired_Title" xml:space="preserve">
+    <value>账户登录已过期</value>
+  </data>
+  <data name="HoyolabAccount_LoginExpired_Message" xml:space="preserve">
+    <value>当前账户需要重新登录后才能使用此功能。</value>
+  </data>
+  <data name="HoyolabAccount_NoGamePath_Title" xml:space="preserve">
+    <value>未选择游戏</value>
+  </data>
+  <data name="HoyolabAccount_NoGamePath_Message" xml:space="preserve">
+    <value>请先在主页选择游戏安装目录。</value>
+  </data>
+  <data name="HoyolabAccount_Enabled_Title" xml:space="preserve">
+    <value>已开启</value>
+  </data>
+  <data name="HoyolabAccount_Enabled_Message" xml:space="preserve">
+    <value>下次启动游戏时将直接以米游社/HoyoLAB 账户身份进入游戏，无需再次输入账号密码。</value>
+  </data>
+  <data name="HoyolabAccount_EnableFailed_Title" xml:space="preserve">
+    <value>无法开启</value>
+  </data>
+  <data name="HoyolabAccount_EnableFailed_Message" xml:space="preserve">
+    <value>当前账户暂时无法使用此功能，请检查账户登录状态后重试。</value>
+  </data>
+  <data name="HoyolabAccount_TempUnavailable_Title" xml:space="preserve">
+    <value>暂时不可用</value>
+  </data>
+  <data name="HoyolabAccount_TempUnavailable_Message" xml:space="preserve">
+    <value>网络或服务异常，请稍后再试。</value>
+  </data>
+  <data name="HoyolabAccount_ServerMismatch_Title" xml:space="preserve">
+    <value>账户与服务器不匹配</value>
+  </data>
+  <data name="HoyolabAccount_ServerMismatch_OverseaMsg" xml:space="preserve">
+    <value>当前选中的 HoyoLAB 国际服账户无法用于启动国服游戏，请切换到对应区域的账户。</value>
+  </data>
+  <data name="HoyolabAccount_ServerMismatch_CnMsg" xml:space="preserve">
+    <value>当前选中的米游社国服账户无法用于启动国际服游戏，请切换到对应区域的账户。</value>
+  </data>
   <data name="RedeemReminderTitle" xml:space="preserve">
     <value>兑换码提醒</value>
   </data>
@@ -3914,7 +3965,7 @@ UIGF v4.x/3.0/2.x</value>
   <data name="User_GenderPrivate" xml:space="preserve">
     <value>保密</value>
   </data>
-  <data name="Gacha_Won5050" xml:space="preserve">
+  <data name="Gacha_Lost5050" xml:space="preserve">
     <value>歪</value>
   </data>
   <data name="Gacha_Guaranteed" xml:space="preserve">
@@ -4315,6 +4366,10 @@ UIGF v4.x/3.0/2.x</value>
   <data name="PluginStoreInstallFailedShort" xml:space="preserve">
     <value>安装失败</value>
   </data>
+  <data name="PluginStoreInstallVerifyFailed" xml:space="preserve">
+    <value>安装后未检测到插件文件，可能未成功安装</value>
+  </data>
+
   <data name="PluginStoreUninstalling" xml:space="preserve">
     <value>卸载中...</value>
   </data>
@@ -4537,7 +4592,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>数据中心</value>
   </data>
   <data name="DataPage_Subtitle" xml:space="preserve">
-    <value>汇总全服榜单，交叉分析成可直接照做的培养与抽卡结论</value>
+    <value>汇总全服榜单，交叉分析培养与抽卡趋势以供决策参考</value>
   </data>
   <data name="DataPage_TabOverview" xml:space="preserve">
     <value>总览</value>
@@ -5254,7 +5309,7 @@ UIGF v4.x/3.0/2.x</value>
     <value>总览</value>
   </data>
   <data name="Backpack_PageSubtitle" xml:space="preserve">
-    <value>将装备、材料与料理转化为可执行的养成信息。</value>
+    <value>集中浏览装备、材料与料理，辅助养成规划。</value>
   </data>
   <data name="Backpack_LocalOnlyDisclaimer" xml:space="preserve">
     <value>同步数据仅保存在本机，不会上传账号或背包内容。</value>
@@ -5502,6 +5557,25 @@ UIGF v4.x/3.0/2.x</value>
   <data name="Backpack_NotifyFailedTitle" xml:space="preserve">
     <value>同步失败</value>
   </data>
+
+  <data name="Backpack_ModuleMissingTitle" xml:space="preserve">
+    <value>未检测到同步模块</value>
+  </data>
+  <data name="Backpack_ModuleNoticeTitle" xml:space="preserve">
+    <value>关于同步模块</value>
+  </data>
+  <data name="Backpack_ModuleNoticeBody" xml:space="preserve">
+    <value>该同步模块由其他开发者制作，为单独项目。开发者对于模块内置事宜并未与我们达成一致，因此导致了搁置。我们仍在尽可能的争取机会，请见谅。</value>
+  </data>
+  <data name="Backpack_MetaNoticeTitle" xml:space="preserve">
+    <value>数据与更新说明</value>
+  </data>
+  <data name="Backpack_MetaNoticeBody" xml:space="preserve">
+    <value>元数据随缘更新，可能无法及时获得更新数据；该功能目前仅提供图鉴（浏览）功能。</value>
+  </data>
+  <data name="Backpack_DetailsButton" xml:space="preserve">
+    <value>详情</value>
+  </data>
   <data name="Backpack_ChipAll" xml:space="preserve">
     <value>全部</value>
   </data>
@@ -5577,4 +5651,147 @@ UIGF v4.x/3.0/2.x</value>
   <data name="Checkin_CheckingIn" xml:space="preserve">
     <value>签到中...</value>
   </data>
-<data name="Checkin_AccountLabel" xml:space="preserve"><value>账号: {0}</value></data></root>
+  <data name="Checkin_AccountLabel" xml:space="preserve">
+    <value>账号: {0}</value>
+  </data>
+  <data name="RemoveCloudCredentialTooltip" xml:space="preserve">
+    <value>移除云游戏凭证</value>
+  </data>
+  <data name="RemoveCloudCredentialConfirmTitle" xml:space="preserve">
+    <value>移除云游戏凭证</value>
+  </data>
+  <data name="RemoveCloudCredentialConfirmContent" xml:space="preserve">
+    <value>确定要移除该账户的云游戏签到凭证吗？</value>
+  </data>
+  <data name="AboutPage_GetBuildFromActions" xml:space="preserve">
+    <value>从 GitHub Actions 获取构建</value>
+  </data>
+  <data name="AboutPage_GitHubToken" xml:space="preserve">
+    <value>GitHub Token</value>
+  </data>
+  <data name="AboutPage_FetchSuccess" xml:space="preserve">
+    <value>获取成功！已生成下载脚本。</value>
+  </data>
+  <data name="AboutPage_EnterToken" xml:space="preserve">
+    <value>请输入您的 Token！</value>
+  </data>
+  <data name="AboutPage_FetchFailedArtifact" xml:space="preserve">
+    <value>获取失败（未找到 artifact）</value>
+  </data>
+  <data name="AboutPage_FetchFailedRun" xml:space="preserve">
+    <value>获取失败（未找到成功的运行）</value>
+  </data>
+  <data name="AboutPage_FetchFailedWorkflow" xml:space="preserve">
+    <value>获取失败（未找到 workflow）</value>
+  </data>
+  <data name="AboutPage_Exception" xml:space="preserve">
+    <value>发生异常</value>
+  </data>
+  <data name="AboutPage_GitHubTokenPlaceholder" xml:space="preserve">
+    <value>请输入您的 GitHub Token</value>
+  </data>
+  <data name="AboutPage_Loading" xml:space="preserve">
+    <value>加载中...</value>
+  </data>
+  <data name="PluginMirrorAccelerationTitle" xml:space="preserve">
+    <value>插件商城镜像站加速</value>
+  </data>
+  <data name="PluginMirrorAccelerationCaption" xml:space="preserve">
+    <value>商城插件的 GitHub 下载链接将通过镜像站加速下载</value>
+  </data>
+  <data name="PluginMirrorAccelerationShort" xml:space="preserve">
+    <value>镜像加速</value>
+  </data>
+  <data name="PluginMirrorWindowTitle" xml:space="preserve">
+    <value>插件下载加速</value>
+  </data>
+  <data name="PluginMirrorWindowDesc" xml:space="preserve">
+    <value>选择下载线路，开始镜像站加速下载</value>
+  </data>
+  <data name="PluginMirrorTesting" xml:space="preserve">
+    <value>正在测速中...</value>
+  </data>
+  <data name="PluginMirrorTestingCount" xml:space="preserve">
+    <value>{0} / {1}</value>
+  </data>
+  <data name="PluginMirrorSelectSourceHint" xml:space="preserve">
+    <value>请选择下载线路</value>
+  </data>
+  <data name="PluginMirrorSelectSourceFirst" xml:space="preserve">
+    <value>请先在列表中选择一个下载节点</value>
+  </data>
+  <data name="PluginMirrorStartDownload" xml:space="preserve">
+    <value>开始下载</value>
+  </data>
+  <data name="PluginMirrorDirectOfficial" xml:space="preserve">
+    <value>直连官方源</value>
+  </data>
+  <data name="PluginMirrorRetest" xml:space="preserve">
+    <value>重新测速</value>
+  </data>
+  <data name="PluginMirrorStopDownload" xml:space="preserve">
+    <value>停止下载</value>
+  </data>
+  <data name="PluginMirrorSwitchSource" xml:space="preserve">
+    <value>换源</value>
+  </data>
+  <data name="PluginMirrorRetrySwitch" xml:space="preserve">
+    <value>换源重试</value>
+  </data>
+  <data name="PluginMirrorCancelInstall" xml:space="preserve">
+    <value>取消安装</value>
+  </data>
+  <data name="PluginMirrorDownloading" xml:space="preserve">
+    <value>正在下载...</value>
+  </data>
+  <data name="PluginMirrorDownloadComplete" xml:space="preserve">
+    <value>下载完成</value>
+  </data>
+  <data name="PluginMirrorAllFailedTitle" xml:space="preserve">
+    <value>镜像节点不可用</value>
+  </data>
+  <data name="PluginMirrorAllFailedMessage" xml:space="preserve">
+    <value>所有镜像节点均未通过完整性校验或网络超时。
+
+可以尝试直连官方源下载，或取消本次安装。</value>
+  </data>
+  <data name="PluginMirrorHashFailedTitle" xml:space="preserve">
+    <value>文件校验失败</value>
+  </data>
+  <data name="PluginMirrorHashFailedMessage" xml:space="preserve">
+    <value>下载的文件 SHA-256 校验未通过，文件可能在传输中被损坏或篡改，已自动删除。
+
+建议更换其他节点或使用官方源重新下载。</value>
+  </data>
+  <data name="PluginMirrorStuckTitle" xml:space="preserve">
+    <value>下载缓慢</value>
+  </data>
+  <data name="PluginMirrorStuckMessage" xml:space="preserve">
+    <value>下载进度长期未更新，可能是网络不佳。
+
+是否停止当前下载并换源重试？</value>
+  </data>
+  <data name="PluginMirrorStuckSwitch" xml:space="preserve">
+    <value>停止并换源</value>
+  </data>
+  <data name="PluginMirrorStuckContinue" xml:space="preserve">
+    <value>继续等待</value>
+  </data>
+  <data name="PluginMirrorDownloadFailedTitle" xml:space="preserve">
+    <value>下载失败</value>
+  </data>
+  <data name="PluginMirrorDownloadFailedMessage" xml:space="preserve">
+    <value>下载失败：{0}
+
+可以更换其他节点重试，或使用官方源直连下载。</value>
+  </data>
+  <data name="PluginMirrorAbortedMessage" xml:space="preserve">
+    <value>插件安装已中止</value>
+  </data>
+  <data name="PluginMirrorStatusExcellent" xml:space="preserve">
+    <value>极佳</value>
+  </data>
+  <data name="PluginMirrorStatusNormal" xml:space="preserve">
+    <value>正常</value>
+  </data>
+</root>
