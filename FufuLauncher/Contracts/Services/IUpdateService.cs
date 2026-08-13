@@ -15,6 +15,14 @@ namespace FufuLauncher.Contracts.Services
         {
             get; set;
         }
+        public bool IsPreview
+        {
+            get; set;
+        }
+        public bool IsDevBuild
+        {
+            get; set;
+        }
         public string ServerVersion { get; set; } = string.Empty;
         public string UpdateInfoUrl { get; set; } = string.Empty;
     }

@@ -22,7 +22,11 @@ using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Hosting;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Media.Animation;
+using Microsoft.UI.Xaml.Media.Imaging;
+using Windows.Media.Core;
+using Windows.Media.Editing;
 using Windows.Media.Playback;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 using FufuLauncher.Constants;
@@ -36,9 +40,12 @@ public sealed partial class MainWindow : WindowEx
     private Microsoft.UI.Dispatching.DispatcherQueue dispatcherQueue;
     private UISettings settings;
     private readonly IBackgroundRenderer _backgroundRenderer;
+    private readonly IDevBuildDetectionService _devBuildDetectionService;
     private readonly ILocalSettingsService _localSettingsService;
     private MediaPlayer? _globalBackgroundPlayer;
     private IMediaPlaybackSource? _suspendedVideoSource;
+    private TypedEventHandler<MediaPlayer, MediaPlayerFailedEventArgs>? _bgVideoFailedHandler;
+    private MediaSource? _bgVideoFallbackSource;
     private DispatcherTimer _bgFallbackTimer;
     private RoutedEventHandler _bgImageOpenedHandler;
     private ExceptionRoutedEventHandler _bgImageFailedHandler;
@@ -171,6 +178,7 @@ public sealed partial class MainWindow : WindowEx
         settings = new UISettings();
         settings.ColorValuesChanged += Settings_ColorValuesChanged;
         _backgroundRenderer = App.GetService<IBackgroundRenderer>();
+        _devBuildDetectionService = App.GetService<IDevBuildDetectionService>();
         _localSettingsService = App.GetService<ILocalSettingsService>();
         
         WeakReferenceMessenger.Default.Register<AgreementAcceptedMessage>(this, (_, _) =>
@@ -187,7 +195,6 @@ public sealed partial class MainWindow : WindowEx
                     await PerformMainInitAsync();
                     _announcementCheckTimer.Start();
                     await CheckAndWarnVCRedistAsync();
-                    await CheckAndWarnUacElevationAsync();
                 }
                 catch (Exception ex) { Debug.WriteLine($"消息处理异常: {ex.Message}"); }
             });
@@ -331,7 +338,6 @@ public sealed partial class MainWindow : WindowEx
                 try
                 {
                     await CheckAndWarnVCRedistAsync();
-                    await CheckAndWarnUacElevationAsync();
                 }
                 catch (Exception ex)
                 {
@@ -635,59 +641,6 @@ public sealed partial class MainWindow : WindowEx
     
     #region Environment Checks
 
-    private async Task CheckAndWarnUacElevationAsync()
-    {
-        var ignoreFilePath = Path.Combine(AppContext.BaseDirectory, ".no_uac_warning");
-        if (File.Exists(ignoreFilePath)) return;
-
-        if (SystemEnvironmentHelper.IsUacElevatedWithConsent())
-    {
-        try
-        {
-            if (Content is FrameworkElement rootElement)
-            {
-                if (rootElement.XamlRoot == null)
-                {
-                    var tcs = new TaskCompletionSource<bool>();
-                    RoutedEventHandler onLoaded = null!;
-                    onLoaded = (_, _) =>
-                    {
-                        rootElement.Loaded -= onLoaded;
-                        tcs.TrySetResult(true);
-                    };
-                    rootElement.Loaded += onLoaded;
-                    await tcs.Task;
-                }
-                
-                ContentDialog dialog = new()
-                {
-                    XamlRoot = rootElement.XamlRoot,
-                    Title = "AdminWarningTitle".GetLocalized(),
-                    Content = "AdminWarningContent".GetLocalized(),
-                    PrimaryButtonText = "DontShowAgain".GetLocalized(),
-                    CloseButtonText = "GotItBtn".GetLocalized(),
-                    DefaultButton = ContentDialogButton.Close
-                };
-                
-                dialog.PrimaryButtonClick += (_, _) =>
-                {
-                    try { File.Create(ignoreFilePath).Dispose(); }
-                    catch
-                    {
-                        // ignored
-                    }
-                };
-
-                await dialog.ShowAsync(); 
-            }
-        }
-        catch (Exception ex)
-        {
-            Debug.WriteLine($"显示 UAC 警告弹窗失败: {ex.Message}");
-        }
-    }
-}
-    
     private async Task CheckAndWarnVCRedistAsync()
     {
         var ignoreFilePath = Path.Combine(AppContext.BaseDirectory, ".no_vc_warning");
@@ -979,8 +932,11 @@ public sealed partial class MainWindow : WindowEx
                 if (!string.IsNullOrEmpty(customPath) && File.Exists(customPath))
                 {
                     var customResult = await _backgroundRenderer.GetCustomBackgroundAsync(customPath);
-                    await ApplyGlobalBackgroundAsync(customResult);
-                    return;
+                    if (customResult != null)
+                    {
+                        await ApplyGlobalBackgroundAsync(customResult);
+                        return;
+                    }
                 }
             }
             else
@@ -989,7 +945,8 @@ public sealed partial class MainWindow : WindowEx
             }
             
             var preferVideoObj = await _localSettingsService.ReadSettingAsync("PreferVideoBackground");
-            var preferVideo = preferVideoObj != null && Convert.ToBoolean(preferVideoObj);
+            var preferVideo = preferVideoObj != null && Convert.ToBoolean(preferVideoObj) &&
+                              _devBuildDetectionService.IsDevBuild;
 
             var serverJson = await _localSettingsService.ReadSettingAsync(LocalSettingsService.BackgroundServerKey);
             var serverValue = serverJson != null ? Convert.ToInt32(serverJson) : 0;
@@ -1077,6 +1034,10 @@ public sealed partial class MainWindow : WindowEx
 
         if (player != null)
         {
+            if (_bgVideoFailedHandler != null)
+            {
+                player.MediaFailed -= _bgVideoFailedHandler;
+            }
             player.Pause();
             player.Source = null;
             _ = Task.Run(() =>
@@ -1084,6 +1045,7 @@ public sealed partial class MainWindow : WindowEx
                 try { player.Dispose(); } catch { }
             });
         }
+        _bgVideoFailedHandler = null;
     }
 
     private async Task ApplyGlobalBackgroundAsync(BackgroundRenderResult? result)
@@ -1110,6 +1072,7 @@ public sealed partial class MainWindow : WindowEx
         if (result.IsVideo)
         {
             _isVideoBackground = true;
+            _bgVideoFallbackSource = null;
             GlobalBackgroundImage.Source = null;
             GlobalBackgroundImage.Visibility = Visibility.Collapsed;
             GlobalBackgroundVideo.Visibility = Visibility.Visible;
@@ -1117,6 +1080,8 @@ public sealed partial class MainWindow : WindowEx
             if (_globalBackgroundPlayer == null)
             {
                 _globalBackgroundPlayer = MediaPlayerHelper.CreateLoopingMutedPlayer();
+                _bgVideoFailedHandler = OnGlobalBackgroundVideoFailed;
+                _globalBackgroundPlayer.MediaFailed += _bgVideoFailedHandler;
                 GlobalBackgroundVideo.SetMediaPlayer(_globalBackgroundPlayer);
             }
             if (!ReferenceEquals(_globalBackgroundPlayer.Source, result.VideoSource))
@@ -1191,6 +1156,123 @@ public sealed partial class MainWindow : WindowEx
         UpdateBackgroundOverlayTheme();
     });
 }
+
+    private void OnGlobalBackgroundVideoFailed(MediaPlayer sender, MediaPlayerFailedEventArgs args)
+    {
+        Debug.WriteLine($"背景视频播放失败({args.Error}): {args.ErrorMessage}");
+
+        if (_isExit) return;
+
+        var failedSource = sender.Source as MediaSource;
+        if (failedSource == null || ReferenceEquals(failedSource, _bgVideoFallbackSource)) return;
+        _bgVideoFallbackSource = failedSource;
+
+        dispatcherQueue.TryEnqueue(async () =>
+        {
+            try
+            {
+                await ShowVideoFirstFrameFallbackAsync(failedSource);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"视频首帧回退异常: {ex.Message}");
+            }
+            finally
+            {
+                if (ReferenceEquals(_bgVideoFallbackSource, failedSource))
+                    _bgVideoFallbackSource = null;
+            }
+        });
+    }
+
+    private async Task ShowVideoFirstFrameFallbackAsync(MediaSource failedSource)
+    {
+        var videoPath = failedSource.Uri?.IsFile == true ? failedSource.Uri.LocalPath : null;
+
+        if (string.IsNullOrEmpty(videoPath) || !File.Exists(videoPath))
+        {
+            await ApplyFallbackBackgroundImageAsync(failedSource);
+            return;
+        }
+
+        try
+        {
+            var file = await StorageFile.GetFileFromPathAsync(videoPath);
+            var clip = await MediaClip.CreateFromFileAsync(file);
+            var composition = new MediaComposition();
+            composition.Clips.Add(clip);
+
+            var thumbnail = await composition.GetThumbnailAsync(
+                TimeSpan.Zero, 1920, 1080, VideoFramePrecision.NearestKeyFrame);
+
+            var bitmap = new BitmapImage();
+            await bitmap.SetSourceAsync(thumbnail);
+            
+            if (!ReferenceEquals(_globalBackgroundPlayer?.Source, failedSource)) return;
+
+            var opacity = GlobalBackgroundVideo.Opacity;
+
+            _isVideoBackground = false;
+            DisposeGlobalBackgroundPlayer();
+            GlobalBackgroundVideo.Visibility = Visibility.Collapsed;
+
+            GlobalBackgroundImage.Source = bitmap;
+            GlobalBackgroundImage.Visibility = Visibility.Visible;
+            GlobalBackgroundImage.Opacity = 0.0;
+
+            var anim = new DoubleAnimation
+            {
+                From = 0.0,
+                To = opacity,
+                Duration = TimeSpan.FromMilliseconds(400),
+                EasingFunction = new CircleEase { EasingMode = EasingMode.EaseOut }
+            };
+            Storyboard.SetTarget(anim, GlobalBackgroundImage);
+            Storyboard.SetTargetProperty(anim, "Opacity");
+
+            var storyboard = new Storyboard();
+            storyboard.Children.Add(anim);
+            storyboard.Begin();
+
+            UpdateBackgroundOverlayTheme();
+            Debug.WriteLine("视频播放失败，已截取第一帧作为静态背景");
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"提取视频首帧失败: {ex.Message}");
+            await ApplyFallbackBackgroundImageAsync(failedSource);
+        }
+    }
+
+    private async Task ApplyFallbackBackgroundImageAsync(MediaSource failedSource)
+    {
+        if (_isExit) return;
+
+        var fallbackPath = Path.Combine(AppContext.BaseDirectory, "Assets", "bg.png");
+        if (!File.Exists(fallbackPath))
+        {
+            Debug.WriteLine($"默认背景文件不存在: {fallbackPath}");
+            return;
+        }
+
+        await RunOnUIThreadAsync(() =>
+        {
+            if (!ReferenceEquals(_globalBackgroundPlayer?.Source, failedSource)) return;
+
+            var opacity = GlobalBackgroundVideo.Opacity;
+
+            _isVideoBackground = false;
+            DisposeGlobalBackgroundPlayer();
+            GlobalBackgroundVideo.Visibility = Visibility.Collapsed;
+
+            GlobalBackgroundImage.Source = new BitmapImage(new Uri(fallbackPath));
+            GlobalBackgroundImage.Visibility = Visibility.Visible;
+            GlobalBackgroundImage.Opacity = opacity;
+
+            UpdateBackgroundOverlayTheme();
+            Debug.WriteLine("视频播放失败，已回退至默认静态背景");
+        });
+    }
 
     private void CleanupBgImageHandlers()
     {
@@ -1328,6 +1410,25 @@ public sealed partial class MainWindow : WindowEx
         {
             var isAdmin = SystemEnvironmentHelper.IsRunningAsAdministrator();
             TitleBarText.Text = isAdmin ? "AppDisplayNameAdmin".GetLocalized() : "AppDisplayName".GetLocalized();
+            
+            if (AppVersionHelper.IsPreviewBuild)
+            {
+                TitleBarVersionText.Text = string.Format("PreviewVersionBadgeFormat".GetLocalized(), AppVersionHelper.NumericVersion);
+                TitleBarVersionText.Visibility = Visibility.Visible;
+            }
+        }
+        catch
+        {
+            // ignored
+        }
+    }
+
+    public void ShowDevBuildBadge()
+    {
+        try
+        {
+            TitleBarVersionText.Text = string.Format("DevVersionBadgeFormat".GetLocalized(), AppVersionHelper.NumericVersion);
+            TitleBarVersionText.Visibility = Visibility.Visible;
         }
         catch
         {
@@ -1924,6 +2025,11 @@ public sealed partial class MainWindow : WindowEx
             Opacity = 0
         };
 
+        if (!string.IsNullOrEmpty(message.CopyText))
+        {
+            infoBar.ActionButton = CreateCopyActionButton(message.CopyText);
+        }
+
         infoBar.Closing += (sender, args) =>
         {
             args.Cancel = true;
@@ -1941,6 +2047,42 @@ public sealed partial class MainWindow : WindowEx
         };
 
         return infoBar;
+    }
+
+    private Button CreateCopyActionButton(string copyText)
+    {
+        var copyButton = new Button
+        {
+            Content = "CopyBtn".GetLocalized()
+        };
+
+        copyButton.Click += (_, _) =>
+        {
+            try
+            {
+                var package = new Windows.ApplicationModel.DataTransfer.DataPackage();
+                package.SetText(copyText);
+                Windows.ApplicationModel.DataTransfer.Clipboard.SetContent(package);
+            }
+            catch
+            {
+                // ignored
+            }
+
+            copyButton.Content = "Btn_Copied".GetLocalized();
+            copyButton.IsEnabled = false;
+
+            Task.Delay(1000).ContinueWith(_ =>
+            {
+                dispatcherQueue.TryEnqueue(() =>
+                {
+                    copyButton.Content = "CopyBtn".GetLocalized();
+                    copyButton.IsEnabled = true;
+                });
+            });
+        };
+
+        return copyButton;
     }
 
     private InfoBarSeverity GetInfoBarSeverity(NotificationType type)
