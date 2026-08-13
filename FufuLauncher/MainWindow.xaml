@@ -86,8 +86,6 @@
                         IsPaneToggleButtonVisible="False"
                         SelectionChanged="NavigationView_SelectionChanged"
                         Loaded="NavigationView_Loaded"
-                        PaneOpened="NavigationView_PaneOpened"
-                        PaneClosed="NavigationView_PaneClosed"
                         OpenPaneLength="150"
                         CompactPaneLength="60"
                         Background="{x:Null}"
@@ -242,7 +240,77 @@
                 </NavigationViewItem>
             </NavigationView.FooterMenuItems>
 
-            <Frame x:Name="ContentFrame" Background="Transparent"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid x:Name="NotificationContainer"
+                      Grid.Row="0"
+                      Margin="24,48,24,8"
+                      MaxHeight="190"
+                      Visibility="Visible">
+
+                    <Border CornerRadius="10"
+                            BorderThickness="1"
+                            BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}">
+                        <Border.Background>
+                            <ThemeResource ResourceKey="IosGlassBrush"/>
+                        </Border.Background>
+                        <Border.Shadow>
+                            <ThemeShadow/>
+                        </Border.Shadow>
+
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid Grid.Row="0" Padding="16,10,12,6">
+                                <StackPanel Orientation="Horizontal"
+                                            VerticalAlignment="Center"
+                                            Spacing="8">
+                                    <FontIcon Glyph="&#xE7E7;"
+                                              FontSize="14"
+                                              Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
+                                    <TextBlock Text="{helpers:Loc Key=NotificationCenter}"
+                                               FontSize="14"
+                                               FontWeight="SemiBold"
+                                               VerticalAlignment="Center"
+                                               Foreground="{ThemeResource TextFillColorPrimaryBrush}"/>
+                                </StackPanel>
+
+                                <Button Content="{helpers:Loc Key=ClearAllBtn}"
+                                        HorizontalAlignment="Right"
+                                        VerticalAlignment="Center"
+                                        Background="Transparent"
+                                        BorderThickness="0"
+                                        Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                                        FontSize="12"
+                                        Padding="8,4"
+                                        Click="ClearAllNotifications_Click"/>
+                            </Grid>
+
+                            <ScrollViewer Grid.Row="1"
+                                          MaxHeight="132"
+                                          VerticalScrollBarVisibility="Auto"
+                                          HorizontalScrollBarVisibility="Disabled"
+                                          Padding="12,4,12,10">
+                                <StackPanel x:Name="NotificationPanel"
+                                            MinHeight="28"
+                                            Orientation="Vertical"
+                                            Spacing="6"/>
+                            </ScrollViewer>
+                        </Grid>
+                    </Border>
+                </Grid>
+
+                <Frame x:Name="ContentFrame"
+                       Grid.Row="1"
+                       Background="Transparent"/>
+            </Grid>
         </NavigationView>
 
         <Grid x:Name="SystemMessageBar"
@@ -276,71 +344,6 @@
                 <FontIcon x:Name="SystemMessageIcon" Glyph="&#xE774;" FontSize="16"/>
                 <TextBlock x:Name="SystemMessageText" Text="{helpers:Loc Key=SysStatusChecking}" FontSize="13" FontWeight="Medium"/>
             </StackPanel>
-        </Grid>
-
-        <Grid x:Name="NotificationContainer"
-              HorizontalAlignment="Right"
-              VerticalAlignment="Bottom"
-              Margin="0,0,24,24"
-              Width="390"
-              MaxHeight="450"
-              Visibility="Collapsed"
-              Canvas.ZIndex="3000">
-
-            <Border CornerRadius="10" BorderThickness="1" BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}">
-                <Border.Background>
-                    <ThemeResource ResourceKey="IosGlassBrush"/>
-                </Border.Background>
-                <Border.Shadow>
-                    <ThemeShadow/>
-                </Border.Shadow>
-
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-
-                    <Grid Grid.Row="0" Padding="16,12,16,8">
-                        <TextBlock Text="{helpers:Loc Key=NotificationCenter}"
-                                   FontSize="14"
-                                   FontWeight="SemiBold"
-                                   VerticalAlignment="Center"
-                                   Foreground="{ThemeResource TextFillColorPrimaryBrush}"/>
-                
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Spacing="4">
-                            <Button ToolTipService.ToolTip="{helpers:Loc Key=NotificationPositionTitle}"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Center"
-                                    Background="Transparent"
-                                    BorderThickness="0"
-                                    Padding="6,4"
-                                    Click="NotificationSettings_Click">
-                                <FontIcon Glyph="&#xE713;" FontSize="14"
-                                          Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
-                            </Button>
-                            <Button Content="{helpers:Loc Key=ClearAllBtn}"
-                                    HorizontalAlignment="Right"
-                                    VerticalAlignment="Center"
-                                    Background="Transparent"
-                                    BorderThickness="0"
-                                    Foreground="{ThemeResource TextFillColorSecondaryBrush}"
-                                    FontSize="12"
-                                    Padding="8,4"
-                                    Click="ClearAllNotifications_Click"/>
-                        </StackPanel>
-                    </Grid>
-
-                    <ScrollViewer Grid.Row="1" 
-                                  VerticalScrollBarVisibility="Auto" 
-                                  HorizontalScrollBarVisibility="Disabled"
-                                  Padding="12,12,12,12">
-                        <StackPanel x:Name="NotificationPanel" 
-                                    Orientation="Vertical" 
-                                    Spacing="8"/>
-                    </ScrollViewer>
-                </Grid>
-            </Border>
         </Grid>
 
         <Grid x:Name="AppTitleBar" 

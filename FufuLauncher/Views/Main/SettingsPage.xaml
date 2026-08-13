@@ -1970,7 +1970,9 @@
 
                                 <Rectangle Style="{StaticResource RowDividerStyle}" />
 
-                                <Grid x:Name="NotificationPositionSettingRow" Style="{StaticResource SettingsRowStyle}">
+                                <Grid x:Name="NotificationPositionSettingRow"
+                                      Style="{StaticResource SettingsRowStyle}"
+                                      Visibility="Collapsed">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="Auto" />
                                         <ColumnDefinition Width="*" />
