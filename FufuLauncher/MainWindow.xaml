@@ -245,9 +245,14 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
                 <Grid x:Name="NotificationContainer"
                       Grid.Row="0"
+                      Grid.Column="0"
                       Margin="24,48,24,8"
                       MaxHeight="190"
                       Visibility="Visible">
@@ -309,6 +314,7 @@
 
                 <Frame x:Name="ContentFrame"
                        Grid.Row="1"
+                       Grid.ColumnSpan="2"
                        Background="Transparent"/>
             </Grid>
         </NavigationView>
