@@ -30,9 +30,9 @@
 
         <PublishReadyToRun>true</PublishReadyToRun>
 
-        <Version>1.6.0.2</Version>
-        <AssemblyVersion>1.6.0.2</AssemblyVersion>
-        <FileVersion>1.6.0.2</FileVersion>
+        <Version>1.6.0.3</Version>
+        <AssemblyVersion>1.6.0.3</AssemblyVersion>
+        <FileVersion>1.6.0.3</FileVersion>
         <Copyright>Copyright © FufuLauncher Development Team</Copyright>
     </PropertyGroup>
 
@@ -74,6 +74,7 @@
         <PackageReference Include="System.Diagnostics.EventLog" Version="8.0.2" />
         <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="8.0.1" />
         <PackageReference Include="System.Drawing.Common" Version="9.0.17" />
+        <PackageReference Include="System.IO.Hashing" Version="9.0.11" />
         <PackageReference Include="System.Management" Version="8.0.0" />
         <PackageReference Include="WinUIEx" Version="2.9.1" />
         <PackageReference Include="YamlDotNet" Version="18.1.0" />
@@ -81,18 +82,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Content Include="..\FufuLauncher\Launcher.dll">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-            <Link>Launcher.dll</Link>
-        </Content>
-        <Content Include="..\FufuLauncher\Launcher_2.exe">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-            <Link>Launcher_2.exe</Link>
-        </Content>
-        <Content Include="..\FufuLauncher\CaptureApp.exe">
-            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-            <Link>CaptureApp.exe</Link>
-        </Content>
         <Content Include="..\FufuLauncher\Update.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
             <Link>Update.json</Link>
@@ -110,6 +99,7 @@
         <Content Include="Strings\id-ID\Resources.resw" />
         <Content Include="Strings\pt-BR\Resources.resw" />
         <Content Include="Strings\es-MX\Resources.resw" />
+        <Content Remove="Plugins\Avatar\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -121,6 +111,7 @@
         <None Update="appsettings.json">
             <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </None>
+        <None Remove="Plugins\Avatar\**" />
     </ItemGroup>
 
     <ItemGroup>
@@ -146,13 +137,25 @@
         <Compile Update="Views\Model\BrowserConfig.cs">
             <DependentUpon>BrowserWindow.xaml</DependentUpon>
         </Compile>
+        <Compile Remove="Plugins\Avatar\**" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Constants\MiHoYo\" />
-      <Folder Include="Plugins\Avatar\" />
       <Folder Include="Services\MiHoYo\Fingerprint\" />
       <Folder Include="Services\UID\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Remove="Plugins\Avatar\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Plugins\Avatar\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Remove="Plugins\Avatar\**" />
     </ItemGroup>
 
     <Target Name="RemoveUnwantedRuntimesFolders" AfterTargets="Build;Publish" Condition="Exists('$(OutDir)runtimes')">
