@@ -3812,6 +3812,15 @@ Files searched:
   <data name="Checkin_GameCheckin" xml:space="preserve">
     <value>Game Check-in</value>
   </data>
+  <data name="Checkin_ZenlessCheckin" xml:space="preserve">
+    <value>Zenless Zone Zero Check-in</value>
+  </data>
+  <data name="Checkin_ZenlessCheckinProgress" xml:space="preserve">
+    <value>Claiming Zenless Zone Zero daily reward...</value>
+  </data>
+  <data name="Checkin_ZenlessNotBound" xml:space="preserve">
+    <value>No Zenless Zone Zero role is bound to this account; skipped</value>
+  </data>
   <data name="Checkin_CloudGameCheckin" xml:space="preserve">
     <value>Cloud Game Check-in</value>
   </data>

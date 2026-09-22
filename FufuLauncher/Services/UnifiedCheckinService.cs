@@ -116,6 +116,8 @@ public class UnifiedCheckinService : IUnifiedCheckinService
         if (gameEnabled)
         {
             var gameSw = Stopwatch.StartNew();
+            int lastGameSignDays = 0;
+            string lastGameRewardItem = "Status_None".GetLocalized();
             result.GameResult.Executed = true;
             try
             {
@@ -163,7 +165,13 @@ public class UnifiedCheckinService : IUnifiedCheckinService
                             var genshin = new Genshin();
                             await genshin.InitializeAsync(config);
                             signResult = await genshin.SignAccountAsync(config, null, disabledUids);
-                            success = string.IsNullOrEmpty(GameCheckin.LastApiError);
+                            success = genshin.LastSignSucceeded;
+                        }
+
+                        if (success)
+                        {
+                            lastGameSignDays = isOs ? HoyolabCheckinService.LastSignDays : GameCheckin.LastSignDays;
+                            lastGameRewardItem = isOs ? HoyolabCheckinService.LastRewardItem : GameCheckin.LastRewardItem;
                         }
 
                         if (success) result.GameResult.SuccessCount++;
@@ -174,6 +182,18 @@ public class UnifiedCheckinService : IUnifiedCheckinService
                             Nickname = account.Nickname,
                             Items = { ("Checkin_GameCheckin".GetLocalized(), success, success ? "Status_Completed".GetLocalized() : signResult) }
                         });
+
+                        if (!isOs)
+                        {
+                            result.ZenlessResult.Executed = true;
+                            Report($"[{account.Nickname}] {"Checkin_ZenlessCheckinProgress".GetLocalized()}");
+                            var zenlessResult = await ZenlessCheckinService.CheckInAsync(config, disabledUids);
+                            if (zenlessResult.Success == true) result.ZenlessResult.SuccessCount++;
+                            else if (zenlessResult.Success == false) result.ZenlessResult.FailCount++;
+                            else result.ZenlessResult.SkippedCount++;
+                            result.AccountResults[^1].Items.Add(("Checkin_ZenlessCheckin".GetLocalized(),
+                                zenlessResult.Success, zenlessResult.Message));
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -189,15 +209,20 @@ public class UnifiedCheckinService : IUnifiedCheckinService
                 }
 
                 result.GameResult.Success = result.GameResult.FailCount == 0;
-                bool anyOs = activeAccounts.Any(a => a.ConfigPath.StartsWith("os_"));
-                int signDays = anyOs ? HoyolabCheckinService.LastSignDays : GameCheckin.LastSignDays;
-                string rewardItem = anyOs ? HoyolabCheckinService.LastRewardItem : GameCheckin.LastRewardItem;
+                int signDays = lastGameSignDays;
+                string rewardItem = lastGameRewardItem;
                 result.GameSignDays = signDays.ToString();
                 result.GameRewardItem = rewardItem;
 
                 result.GameResult.Message = result.GameResult.Success
                     ? string.Format("Checkin_ConsecutiveDays".GetLocalized(), signDays, rewardItem)
                     : string.Format("Checkin_SuccessFailCount".GetLocalized(), result.GameResult.SuccessCount, result.GameResult.FailCount);
+                if (result.ZenlessResult.Executed)
+                {
+                    result.ZenlessResult.Success = result.ZenlessResult.FailCount == 0;
+                    result.ZenlessResult.Message = string.Format("Checkin_SuccessFailCount".GetLocalized(),
+                        result.ZenlessResult.SuccessCount, result.ZenlessResult.FailCount);
+                }
             }
             catch (Exception ex)
             {

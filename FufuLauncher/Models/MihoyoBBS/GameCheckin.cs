@@ -33,9 +33,10 @@ public abstract class GameCheckin
 
     protected static readonly string WebApi = ApiEndpoints.MihoyoBbsWebApi;
     protected readonly string AccountInfoUrl = ApiEndpoints.MihoyoBbsAccountInfoUrl;
-    protected readonly string CheckinRewardsUrl = ApiEndpoints.MihoyoBbsCheckinRewardsUrl;
-    protected readonly string IsSignUrl = ApiEndpoints.MihoyoBbsIsSignUrl;
-    protected readonly string SignUrl = ApiEndpoints.MihoyoBbsSignUrl;
+    protected virtual string CheckinRewardsUrl => ApiEndpoints.MihoyoBbsCheckinRewardsUrl;
+    protected virtual string IsSignUrl => ApiEndpoints.MihoyoBbsIsSignUrl;
+    protected virtual string SignUrl => ApiEndpoints.MihoyoBbsSignUrl;
+    public bool LastSignSucceeded { get; private set; }
     protected readonly string ResignInfoUrl = "https://api-takumi.mihoyo.com/event/luna/resign_info";
     protected readonly string ResignUrl = "https://api-takumi.mihoyo.com/event/luna/resign";
 
@@ -57,7 +58,7 @@ public abstract class GameCheckin
     {
         try
         {
-            var url = $"https://api-takumi.mihoyo.com/event/luna/home?act_id={ActId}&lang=zh-cn";
+            var url = $"{CheckinRewardsUrl}?act_id={ActId}&lang=zh-cn";
             using (var request = new HttpRequestMessage(HttpMethod.Get, url))
             {
                 AddHeadersToRequest(request);
@@ -367,10 +368,12 @@ public abstract class GameCheckin
     public async Task<string> SignAccountAsync(Config config, string targetUid = null, HashSet<string> disabledUids = null)
     {
         LastApiError = string.Empty;
+        LastSignSucceeded = true;
         var returnData = $"{GameName}: ";
 
         if (AccountList == null || AccountList.Count == 0)
         {
+            LastSignSucceeded = false;
             returnData += "Checkin_NoBoundAccount".GetLocalized();
             if (!string.IsNullOrEmpty(LastApiError))
             {
@@ -406,6 +409,7 @@ public abstract class GameCheckin
             var isData = await IsSignAsync(account.Region, account.GameUid);
             if (isData == null)
             {
+                LastSignSucceeded = false;
                 returnData += "\n" + account.Nickname + "Checkin_GetInfoFailed".GetLocalized();
                 if (!string.IsNullOrEmpty(LastApiError))
                 {
@@ -416,6 +420,7 @@ public abstract class GameCheckin
 
             if (isData.FirstBind)
             {
+                LastSignSucceeded = false;
                 returnData += "\n" + account.Nickname + "Checkin_FirstBindWarning".GetLocalized();
                 continue;
             }
@@ -444,6 +449,7 @@ public abstract class GameCheckin
                 var req = await CheckIn(account);
                 if (req == null)
                 {
+                    LastSignSucceeded = false;
                     returnData += "\n" + account.Nickname + "Checkin_SignRequestFailed".GetLocalized();
                     if (!string.IsNullOrEmpty(LastApiError))
                     {
@@ -484,18 +490,21 @@ public abstract class GameCheckin
                         }
                         else
                         {
+                            LastSignSucceeded = false;
                             returnData += "\n" + account.Nickname + string.Format("Checkin_SignFailedApi".GetLocalized(), data.Message);
                             continue;
                         }
                     }
                     else
                     {
+                        LastSignSucceeded = false;
                         returnData += "\n" + account.Nickname + "Checkin_ParseResultFailed".GetLocalized();
                         continue;
                     }
                 }
                 else
                 {
+                    LastSignSucceeded = false;
                     returnData += "\n" + account.Nickname + "Checkin_SignRateLimited".GetLocalized();
                     continue;
                 }

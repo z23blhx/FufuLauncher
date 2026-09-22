@@ -140,10 +140,10 @@ public class HoyoverseCheckinService : IHoyoverseCheckinService
         await genshin.InitializeAsync(config);
         var disabledUids = await GetDisabledUidsAsync();
         string result = await genshin.SignAccountAsync(config, targetUid, disabledUids);
-        var failKey = "Status_Failure".GetLocalized();
-        var excKey = "Status_Exception".GetLocalized();
-        bool success = !result.Contains(failKey) && !result.Contains(excKey);
-        return (success, result);
+        bool success = genshin.LastSignSucceeded;
+        var zenlessResult = await ZenlessCheckinService.CheckInAsync(config, disabledUids);
+        return (success && zenlessResult.Success != false,
+            $"{result}\n{"Checkin_ZenlessCheckin".GetLocalized()}: {zenlessResult.Message}");
     }
 
     public async Task<CheckinCalendarData?> GetCalendarDataAsync(Dictionary<string, string> cookies, string serverType)

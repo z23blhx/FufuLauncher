@@ -10,7 +10,7 @@ namespace FufuLauncher.Models;
 public class UnifiedCheckinResult
 {
     private IEnumerable<CheckinTypeResult> ExecutedResults =>
-        new[] { GameResult, CommunityResult, CloudGameResult }.Where(r => r.Executed);
+        new[] { GameResult, ZenlessResult, CommunityResult, CloudGameResult }.Where(r => r.Executed);
 
     public bool OverallSuccess
     {
@@ -34,6 +34,7 @@ public class UnifiedCheckinResult
         }
     }
     public CheckinTypeResult GameResult { get; set; } = new() { TypeName = "Checkin_GameCheckin".GetLocalized() };
+    public CheckinTypeResult ZenlessResult { get; set; } = new() { TypeName = "Checkin_ZenlessCheckin".GetLocalized() };
     public CheckinTypeResult CommunityResult { get; set; } = new() { TypeName = "Checkin_CommunityCheckin".GetLocalized() };
     public CheckinTypeResult CloudGameResult { get; set; } = new() { TypeName = "CheckinCloud_Title".GetLocalized() };
     public string SummaryMessage { get; set; } = "";
