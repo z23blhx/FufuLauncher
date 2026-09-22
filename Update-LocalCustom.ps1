@@ -9,7 +9,7 @@ $env:GIT_MERGE_AUTOEDIT = 'no'
 
 $repoRoot = $PSScriptRoot
 $projectPath = Join-Path $repoRoot 'FufuLauncher\FufuLauncher.csproj'
-$executablePath = Join-Path $repoRoot 'FufuLauncher\bin\x64\Debug\net8.0-windows10.0.26100.0\FufuLauncher.exe'
+$executablePath = Join-Path $repoRoot 'FufuLauncher\bin\x64\Debug\net8.0-windows10.0.26100.0\win-x64\FufuLauncher.exe'
 $buildOutputPath = Split-Path -Parent $executablePath
 $nativeCorePath = Join-Path $repoRoot '.local-dependencies\FufuLauncher.UnlockerIsland'
 $nativeCoreRepository = 'https://github.com/FufuLauncher/FufuLauncher.UnlockerIsland.git'
@@ -139,7 +139,7 @@ try {
     }
 
     Write-Step 'Building the customized x64 Debug version'
-    & dotnet build $projectPath -c Debug '-p:Platform=x64' '-p:WarningLevel=0' --nologo -v:minimal
+    & dotnet build $projectPath -c Debug '-p:Platform=x64' '-p:RuntimeIdentifier=win-x64' '-p:WarningLevel=0' --nologo -v:minimal
     if ($LASTEXITCODE -ne 0) {
         throw 'Build failed.'
     }
