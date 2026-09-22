@@ -16,6 +16,11 @@ public class HashValidationService
         try
         {
             string baseDirectory = AppContext.BaseDirectory;
+            string captureAppPath = Path.Combine(baseDirectory, "CaptureApp.exe");
+            // Local/source builds do not ship CaptureApp; there is nothing to validate.
+            if (!File.Exists(captureAppPath))
+                return;
+
             string hashFilePath = Path.Combine(baseDirectory, "Assets", "Launcher" , "hash.txt");
 
             if (!File.Exists(hashFilePath))
@@ -32,8 +37,6 @@ public class HashValidationService
             }
 
             string expectedCaptureAppHash = hashLines[1].Trim();
-
-            string captureAppPath = Path.Combine(baseDirectory, "CaptureApp.exe");
 
             bool captureAppValid = await VerifyFileHashAsync(captureAppPath, expectedCaptureAppHash);
 
