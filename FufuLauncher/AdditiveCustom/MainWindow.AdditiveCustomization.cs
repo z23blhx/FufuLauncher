@@ -1,5 +1,6 @@
 using CommunityToolkit.Mvvm.Messaging;
 using FufuLauncher.AdditiveCustom;
+using FufuLauncher.Helpers;
 using FufuLauncher.Messages;
 using Microsoft.UI.Dispatching;
 using Microsoft.UI.Xaml;
@@ -57,6 +58,8 @@ public sealed partial class MainWindow
             (_, message) => dispatcherQueue.TryEnqueue(() =>
             {
                 HideOfficialNotificationCenter();
+                if (IsMissingCaptureAppHashFalsePositive(message))
+                    return;
                 AddPersistentNotification(message);
             }));
 
@@ -245,6 +248,15 @@ public sealed partial class MainWindow
         _additiveNotificationPanel.Children.Insert(0, infoBar);
         while (_additiveNotificationPanel.Children.Count > AdditiveMaximumNotifications)
             _additiveNotificationPanel.Children.RemoveAt(_additiveNotificationPanel.Children.Count - 1);
+    }
+
+    private static bool IsMissingCaptureAppHashFalsePositive(NotificationMessage message)
+    {
+        if (File.Exists(Path.Combine(AppContext.BaseDirectory, "CaptureApp.exe")))
+            return false;
+
+        return string.Equals(message.Title, "HashCheck_Failed".GetLocalized(), StringComparison.Ordinal) &&
+               string.Equals(message.Message, "HashCheck_FormatError".GetLocalized(), StringComparison.Ordinal);
     }
 
     private static Button CreateAdditiveCopyButton(string copyText)
