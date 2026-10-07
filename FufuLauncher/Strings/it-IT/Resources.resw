@@ -507,6 +507,9 @@
   <data name="Announcement_Loading" xml:space="preserve">
     <value>Caricamento annuncio...</value>
   </data>
+  <data name="Announcement_OpenInEdge" xml:space="preserve">
+    <value>Apri in Edge</value>
+  </data>
   <data name="Announcement_Title" xml:space="preserve">
     <value>Annuncio</value>
   </data>
@@ -1748,6 +1751,12 @@ Conferma di aver selezionato la directory di installazione contenente l'eseguibi
   </data>
   <data name="Fps_HashMismatch_Content" xml:space="preserve">
     <value>L'hash del plugin di visualizzazione FPS non corrisponde. Potrebbe essere stato manomesso o danneggiato. Reinstalla il launcher.</value>
+  </data>
+  <data name="Fps_Missing_Content" xml:space="preserve">
+    <value>Il file DLL del plugin di visualizzazione FPS non è stato trovato. Potrebbe non essere installato, essere stato eliminato per errore o bloccato dall'antivirus. Usa "Ripara Plugin Visualizzazione FPS" nel menu Funzioni e riprova.</value>
+  </data>
+  <data name="Fps_Missing_Title" xml:space="preserve">
+    <value>Plugin FPS mancante</value>
   </data>
   <data name="Fps_Repair_Fail_Title" xml:space="preserve">
     <value>Riparazione Fallita</value>
@@ -6040,4 +6049,174 @@ Puoi riprovare con un altro nodo o usare la fonte ufficiale diretta.</value>
   <data name="PluginStoreWritingConfig" xml:space="preserve">
     <value>Writing configuration...</value>
   </data>
+  <data name="EnableCaptchaNotice" xml:space="preserve">
+    <value>Mostra avviso nella finestra captcha</value>
+  </data>
+  <data name="EnableCaptchaNoticeCaption" xml:space="preserve">
+    <value>Mostra nella finestra captcha del controllo rischi un avviso sulla provenienza. Disattivandolo si nasconde solo il testo; la verifica resta invariata.</value>
+  </data>
+  <data name="CaptchaNoticeWatermark" xml:space="preserve">
+    <value>MIYOUSHE · NOTE · CAPTCHA</value>
+  </data>
+  <data name="CaptchaNoticeTitle" xml:space="preserve">
+    <value>Questa verifica proviene dalle note di Miyoushe</value>
+  </data>
+  <data name="CaptchaNoticeLine1" xml:space="preserve">
+    <value>Questa finestra è attivata dal controllo rischi di miHoYo e serve solo alla consulta delle «note». Non è il captcha del launcher.</value>
+  </data>
+  <data name="CaptchaNoticeLine2" xml:space="preserve">
+    <value>Dopo la verifica potrai visualizzare le note. Per nascondere questo avviso, disattivalo in «Impostazioni → Opzioni avanzate».</value>
+  </data>
+  <data name="DeviceInfo_Title" xml:space="preserve">
+    <value>Informazioni dispositivo Miyoushe</value>
+  </data>
+  <data name="DeviceInfo_Caption" xml:space="preserve">
+    <value>Visualizza e modifica l'impronta, gli identificatori e il profilo del dispositivo dell'account selezionato</value>
+  </data>
+  <data name="DeviceInfo_Account" xml:space="preserve">
+    <value>Account</value>
+  </data>
+  <data name="DeviceInfo_FingerprintSection" xml:space="preserve">
+    <value>Impronta del dispositivo</value>
+  </data>
+  <data name="DeviceInfo_FingerprintCaption" xml:space="preserve">
+    <value>Identificatori usati per l'autenticazione delle API Miyoushe. Le modifiche si applicano all'account dopo il salvataggio.</value>
+  </data>
+  <data name="DeviceInfo_ExtSection" xml:space="preserve">
+    <value>Profilo dispositivo (ext_fields)</value>
+  </data>
+  <data name="DeviceInfo_ExtCaption" xml:space="preserve">
+    <value>Caratteristiche inviate con l'impronta. Ogni campo è modificabile singolarmente.</value>
+  </data>
+  <data name="DeviceInfo_Randomize" xml:space="preserve">
+    <value>Genera identificatori casuali</value>
+  </data>
+  <data name="DeviceInfo_Reload" xml:space="preserve">
+    <value>Ricarica</value>
+  </data>
+  <data name="DeviceInfo_RestoreDefaults" xml:space="preserve">
+    <value>Ripristina predefiniti</value>
+  </data>
+  <data name="DeviceInfo_Save" xml:space="preserve">
+    <value>Salva</value>
+  </data>
+  <data name="DeviceInfo_FilterPlaceholder" xml:space="preserve">
+    <value>Filtra campi</value>
+  </data>
+  <data name="DeviceInfo_NoAccount" xml:space="preserve">
+    <value>Nessun account disponibile</value>
+  </data>
+  <data name="DeviceInfo_NoFingerprint" xml:space="preserve">
+    <value>Questo account non ha ancora un'impronta del dispositivo. Accedi e carica i dati una volta per poterla modificare.</value>
+  </data>
+  <data name="DeviceInfo_Saved" xml:space="preserve">
+    <value>Salvato</value>
+  </data>
+  <data name="DeviceInfo_SaveFailed" xml:space="preserve">
+    <value>Salvataggio non riuscito</value>
+  </data>
+  <data name="DeviceInfo_InvalidJson" xml:space="preserve">
+    <value>ext_fields non è un JSON valido</value>
+  </data>
+  <data name="DeviceInfo_Randomized" xml:space="preserve">
+    <value>Identificatori casuali generati. Salva per applicare.</value>
+  </data>
+  <data name="DeviceInfo_DefaultsRestored" xml:space="preserve">
+    <value>Profilo dispositivo predefinito ripristinato. Salva per applicare.</value>
+  </data>
+  <data name="DeviceInfo_DeviceIdRequired" xml:space="preserve">
+    <value>device_id non può essere vuoto</value>
+  </data>
+  <data name="DeviceInfo_ResetToDefaults" xml:space="preserve">
+    <value>Reimposta</value>
+  </data>
+  <data name="DeviceInfo_Resetting" xml:space="preserve">
+    <value>Ripristino della configurazione predefinita...</value>
+  </data>
+  <data name="DeviceInfo_ResetDone" xml:space="preserve">
+    <value>Configurazione predefinita ripristinata</value>
+  </data>
+  <data name="DeviceInfo_ResetFailed" xml:space="preserve">
+    <value>Ripristino non riuscito. Controlla la rete e riprova.</value>
+  </data>
+  <data name="SectionStartup" xml:space="preserve">
+    <value>Avvio automatico</value>
+  </data>
+  <data name="RunAtStartupTitle" xml:space="preserve">
+    <value>Avvia all'avvio</value>
+  </data>
+  <data name="RunAtStartupCaption" xml:space="preserve">
+    <value>Avvia automaticamente FufuLauncher all'accesso a Windows</value>
+  </data>
+  <data name="RunAtStartupFailedTitle" xml:space="preserve">
+    <value>Impossibile attivare l'avvio automatico</value>
+  </data>
+  <data name="RunAtStartupFailedMessage" xml:space="preserve">
+    <value>Scrittura della voce di avvio non riuscita. Controlla i permessi di sistema o le impostazioni del software di sicurezza.</value>
+  </data>
+  <data name="PluginDllConflict_Title" xml:space="preserve">
+    <value>Conflitto DLL del plugin</value>
+  </data>
+  <data name="PluginDllConflict_Message" xml:space="preserve">
+    <value>Abbiamo trovato DLL con lo stesso nome in più plugin, quindi l'iniezione è stata interrotta. Se proseguisse, potrebbe essere caricata una versione obsoleta del plugin e il gioco o i plugin potrebbero non funzionare più correttamente.</value>
+  </data>
+  <data name="PluginDllConflict_DllNameFormat" xml:space="preserve">
+    <value>Nome DLL: {0}</value>
+  </data>
+  <data name="PluginDllConflict_NewestBadge" xml:space="preserve">
+    <value>Più recente</value>
+  </data>
+  <data name="PluginDllConflict_OlderBadge" xml:space="preserve">
+    <value>Obsoleto</value>
+  </data>
+  <data name="PluginDllConflict_LocateBtn" xml:space="preserve">
+    <value>Individua file</value>
+  </data>
+  <data name="PluginDllConflict_Hint" xml:space="preserve">
+    <value>Mantieni solo il plugin più recente ed elimina o rinomina le DLL duplicate negli altri plugin. Se non sai quale mantenere, elimina tutti i plugin e reinstallali.</value>
+  </data>
+  <data name="PluginConflictCheckTitle" xml:space="preserve">
+    <value>Controllo conflitti plugin</value>
+  </data>
+  <data name="PluginConflictCheckCaption" xml:space="preserve">
+    <value>Controlla le DLL dei plugin con lo stesso nome prima dell'iniezione e la interrompe per farti risolvere il conflitto</value>
+  </data>
+  <data name="PluginConflictMainOnlyTitle" xml:space="preserve">
+    <value>Solo plugin principale</value>
+  </data>
+  <data name="PluginConflictMainOnlyCaption" xml:space="preserve">
+    <value>Controlla solo FufuLauncher.UnlockerIsland.dll; disattiva per controllare tutte le DLL dei plugin</value>
+  </data>
+  <data name="PluginDllConflict_DeleteBtn" xml:space="preserve">
+    <value>Elimina</value>
+  </data>
+  <data name="PluginDllConflict_ConfirmDeleteBtn" xml:space="preserve">
+    <value>Conferma eliminazione</value>
+  </data>
+  <data name="PluginDllConflict_DeleteConfirm" xml:space="preserve">
+    <value>Verranno eliminati la DLL e il config.ini nella stessa cartella. L'operazione non può essere annullata. Continuare?</value>
+  </data>
+  <data name="PluginDllConflict_DeleteFailedFormat" xml:space="preserve">
+    <value>Eliminazione non riuscita: {0}</value>
+  </data>
+  <data name="PluginDllConflict_Resolved" xml:space="preserve">
+    <value>Il conflitto di DLL duplicate è stato risolto. Ora puoi riavviare il gioco.</value>
+  </data>
+  <data name="PluginConfigPage_AutoSaveHint" xml:space="preserve"><value>Le modifiche vengono salvate automaticamente</value></data>
+  <data name="PluginConfigPage_Saving" xml:space="preserve"><value>Salvataggio…</value></data>
+  <data name="PluginConfigPage_SaveFailed" xml:space="preserve"><value>Salvataggio della configurazione non riuscito</value></data>
+  <data name="PluginConfigPage_SaveFailedMessage" xml:space="preserve"><value>Impossibile scrivere il file di configurazione. Controlla le autorizzazioni del file e riprova. Dettagli: {0}</value></data>
+  <data name="PluginConfigPage_LoadFailed" xml:space="preserve"><value>Caricamento della configurazione non riuscito</value></data>
+  <data name="PluginConfigPage_LoadFailedMessage" xml:space="preserve"><value>Impossibile leggere il file di configurazione del plugin. Dettagli: {0}</value></data>
+  <data name="PluginConfigPage_LoadFailedHint" xml:space="preserve"><value>Assicurati che il file di configurazione esista e sia leggibile, quindi ricaricalo.</value></data>
+  <data name="PluginConfigPage_MissingFile" xml:space="preserve"><value>Il file di configurazione non esiste: {0}</value></data>
+  <data name="PluginConfigPage_NoOptions" xml:space="preserve"><value>Nessuna impostazione configurabile</value></data>
+  <data name="PluginConfigPage_NoOptionsHint" xml:space="preserve"><value>Questo plugin non offre impostazioni modificabili.</value></data>
+  <data name="PluginConfigPage_NoResults" xml:space="preserve"><value>Nessuna impostazione corrispondente</value></data>
+  <data name="PluginConfigPage_NoResultsHint" xml:space="preserve"><value>Prova un’altra parola chiave o cancella la ricerca.</value></data>
+  <data name="PluginConfigPage_ClearSearch" xml:space="preserve"><value>Cancella ricerca</value></data>
+  <data name="PluginConfigPage_OptionCount" xml:space="preserve"><value>{0} impostazioni</value></data>
+  <data name="PluginConfigPage_FilteredOptionCount" xml:space="preserve"><value>{0} / {1} impostazioni</value></data>
+  <data name="PluginConfigPage_ConfigFile" xml:space="preserve"><value>File di configurazione</value></data>
+  <data name="PluginConfigPage_ValuePlaceholder" xml:space="preserve"><value>Inserisci un valore…</value></data>
 </root>

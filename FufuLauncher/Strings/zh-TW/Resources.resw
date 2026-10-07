@@ -54,6 +54,12 @@
   <data name="Fps_HashMismatch_Content" xml:space="preserve">
     <value>幀數顯示插件雜湊不符，可能已被竄改或損壞，請重新安裝啟動器</value>
   </data>
+  <data name="Fps_Missing_Content" xml:space="preserve">
+    <value>未找到FPS插件DLL檔案，插件可能未安裝、被誤刪或被防毒軟體攔截。請點擊功能選單中的「修復FPS顯示插件」後重試。</value>
+  </data>
+  <data name="Fps_Missing_Title" xml:space="preserve">
+    <value>FPS插件缺失</value>
+  </data>
   <data name="Fps_Repair_Fail_Title" xml:space="preserve">
     <value>修復失敗</value>
   </data>
@@ -965,10 +971,10 @@
     <value>功能</value>
   </data>
   <data name="DownloadPluginBtn" xml:space="preserve">
-    <value>下載插件(Download)</value>
+    <value>下載插件</value>
   </data>
   <data name="RepairFpsPluginBtn" xml:space="preserve">
-    <value>修復FPS顯示插件(Repair)</value>
+    <value>修復FPS顯示插件</value>
   </data>
   <data name="MainPluginEnabledLabel" xml:space="preserve">
     <value>主插件啟用</value>
@@ -1001,7 +1007,7 @@
     <value>提交PR</value>
   </data>
   <data name="EnableInjectionParenLabel" xml:space="preserve">
-    <value>啟用注入(Injection)</value>
+    <value>啟用注入</value>
   </data>
   <data name="ConfigPresetLabel" xml:space="preserve">
     <value>設定預設:</value>
@@ -2116,6 +2122,9 @@
   </data>
   <data name="Announcement_Loading" xml:space="preserve">
     <value>正在載入公告...</value>
+  </data>
+  <data name="Announcement_OpenInEdge" xml:space="preserve">
+    <value>在 Edge 中開啟</value>
   </data>
   <data name="CommunityPage_Back" xml:space="preserve">
     <value>上一頁</value>
@@ -6034,4 +6043,174 @@ UIGF v4.x/3.0/2.x</value>
   <data name="PluginStoreWritingConfig" xml:space="preserve">
     <value>正在寫入設定...</value>
   </data>
+  <data name="EnableCaptchaNotice" xml:space="preserve">
+    <value>顯示驗證碼彈窗說明</value>
+  </data>
+  <data name="EnableCaptchaNoticeCaption" xml:space="preserve">
+    <value>在米遊社風控驗證碼彈窗中顯示來源說明；關閉後僅隱藏文字，驗證功能不受影響。</value>
+  </data>
+  <data name="CaptchaNoticeWatermark" xml:space="preserve">
+    <value>米遊社便箋 · 人機驗證</value>
+  </data>
+  <data name="CaptchaNoticeTitle" xml:space="preserve">
+    <value>此驗證來自米遊社便箋</value>
+  </data>
+  <data name="CaptchaNoticeLine1" xml:space="preserve">
+    <value>該彈窗由米遊社風控觸發，僅用於「便箋」資料的查詢驗證，並非啟動器自身的人機驗證。</value>
+  </data>
+  <data name="CaptchaNoticeLine2" xml:space="preserve">
+    <value>完成驗證後即可查看便箋；不想看到此提示，可在「設定 → 進階選項」中關閉。</value>
+  </data>
+  <data name="DeviceInfo_Title" xml:space="preserve">
+    <value>米遊社裝置資訊</value>
+  </data>
+  <data name="DeviceInfo_Caption" xml:space="preserve">
+    <value>檢視並修改目前帳號的裝置指紋、裝置識別與裝置畫像資料</value>
+  </data>
+  <data name="DeviceInfo_Account" xml:space="preserve">
+    <value>帳號</value>
+  </data>
+  <data name="DeviceInfo_FingerprintSection" xml:space="preserve">
+    <value>裝置指紋</value>
+  </data>
+  <data name="DeviceInfo_FingerprintCaption" xml:space="preserve">
+    <value>用於米遊社介面驗證的裝置識別，儲存後立即對此帳號生效</value>
+  </data>
+  <data name="DeviceInfo_ExtSection" xml:space="preserve">
+    <value>裝置畫像（ext_fields）</value>
+  </data>
+  <data name="DeviceInfo_ExtCaption" xml:space="preserve">
+    <value>隨裝置指紋上報的裝置特徵參數，可依需求逐項修改</value>
+  </data>
+  <data name="DeviceInfo_Randomize" xml:space="preserve">
+    <value>隨機產生識別</value>
+  </data>
+  <data name="DeviceInfo_Reload" xml:space="preserve">
+    <value>重新載入</value>
+  </data>
+  <data name="DeviceInfo_RestoreDefaults" xml:space="preserve">
+    <value>還原預設</value>
+  </data>
+  <data name="DeviceInfo_Save" xml:space="preserve">
+    <value>儲存</value>
+  </data>
+  <data name="DeviceInfo_FilterPlaceholder" xml:space="preserve">
+    <value>篩選欄位</value>
+  </data>
+  <data name="DeviceInfo_NoAccount" xml:space="preserve">
+    <value>目前沒有可用帳號</value>
+  </data>
+  <data name="DeviceInfo_NoFingerprint" xml:space="preserve">
+    <value>此帳號尚未產生裝置指紋，登入並載入一次資料後即可編輯</value>
+  </data>
+  <data name="DeviceInfo_Saved" xml:space="preserve">
+    <value>儲存成功</value>
+  </data>
+  <data name="DeviceInfo_SaveFailed" xml:space="preserve">
+    <value>儲存失敗</value>
+  </data>
+  <data name="DeviceInfo_InvalidJson" xml:space="preserve">
+    <value>ext_fields 不是有效的 JSON</value>
+  </data>
+  <data name="DeviceInfo_Randomized" xml:space="preserve">
+    <value>已產生隨機裝置識別，儲存後生效</value>
+  </data>
+  <data name="DeviceInfo_DefaultsRestored" xml:space="preserve">
+    <value>已還原預設裝置畫像，儲存後生效</value>
+  </data>
+  <data name="DeviceInfo_DeviceIdRequired" xml:space="preserve">
+    <value>device_id 不能為空</value>
+  </data>
+  <data name="DeviceInfo_ResetToDefaults" xml:space="preserve">
+    <value>一鍵重置</value>
+  </data>
+  <data name="DeviceInfo_Resetting" xml:space="preserve">
+    <value>正在重置為預設設定…</value>
+  </data>
+  <data name="DeviceInfo_ResetDone" xml:space="preserve">
+    <value>已重置為預設設定</value>
+  </data>
+  <data name="DeviceInfo_ResetFailed" xml:space="preserve">
+    <value>重置失敗，請檢查網路後重試</value>
+  </data>
+  <data name="SectionStartup" xml:space="preserve">
+    <value>啟動設定</value>
+  </data>
+  <data name="RunAtStartupTitle" xml:space="preserve">
+    <value>開機自動啟動</value>
+  </data>
+  <data name="RunAtStartupCaption" xml:space="preserve">
+    <value>登入 Windows 後自動啟動芙芙啟動器</value>
+  </data>
+  <data name="RunAtStartupFailedTitle" xml:space="preserve">
+    <value>無法開啟開機自動啟動</value>
+  </data>
+  <data name="RunAtStartupFailedMessage" xml:space="preserve">
+    <value>寫入開機啟動項失敗，請檢查系統權限或安全軟體設定。</value>
+  </data>
+  <data name="PluginDllConflict_Title" xml:space="preserve">
+    <value>外掛 DLL 衝突</value>
+  </data>
+  <data name="PluginDllConflict_Message" xml:space="preserve">
+    <value>我們發現多個外掛裡有同名的 DLL，已停止注入。如果繼續注入，可能會載入舊版外掛，造成遊戲或外掛無法正常運作。</value>
+  </data>
+  <data name="PluginDllConflict_DllNameFormat" xml:space="preserve">
+    <value>DLL 名稱：{0}</value>
+  </data>
+  <data name="PluginDllConflict_NewestBadge" xml:space="preserve">
+    <value>最新</value>
+  </data>
+  <data name="PluginDllConflict_OlderBadge" xml:space="preserve">
+    <value>舊版本</value>
+  </data>
+  <data name="PluginDllConflict_LocateBtn" xml:space="preserve">
+    <value>定位檔案</value>
+  </data>
+  <data name="PluginDllConflict_Hint" xml:space="preserve">
+    <value>請只保留最新版本的外掛，並把其他外掛裡的同名 DLL 刪除或重新命名；如果不清楚該保留哪一個，建議刪除全部外掛後重新安裝。</value>
+  </data>
+  <data name="PluginConflictCheckTitle" xml:space="preserve">
+    <value>外掛衝突偵測</value>
+  </data>
+  <data name="PluginConflictCheckCaption" xml:space="preserve">
+    <value>啟動注入前會檢查同名外掛 DLL，發現衝突時停止注入並提示處理</value>
+  </data>
+  <data name="PluginConflictMainOnlyTitle" xml:space="preserve">
+    <value>僅偵測主外掛</value>
+  </data>
+  <data name="PluginConflictMainOnlyCaption" xml:space="preserve">
+    <value>只檢查 FufuLauncher.UnlockerIsland.dll；關閉後檢查所有外掛 DLL</value>
+  </data>
+  <data name="PluginDllConflict_DeleteBtn" xml:space="preserve">
+    <value>刪除</value>
+  </data>
+  <data name="PluginDllConflict_ConfirmDeleteBtn" xml:space="preserve">
+    <value>確認刪除</value>
+  </data>
+  <data name="PluginDllConflict_DeleteConfirm" xml:space="preserve">
+    <value>將刪除該 DLL 及其同目錄下的 config.ini，刪除後無法復原。是否繼續？</value>
+  </data>
+  <data name="PluginDllConflict_DeleteFailedFormat" xml:space="preserve">
+    <value>刪除失敗：{0}</value>
+  </data>
+  <data name="PluginDllConflict_Resolved" xml:space="preserve">
+    <value>同名 DLL 衝突已處理完畢，可以重新啟動遊戲了。</value>
+  </data>
+  <data name="PluginConfigPage_AutoSaveHint" xml:space="preserve"><value>變更將自動儲存</value></data>
+  <data name="PluginConfigPage_Saving" xml:space="preserve"><value>正在儲存…</value></data>
+  <data name="PluginConfigPage_SaveFailed" xml:space="preserve"><value>設定儲存失敗</value></data>
+  <data name="PluginConfigPage_SaveFailedMessage" xml:space="preserve"><value>無法寫入設定檔，請檢查檔案權限後重試。錯誤詳細資訊：{0}</value></data>
+  <data name="PluginConfigPage_LoadFailed" xml:space="preserve"><value>設定載入失敗</value></data>
+  <data name="PluginConfigPage_LoadFailedMessage" xml:space="preserve"><value>無法讀取外掛設定檔。錯誤詳細資訊：{0}</value></data>
+  <data name="PluginConfigPage_LoadFailedHint" xml:space="preserve"><value>請確認設定檔存在且可讀取，然後重新載入。</value></data>
+  <data name="PluginConfigPage_MissingFile" xml:space="preserve"><value>設定檔不存在：{0}</value></data>
+  <data name="PluginConfigPage_NoOptions" xml:space="preserve"><value>目前沒有可設定的參數</value></data>
+  <data name="PluginConfigPage_NoOptionsHint" xml:space="preserve"><value>此外掛尚未提供可調整的設定參數。</value></data>
+  <data name="PluginConfigPage_NoResults" xml:space="preserve"><value>找不到符合的設定項目</value></data>
+  <data name="PluginConfigPage_NoResultsHint" xml:space="preserve"><value>請嘗試其他關鍵字，或清除搜尋條件。</value></data>
+  <data name="PluginConfigPage_ClearSearch" xml:space="preserve"><value>清除搜尋</value></data>
+  <data name="PluginConfigPage_OptionCount" xml:space="preserve"><value>{0} 個設定項目</value></data>
+  <data name="PluginConfigPage_FilteredOptionCount" xml:space="preserve"><value>{0} / {1} 個設定項目</value></data>
+  <data name="PluginConfigPage_ConfigFile" xml:space="preserve"><value>設定檔</value></data>
+  <data name="PluginConfigPage_ValuePlaceholder" xml:space="preserve"><value>請輸入設定值…</value></data>
 </root>

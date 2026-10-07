@@ -1,7 +1,8 @@
-﻿/*
+/*
 Copyright (c) FufuLauncher Dev Team. All rights reserved.
 Licensed under the MIT License.
 */
+
 using System.Text.Encodings.Web;
 using System.Text.Json;
 
@@ -13,8 +14,9 @@ public partial class AccountManager
 
     private async Task WriteCookieFileAsync(string path, Dictionary<string, string> cookies)
     {
-        var file = new AccountCookieFile(cookies, await ReadFingerprintCoreAsync(path));
-        var json = JsonSerializer.Serialize(file, new JsonSerializerOptions { WriteIndented = true, Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping });
+        var file = new AccountCookieFile(cookies);
+        var json = JsonSerializer.Serialize(file,
+            new JsonSerializerOptions { WriteIndented = true, Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping });
         await File.WriteAllTextAsync(path, json);
     }
 

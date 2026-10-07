@@ -2,6 +2,7 @@
 Copyright (c) FufuLauncher Dev Team. All rights reserved.
 Licensed under the MIT License.
 */
+
 using System.Collections.ObjectModel;
 using System.Text.Json;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -19,13 +20,13 @@ public partial class PluginSettingsViewModel : ObservableObject
     private IniFile _iniFile;
     private bool _useKeyListInput = true;
     private readonly LightweightPluginService _lightweightPlugin;
-    
+
     [ObservableProperty]
     [NotifyPropertyChangedFor(nameof(IsDownloadSupported))]
     [NotifyPropertyChangedFor(nameof(ModeTabVisibility))]
     [NotifyPropertyChangedFor(nameof(SelectedPluginComboLabel))]
     private int selectedPluginIndex = 0;
-    
+
     public bool IsDownloadSupported => SelectedPluginIndex == 0 && !IsLightweightMode;
 
     public bool IsLightweightMode => _lightweightPlugin.IsLightweightMode;
@@ -45,51 +46,18 @@ public partial class PluginSettingsViewModel : ObservableObject
     public string PluginToggleLabel =>
         IsLightweightMode ? "LightweightMode_LiteEnabledLabel".GetLocalized() : "MainPluginEnabledLabel".GetLocalized();
 
-    [ObservableProperty]
-    private string pluginName;
+    [ObservableProperty] private string pluginName;
 
-    [ObservableProperty]
-    private string pluginDescription;
+    [ObservableProperty] private string pluginDescription;
 
-    [ObservableProperty]
-    private string pluginDeveloper;
+    [ObservableProperty] private string pluginDeveloper;
 
-    [ObservableProperty]
-    private string lastModifiedDate;
+    [ObservableProperty] private string lastModifiedDate;
 
-    [ObservableProperty]
-    private ObservableCollection<PresetModel> availablePresets = new();
+    [ObservableProperty] private ObservableCollection<PresetModel> availablePresets = new();
 
-    [ObservableProperty]
-    private PresetModel currentPreset;
+    [ObservableProperty] private PresetModel currentPreset;
 
-    [ObservableProperty]
-    private Microsoft.UI.Xaml.Media.ImageSource currentAvatarSource;
-
-    [ObservableProperty]
-    private bool hasAvatar;
-    
-    
-    [ObservableProperty]
-    private Microsoft.UI.Xaml.Media.ImageSource avatar512Source;
-
-    [ObservableProperty]
-    private Microsoft.UI.Xaml.Media.ImageSource avatar256Source;
-
-    [ObservableProperty]
-    private Microsoft.UI.Xaml.Media.ImageSource avatar128Source;
-
-    [ObservableProperty]
-    private bool hasAvatar512;
-
-    [ObservableProperty]
-    private bool hasAvatar256;
-
-    [ObservableProperty]
-    private bool hasAvatar128;
-
-    
-    
     private bool _isAutoCreatePresetEnabled = false;
 
     public bool IsAutoCreatePresetEnabled
@@ -107,10 +75,16 @@ public partial class PluginSettingsViewModel : ObservableObject
             }
         }
     }
-    
-    public ObservableCollection<PluginSettingItem> Settings { get; } = new();
 
-    public ObservableCollection<PluginSettingItem> PinnedSettings { get; } = new();
+    public ObservableCollection<PluginSettingItem> Settings
+    {
+        get;
+    } = new();
+
+    public ObservableCollection<PluginSettingItem> PinnedSettings
+    {
+        get;
+    } = new();
 
     public Microsoft.UI.Xaml.Visibility PinnedSettingsVisibility =>
         PinnedSettings.Count > 0 ? Microsoft.UI.Xaml.Visibility.Visible : Microsoft.UI.Xaml.Visibility.Collapsed;
@@ -118,13 +92,8 @@ public partial class PluginSettingsViewModel : ObservableObject
     private const string PinnedSettingsKey = "PluginSettingPinnedItems";
 
     private readonly List<string> _settingOrder = new();
+    private readonly Dictionary<string, int> _settingOrderIndexes = new(StringComparer.OrdinalIgnoreCase);
     private Dictionary<string, List<string>> _pinnedSections = new(StringComparer.OrdinalIgnoreCase);
-
-    public Microsoft.UI.Xaml.Visibility AvatarSettingsVisibility => 
-        SelectedPluginIndex == 2 ? Microsoft.UI.Xaml.Visibility.Visible : Microsoft.UI.Xaml.Visibility.Collapsed;
-
-    public Microsoft.UI.Xaml.Visibility MainSettingsVisibility => 
-        SelectedPluginIndex != 2 ? Microsoft.UI.Xaml.Visibility.Visible : Microsoft.UI.Xaml.Visibility.Collapsed;
 
 
     partial void OnSelectedPluginIndexChanged(int value)
@@ -132,13 +101,18 @@ public partial class PluginSettingsViewModel : ObservableObject
         CheckPluginStates();
         UpdatePaths();
         LoadConfiguration();
-        UpdateAvatarPreview();
         RefreshUIState();
     }
-    
 
-    public PluginSettingsViewModel()
+
+    public PluginSettingsViewModel(bool deferConfigurationLoading = false)
     {
+        _deferConfigurationLoading = deferConfigurationLoading;
+        SettingGroups = new()
+        {
+            new PluginSettingsGroup(PinnedSettings),
+            new PluginSettingsGroup(Settings, PinnedSettings)
+        };
         _lightweightPlugin = App.GetService<LightweightPluginService>();
         PinnedSettings.CollectionChanged += (_, _) => OnPropertyChanged(nameof(PinnedSettingsVisibility));
         CheckPluginStates();
@@ -153,9 +127,17 @@ public partial class PluginSettingsViewModel : ObservableObject
         _presetsDir = IsLightweightMode
             ? Path.Combine(AppPaths.PluginPresetsDir, LightweightPluginService.LitePluginFolderName)
             : AppPaths.PluginPresetsDir;
-    
+
         _iniFile = new IniFile(_iniPath);
-    
+        if (_deferConfigurationLoading)
+        {
+            PluginName = SelectedPluginComboLabel;
+            PluginDescription = string.Empty;
+            PluginDeveloper = string.Empty;
+            LastModifiedDate = string.Empty;
+            return;
+        }
+
         try
         {
             if (!Directory.Exists(_presetsDir))
@@ -166,25 +148,31 @@ public partial class PluginSettingsViewModel : ObservableObject
         catch (UnauthorizedAccessException)
         {
             _presetsDir = Path.Combine(AppPaths.RootDir, "Data", "PluginPresets");
-            try { Directory.CreateDirectory(_presetsDir); }
-            catch (Exception inner) { System.Diagnostics.Debug.WriteLine($"目录创建失败: {inner.Message}"); }
+            try
+            {
+                Directory.CreateDirectory(_presetsDir);
+            }
+            catch (Exception inner)
+            {
+                System.Diagnostics.Debug.WriteLine($"目录创建失败: {inner.Message}");
+            }
         }
         catch (Exception ex)
         {
             System.Diagnostics.Debug.WriteLine($"目录创建失败: {ex.Message}");
         }
-        
+
         var localSettings = App.GetService<FufuLauncher.Contracts.Services.ILocalSettingsService>();
         if (localSettings != null)
         {
             var keyInputTask = localSettings.ReadSettingAsync("UseKeyListInput");
             keyInputTask.Wait();
             _useKeyListInput = keyInputTask.Result == null || Convert.ToBoolean(keyInputTask.Result);
-            
+
             var autoCreateTask = localSettings.ReadSettingAsync("IsAutoCreatePresetEnabled");
             autoCreateTask.Wait();
             _isAutoCreatePresetEnabled = autoCreateTask.Result != null && Convert.ToBoolean(autoCreateTask.Result);
-            
+
             var devFeaturesTask = localSettings.ReadSettingAsync("IsDevFeaturesEnabled");
             devFeaturesTask.Wait();
             bool savedDevFeatures = devFeaturesTask.Result != null && Convert.ToBoolean(devFeaturesTask.Result);
@@ -203,11 +191,10 @@ public partial class PluginSettingsViewModel : ObservableObject
                 _isDevFeaturesEnabled = false;
             }
         }
-        
+
         LoadConfiguration();
-        UpdateAvatarPreview();
     }
-    
+
 
     public bool UseKeyListInput
     {
@@ -216,7 +203,8 @@ public partial class PluginSettingsViewModel : ObservableObject
         {
             if (SetProperty(ref _useKeyListInput, value))
             {
-                foreach (var setting in Settings.Concat(PinnedSettings).Where(s => string.Equals(s.Type, "key", StringComparison.OrdinalIgnoreCase)))
+                foreach (var setting in Settings.Concat(PinnedSettings)
+                             .Where(s => string.Equals(s.Type, "key", StringComparison.OrdinalIgnoreCase)))
                 {
                     setting.SetKeyInputMode(value);
                 }
@@ -230,8 +218,9 @@ public partial class PluginSettingsViewModel : ObservableObject
         }
     }
 
-    
+
     private bool _isDevFeaturesEnabled;
+
     public bool IsDevFeaturesEnabled
     {
         get => _isDevFeaturesEnabled;
@@ -268,13 +257,12 @@ public partial class PluginSettingsViewModel : ObservableObject
         CheckPluginStates();
         UpdatePaths();
         LoadConfiguration();
-        UpdateAvatarPreview();
         RefreshUIState();
     }
 
     public void ToggleSettingPin(PluginSettingItem? item)
     {
-        if (item == null) return;
+        if (item == null || (!Settings.Contains(item) && !PinnedSettings.Contains(item))) return;
 
         ApplyPin(item, !item.IsPinned);
         SavePinnedSections();
@@ -385,26 +373,32 @@ public partial class PluginSettingsViewModel : ObservableObject
     }
 
     private int GetSettingOrderIndex(string sectionKey) =>
-        _settingOrder.FindIndex(key => string.Equals(key, sectionKey, StringComparison.OrdinalIgnoreCase));
+        _settingOrderIndexes.GetValueOrDefault(sectionKey, -1);
 
     private void InsertBySettingOrder(ObservableCollection<PluginSettingItem> target, PluginSettingItem item)
     {
-        int itemIndex = GetSettingOrderIndex(item.SectionKey);
-
-        if (itemIndex >= 0)
+        var itemIndex = GetSettingOrderIndex(item.SectionKey);
+        if (itemIndex < 0 || target.Count == 0 || GetSettingOrderIndex(target[^1].SectionKey) <= itemIndex)
         {
-            for (int i = 0; i < target.Count; i++)
-            {
-                int otherIndex = GetSettingOrderIndex(target[i].SectionKey);
-                if (otherIndex > itemIndex)
-                {
-                    target.Insert(i, item);
-                    return;
-                }
-            }
+            target.Add(item);
+            return;
         }
 
-        target.Add(item);
+        var left = 0;
+        var right = target.Count;
+        while (left < right)
+        {
+            var middle = left + (right - left) / 2;
+            if (GetSettingOrderIndex(target[middle].SectionKey) <= itemIndex)
+            {
+                left = middle + 1;
+            }
+            else
+            {
+                right = middle;
+            }
+        }
+        target.Insert(left, item);
     }
 
     private void SavePinnedSections()
@@ -422,7 +416,8 @@ public partial class PluginSettingsViewModel : ObservableObject
 
         try
         {
-            var parsed = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(stored.ToString() ?? string.Empty);
+            var parsed =
+                JsonSerializer.Deserialize<Dictionary<string, List<string>>>(stored.ToString() ?? string.Empty);
             if (parsed == null) return result;
 
             foreach (var pair in parsed)
@@ -437,5 +432,4 @@ public partial class PluginSettingsViewModel : ObservableObject
 
         return result;
     }
-
 }

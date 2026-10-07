@@ -54,6 +54,12 @@
   <data name="Fps_HashMismatch_Content" xml:space="preserve">
     <value>Хэш плагина отображения FPS не совпадает. Возможно, он был изменён или повреждён. Переустановите лаунчер.</value>
   </data>
+  <data name="Fps_Missing_Content" xml:space="preserve">
+    <value>DLL-файл плагина отображения FPS не найден. Возможно, он не установлен, был случайно удалён или заблокирован антивирусом. Воспользуйтесь пунктом «Восстановить FPS плагин» в меню функций и повторите попытку.</value>
+  </data>
+  <data name="Fps_Missing_Title" xml:space="preserve">
+    <value>Плагин FPS не найден</value>
+  </data>
   <data name="Fps_Repair_Fail_Title" xml:space="preserve">
     <value>Ошибка восстановления</value>
   </data>
@@ -2116,6 +2122,9 @@
   </data>
   <data name="Announcement_Loading" xml:space="preserve">
     <value>Загрузка объявлений...</value>
+  </data>
+  <data name="Announcement_OpenInEdge" xml:space="preserve">
+    <value>Открыть в Edge</value>
   </data>
   <data name="CommunityPage_Back" xml:space="preserve">
     <value>Назад</value>
@@ -6034,4 +6043,174 @@ UIGF v4.x/3.0/2.x</value>
   <data name="PluginStoreWritingConfig" xml:space="preserve">
     <value>Writing configuration...</value>
   </data>
+  <data name="EnableCaptchaNotice" xml:space="preserve">
+    <value>Показывать пояснение в окне капчи</value>
+  </data>
+  <data name="EnableCaptchaNoticeCaption" xml:space="preserve">
+    <value>Показывает в окне капчи контроля рисков пояснение об источнике. Отключение скрывает только текст и не влияет на проверку.</value>
+  </data>
+  <data name="CaptchaNoticeWatermark" xml:space="preserve">
+    <value>MIYOUSHE · ЗАМЕТКИ · CAPTCHA</value>
+  </data>
+  <data name="CaptchaNoticeTitle" xml:space="preserve">
+    <value>Эта проверка — от заметок Miyoushe</value>
+  </data>
+  <data name="CaptchaNoticeLine1" xml:space="preserve">
+    <value>Окно вызывается контролем рисков miHoYo и служит только для запроса «заметок». Это не капча самого лаунчера.</value>
+  </data>
+  <data name="CaptchaNoticeLine2" xml:space="preserve">
+    <value>После проверки заметки станут доступны. Чтобы скрыть это сообщение, отключите его в «Настройки → Расширенные параметры».</value>
+  </data>
+  <data name="DeviceInfo_Title" xml:space="preserve">
+    <value>Информация об устройстве Miyoushe</value>
+  </data>
+  <data name="DeviceInfo_Caption" xml:space="preserve">
+    <value>Просмотр и изменение отпечатка, идентификаторов и профиля устройства выбранного аккаунта</value>
+  </data>
+  <data name="DeviceInfo_Account" xml:space="preserve">
+    <value>Аккаунт</value>
+  </data>
+  <data name="DeviceInfo_FingerprintSection" xml:space="preserve">
+    <value>Отпечаток устройства</value>
+  </data>
+  <data name="DeviceInfo_FingerprintCaption" xml:space="preserve">
+    <value>Идентификаторы устройства для аутентификации в API Miyoushe. Изменения применяются к аккаунту сразу после сохранения.</value>
+  </data>
+  <data name="DeviceInfo_ExtSection" xml:space="preserve">
+    <value>Профиль устройства (ext_fields)</value>
+  </data>
+  <data name="DeviceInfo_ExtCaption" xml:space="preserve">
+    <value>Характеристики устройства, отправляемые вместе с отпечатком. Каждое поле можно изменить.</value>
+  </data>
+  <data name="DeviceInfo_Randomize" xml:space="preserve">
+    <value>Случайные идентификаторы</value>
+  </data>
+  <data name="DeviceInfo_Reload" xml:space="preserve">
+    <value>Обновить</value>
+  </data>
+  <data name="DeviceInfo_RestoreDefaults" xml:space="preserve">
+    <value>Сбросить настройки</value>
+  </data>
+  <data name="DeviceInfo_Save" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="DeviceInfo_FilterPlaceholder" xml:space="preserve">
+    <value>Фильтр полей</value>
+  </data>
+  <data name="DeviceInfo_NoAccount" xml:space="preserve">
+    <value>Нет доступных аккаунтов</value>
+  </data>
+  <data name="DeviceInfo_NoFingerprint" xml:space="preserve">
+    <value>У этого аккаунта ещё нет отпечатка устройства. Войдите и один раз загрузите данные, чтобы его изменить.</value>
+  </data>
+  <data name="DeviceInfo_Saved" xml:space="preserve">
+    <value>Сохранено</value>
+  </data>
+  <data name="DeviceInfo_SaveFailed" xml:space="preserve">
+    <value>Не удалось сохранить</value>
+  </data>
+  <data name="DeviceInfo_InvalidJson" xml:space="preserve">
+    <value>ext_fields — недопустимый JSON</value>
+  </data>
+  <data name="DeviceInfo_Randomized" xml:space="preserve">
+    <value>Случайные идентификаторы устройства созданы. Сохраните для применения.</value>
+  </data>
+  <data name="DeviceInfo_DefaultsRestored" xml:space="preserve">
+    <value>Профиль устройства сброшен к значениям по умолчанию. Сохраните для применения.</value>
+  </data>
+  <data name="DeviceInfo_DeviceIdRequired" xml:space="preserve">
+    <value>device_id не может быть пустым</value>
+  </data>
+  <data name="DeviceInfo_ResetToDefaults" xml:space="preserve">
+    <value>Сбросить</value>
+  </data>
+  <data name="DeviceInfo_Resetting" xml:space="preserve">
+    <value>Сброс к конфигурации по умолчанию…</value>
+  </data>
+  <data name="DeviceInfo_ResetDone" xml:space="preserve">
+    <value>Конфигурация по умолчанию восстановлена</value>
+  </data>
+  <data name="DeviceInfo_ResetFailed" xml:space="preserve">
+    <value>Не удалось сбросить. Проверьте сеть и повторите попытку.</value>
+  </data>
+  <data name="SectionStartup" xml:space="preserve">
+    <value>Автозапуск</value>
+  </data>
+  <data name="RunAtStartupTitle" xml:space="preserve">
+    <value>Запускать при входе в систему</value>
+  </data>
+  <data name="RunAtStartupCaption" xml:space="preserve">
+    <value>Автоматически запускать FufuLauncher при входе в Windows</value>
+  </data>
+  <data name="RunAtStartupFailedTitle" xml:space="preserve">
+    <value>Не удалось включить автозапуск</value>
+  </data>
+  <data name="RunAtStartupFailedMessage" xml:space="preserve">
+    <value>Не удалось записать элемент автозапуска. Проверьте системные разрешения или настройки антивируса.</value>
+  </data>
+  <data name="PluginDllConflict_Title" xml:space="preserve">
+    <value>Конфликт DLL плагинов</value>
+  </data>
+  <data name="PluginDllConflict_Message" xml:space="preserve">
+    <value>Мы обнаружили DLL с одинаковыми именами в нескольких плагинах и остановили внедрение. Если продолжить, может загрузиться устаревшая версия плагина, и игра или плагины могут перестать работать правильно.</value>
+  </data>
+  <data name="PluginDllConflict_DllNameFormat" xml:space="preserve">
+    <value>Имя DLL: {0}</value>
+  </data>
+  <data name="PluginDllConflict_NewestBadge" xml:space="preserve">
+    <value>Новейшая</value>
+  </data>
+  <data name="PluginDllConflict_OlderBadge" xml:space="preserve">
+    <value>Устаревшая</value>
+  </data>
+  <data name="PluginDllConflict_LocateBtn" xml:space="preserve">
+    <value>Показать файл</value>
+  </data>
+  <data name="PluginDllConflict_Hint" xml:space="preserve">
+    <value>Оставьте только самый новый плагин, а одинаковые DLL в других плагинах удалите или переименуйте. Если вы не уверены, какой оставить, удалите все плагины и установите их заново.</value>
+  </data>
+  <data name="PluginConflictCheckTitle" xml:space="preserve">
+    <value>Проверка конфликтов плагинов</value>
+  </data>
+  <data name="PluginConflictCheckCaption" xml:space="preserve">
+    <value>Проверяет DLL плагинов с одинаковыми именами перед внедрением и останавливает его, чтобы вы устранили конфликт</value>
+  </data>
+  <data name="PluginConflictMainOnlyTitle" xml:space="preserve">
+    <value>Только основной плагин</value>
+  </data>
+  <data name="PluginConflictMainOnlyCaption" xml:space="preserve">
+    <value>Проверяется только FufuLauncher.UnlockerIsland.dll; отключите, чтобы проверять все DLL плагинов</value>
+  </data>
+  <data name="PluginDllConflict_DeleteBtn" xml:space="preserve">
+    <value>Удалить</value>
+  </data>
+  <data name="PluginDllConflict_ConfirmDeleteBtn" xml:space="preserve">
+    <value>Подтвердить удаление</value>
+  </data>
+  <data name="PluginDllConflict_DeleteConfirm" xml:space="preserve">
+    <value>Будут удалены DLL и config.ini в той же папке. Это действие необратимо. Продолжить?</value>
+  </data>
+  <data name="PluginDllConflict_DeleteFailedFormat" xml:space="preserve">
+    <value>Не удалось удалить: {0}</value>
+  </data>
+  <data name="PluginDllConflict_Resolved" xml:space="preserve">
+    <value>Конфликт одинаковых DLL устранён. Можно перезапустить игру.</value>
+  </data>
+  <data name="PluginConfigPage_AutoSaveHint" xml:space="preserve"><value>Изменения сохраняются автоматически</value></data>
+  <data name="PluginConfigPage_Saving" xml:space="preserve"><value>Сохранение…</value></data>
+  <data name="PluginConfigPage_SaveFailed" xml:space="preserve"><value>Не удалось сохранить конфигурацию</value></data>
+  <data name="PluginConfigPage_SaveFailedMessage" xml:space="preserve"><value>Не удалось записать файл конфигурации. Проверьте права доступа и повторите попытку. Подробности: {0}</value></data>
+  <data name="PluginConfigPage_LoadFailed" xml:space="preserve"><value>Не удалось загрузить конфигурацию</value></data>
+  <data name="PluginConfigPage_LoadFailedMessage" xml:space="preserve"><value>Не удалось прочитать файл конфигурации плагина. Подробности: {0}</value></data>
+  <data name="PluginConfigPage_LoadFailedHint" xml:space="preserve"><value>Убедитесь, что файл конфигурации существует и доступен для чтения, затем загрузите его заново.</value></data>
+  <data name="PluginConfigPage_MissingFile" xml:space="preserve"><value>Файл конфигурации не существует: {0}</value></data>
+  <data name="PluginConfigPage_NoOptions" xml:space="preserve"><value>Нет доступных настроек</value></data>
+  <data name="PluginConfigPage_NoOptionsHint" xml:space="preserve"><value>Этот плагин не предоставляет изменяемых настроек.</value></data>
+  <data name="PluginConfigPage_NoResults" xml:space="preserve"><value>Подходящие настройки не найдены</value></data>
+  <data name="PluginConfigPage_NoResultsHint" xml:space="preserve"><value>Попробуйте другое ключевое слово или очистите поиск.</value></data>
+  <data name="PluginConfigPage_ClearSearch" xml:space="preserve"><value>Очистить поиск</value></data>
+  <data name="PluginConfigPage_OptionCount" xml:space="preserve"><value>Настроек: {0}</value></data>
+  <data name="PluginConfigPage_FilteredOptionCount" xml:space="preserve"><value>Настроек: {0} / {1}</value></data>
+  <data name="PluginConfigPage_ConfigFile" xml:space="preserve"><value>Файл конфигурации</value></data>
+  <data name="PluginConfigPage_ValuePlaceholder" xml:space="preserve"><value>Введите значение…</value></data>
 </root>

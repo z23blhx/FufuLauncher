@@ -2,6 +2,7 @@
 Copyright (c) FufuLauncher Dev Team. All rights reserved.
 Licensed under the MIT License.
 */
+
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Windows.Input;
@@ -25,6 +26,7 @@ public enum WindowBackdropType
     Acrylic = 1,
     Mica = 2
 }
+
 public enum NotificationPosition
 {
     BottomRight = 0,
@@ -32,6 +34,7 @@ public enum NotificationPosition
     TopLeft = 2,
     BottomLeft = 3
 }
+
 public enum WindowModeType
 {
     Normal,
@@ -56,9 +59,11 @@ public partial class SettingsViewModel : ObservableRecipient
     private readonly INavigationService _navigationService;
     private readonly IGameLauncherService _gameLauncherService;
     private readonly IFilePickerService _filePickerService;
+    private readonly INotificationService _notificationService;
     private readonly AccountManager _accountManager;
     private readonly Services.AuthTicket.IAuthTicketService _authTicketService;
     private readonly DispatcherQueue _dispatcherQueue;
+
     public record MonitorItem(string DisplayName, int Index);
 
     [ObservableProperty] private ElementTheme _elementTheme;
@@ -69,6 +74,7 @@ public partial class SettingsViewModel : ObservableRecipient
     [ObservableProperty] private bool _isBackgroundEnabled = true;
     [ObservableProperty] private AppLanguage _selectedLanguage;
     [ObservableProperty] private bool _minimizeToTray;
+    [ObservableProperty] private bool _isStartupEnabled;
     [ObservableProperty] private string _customLaunchParameters = "";
     [ObservableProperty] private WindowModeType _launchArgsWindowMode = WindowModeType.Normal;
     [ObservableProperty] private string _launchArgsWidth = "";
@@ -76,7 +82,7 @@ public partial class SettingsViewModel : ObservableRecipient
     [ObservableProperty] private string _launchArgsPreview = "";
     [ObservableProperty] private string _customBackgroundPath;
     [ObservableProperty] private bool _hasCustomBackground;
-    
+
     [ObservableProperty] private bool _isBackgroundSlideshowEnabled;
     [ObservableProperty] private string _backgroundSlideshowFolder;
     [ObservableProperty] private bool _hasBackgroundSlideshowFolder;
@@ -91,18 +97,20 @@ public partial class SettingsViewModel : ObservableRecipient
     [ObservableProperty] private bool _isBetterGICloseOnExitEnabled;
 
     private double _betterGIStartupDelaySeconds = 0.0;
+
     public double BetterGIStartupDelaySeconds
     {
         get => _betterGIStartupDelaySeconds;
         set
         {
             var clampedValue = double.IsNaN(value) ? 0.0 : Math.Clamp(value, 0.0, 60.0);
-            if (SetProperty(ref _betterGIStartupDelaySeconds, clampedValue))
+            if (SetProperty(ref _betterGIStartupDelaySeconds, clampedValue) && !_isInitializing)
             {
                 _ = _localSettingsService.SaveSettingAsync("BetterGIStartupDelaySeconds", clampedValue);
             }
         }
     }
+
     [ObservableProperty] private double _globalBackgroundOverlayOpacity = 0.0;
     [ObservableProperty] private double _contentFrameBackgroundOpacity = 0.5;
     [ObservableProperty] private bool _isSaveWindowSizeEnabled;
@@ -141,7 +149,7 @@ public partial class SettingsViewModel : ObservableRecipient
     [ObservableProperty] private int _launchArgsMonitorIndex = 0;
 
     [ObservableProperty] private bool _isShowPresetCardEnabled;
-    
+
     [ObservableProperty] private bool _isShowWidgetCardEnabled;
     [ObservableProperty] private bool _showWidgetGacha = true;
     [ObservableProperty] private bool _showWidgetAchievement = true;
@@ -152,18 +160,18 @@ public partial class SettingsViewModel : ObservableRecipient
     [ObservableProperty] private bool _showWidgetBBS = true;
 
     [ObservableProperty] private AppProcessPriority _appProcessPriority;
-    
+
     [ObservableProperty] private string _customBackgroundApiUrl = "";
     [ObservableProperty] private string _currentBackgroundApiUrl = "";
-    
+
     [ObservableProperty] private string _launchButtonOverlayColor = "#0078D7";
     [ObservableProperty] private bool _isCpuUsageWarningEnabled = true;
     [ObservableProperty] private double _cpuUsageWarningThreshold = ProcessCpuUsageMonitor.DefaultCpuThreshold;
 
     [ObservableProperty] private bool _isRedeemCodeNotificationEnabled = true;
-    
+
     [ObservableProperty] private bool _isUsingHoyolabAccount;
-    
+
     [ObservableProperty] private bool _isScreenshotEnabled;
     [ObservableProperty] private string _screenshotHotkey = "F12";
     [ObservableProperty] private string _screenshotSavePath;
@@ -175,19 +183,38 @@ public partial class SettingsViewModel : ObservableRecipient
 
     [ObservableProperty] private bool _isPluginMirrorAccelerationEnabled = true;
 
+    [ObservableProperty] private bool _isPluginConflictCheckEnabled = true;
+    [ObservableProperty] private bool _isPluginConflictMainDllOnly = true;
+
     [ObservableProperty] private bool _ignoreConstraintRestrictions;
 
     [ObservableProperty] private bool _isCaptchaPopupDisabled;
 
-    public IAsyncRelayCommand SelectScreenshotFolderCommand { get; }
-    public IAsyncRelayCommand ClearScreenshotFolderCommand { get; }
-    public IAsyncRelayCommand OpenScreenshotFolderCommand { get; }
+    [ObservableProperty] private bool _isCaptchaNoticeEnabled = true;
+
+    public IAsyncRelayCommand SelectScreenshotFolderCommand
+    {
+        get;
+    }
+
+    public IAsyncRelayCommand ClearScreenshotFolderCommand
+    {
+        get;
+    }
+
+    public IAsyncRelayCommand OpenScreenshotFolderCommand
+    {
+        get;
+    }
 
     [ObservableProperty] private PostLaunchBehavior _postLaunchBehavior;
 
     public record PostLaunchBehaviorItem(string DisplayName, PostLaunchBehavior Value);
 
-    public List<PostLaunchBehaviorItem> PostLaunchBehaviorItems { get; } = new()
+    public List<PostLaunchBehaviorItem> PostLaunchBehaviorItems
+    {
+        get;
+    } = new()
     {
         new("不变", Models.PostLaunchBehavior.None),
         new("最小化到托盘", Models.PostLaunchBehavior.MinimizeToTray),
@@ -196,7 +223,10 @@ public partial class SettingsViewModel : ObservableRecipient
 
     [ObservableProperty] private PostLaunchBehaviorItem _selectedPostLaunchBehaviorItem = null!;
 
-    public ObservableCollection<NavItemConfig> NavItems { get; } = new();
+    public ObservableCollection<NavItemConfig> NavItems
+    {
+        get;
+    } = new();
 
     [ObservableProperty] private bool _isGameCheckinEnabled = true;
     [ObservableProperty] private bool _isBatchCheckinEnabled;
@@ -208,21 +238,31 @@ public partial class SettingsViewModel : ObservableRecipient
     [ObservableProperty] private ObservableCollection<CheckinAccountItem> _checkinAccounts = new();
     [ObservableProperty] private bool _isLoadingCheckinAccounts;
 
-    public IAsyncRelayCommand ResetGameExeNameCommand { get; }
+    public IAsyncRelayCommand ResetGameExeNameCommand
+    {
+        get;
+    }
 
-    public IAsyncRelayCommand ClearWebView2CacheCommand { get; }
+    public IAsyncRelayCommand ClearWebView2CacheCommand
+    {
+        get;
+    }
+
     public ICommand SwitchThemeCommand
     {
         get;
     }
+
     public ICommand SwitchLanguageCommand
     {
         get;
     }
+
     public ICommand SetResolutionPresetCommand
     {
         get;
     }
+
     public IAsyncRelayCommand SelectCustomBackgroundCommand
     {
         get;
@@ -232,7 +272,7 @@ public partial class SettingsViewModel : ObservableRecipient
     {
         get;
     }
-    
+
     public IAsyncRelayCommand ClearBackgroundSlideshowFolderCommand
     {
         get;
@@ -263,6 +303,7 @@ public partial class SettingsViewModel : ObservableRecipient
     {
         get;
     }
+
     public IAsyncRelayCommand ClearStartupSoundCommand
     {
         get;
@@ -273,9 +314,20 @@ public partial class SettingsViewModel : ObservableRecipient
         get;
     }
 
-    public IAsyncRelayCommand ResetBackgroundApiCommand { get; }
-    public IAsyncRelayCommand ResetLaunchButtonOverlayColorCommand { get; }
-    public IAsyncRelayCommand ResetCpuUsageWarningSettingsCommand { get; }
+    public IAsyncRelayCommand ResetBackgroundApiCommand
+    {
+        get;
+    }
+
+    public IAsyncRelayCommand ResetLaunchButtonOverlayColorCommand
+    {
+        get;
+    }
+
+    public IAsyncRelayCommand ResetCpuUsageWarningSettingsCommand
+    {
+        get;
+    }
 
     private static string? _cachedWebView2CacheSize;
 
@@ -295,6 +347,7 @@ public partial class SettingsViewModel : ObservableRecipient
         INavigationService navigationService,
         IGameLauncherService gameLauncherService,
         IFilePickerService filePickerService,
+        INotificationService notificationService,
         AccountManager accountManager,
         Services.AuthTicket.IAuthTicketService authTicketService)
     {
@@ -305,9 +358,12 @@ public partial class SettingsViewModel : ObservableRecipient
         _navigationService = navigationService;
         _gameLauncherService = gameLauncherService;
         _filePickerService = filePickerService;
+        _notificationService = notificationService;
         _accountManager = accountManager;
         _authTicketService = authTicketService;
         _dispatcherQueue = App.MainWindow.DispatcherQueue;
+
+        RegisterSettingSections();
 
         InitializeDefaultResolution();
 
@@ -324,7 +380,7 @@ public partial class SettingsViewModel : ObservableRecipient
         ResetGameExeNameCommand = new AsyncRelayCommand(ResetGameExeNameAsync);
         ResetBackgroundApiCommand = new AsyncRelayCommand(ResetBackgroundApiAsync);
         ResetCpuUsageWarningSettingsCommand = new AsyncRelayCommand(ResetCpuUsageWarningSettingsAsync);
-        
+
         ResetLaunchButtonOverlayColorCommand = new AsyncRelayCommand(ResetLaunchButtonOverlayColorAsync);
 
         WeakReferenceMessenger.Default.Register<CloudCredentialUpdatedMessage>(this, (r, m) =>
@@ -339,48 +395,46 @@ public partial class SettingsViewModel : ObservableRecipient
             }
         });
 
-        SwitchThemeCommand = new RelayCommand<ElementTheme>(
-            async (param) =>
+        SwitchThemeCommand = new RelayCommand<ElementTheme>(async (param) =>
+        {
+            if (ElementTheme != param)
             {
-                if (ElementTheme != param)
-                {
-                    ElementTheme = param;
-                    await _themeSelectorService.SetThemeAsync(param);
-                }
-            });
+                ElementTheme = param;
+                await _themeSelectorService.SetThemeAsync(param);
+            }
+        });
 
-        SwitchLanguageCommand = new RelayCommand<object>(
-            async (param) =>
+        SwitchLanguageCommand = new RelayCommand<object>(async (param) =>
+        {
+            try
             {
-                try
-                {
-                    int languageCode = Convert.ToInt32(param);
-                    var language = (AppLanguage)languageCode;
+                int languageCode = Convert.ToInt32(param);
+                var language = (AppLanguage)languageCode;
 
-                    Debug.WriteLine($"[SettingsVM] SwitchLanguageCommand: param={param}, language={language}, current SelectedLanguage={SelectedLanguage}");
+                Debug.WriteLine(
+                    $"[SettingsVM] SwitchLanguageCommand: param={param}, language={language}, current SelectedLanguage={SelectedLanguage}");
 
-                    // Always apply - the TwoWay binding on IsChecked may have already
-                    // updated SelectedLanguage, so the old guard was incorrectly
-                    // preventing ApplyLanguageChangeAsync from being called.
-                    SelectedLanguage = language;
-                    await ApplyLanguageChangeAsync(language);
-                }
-                catch (Exception ex)
-                {
-                    Debug.WriteLine($"语言切换失败: {ex.Message}");
-                }
-            });
-
-        SetResolutionPresetCommand = new RelayCommand<string>(
-            (param) =>
+                // Always apply - the TwoWay binding on IsChecked may have already
+                // updated SelectedLanguage, so the old guard was incorrectly
+                // preventing ApplyLanguageChangeAsync from being called.
+                SelectedLanguage = language;
+                await ApplyLanguageChangeAsync(language);
+            }
+            catch (Exception ex)
             {
-                var parts = param.Split(' ');
-                if (parts.Length == 2)
-                {
-                    LaunchArgsWidth = parts[0];
-                    LaunchArgsHeight = parts[1];
-                }
-            });
+                Debug.WriteLine($"语言切换失败: {ex.Message}");
+            }
+        });
+
+        SetResolutionPresetCommand = new RelayCommand<string>((param) =>
+        {
+            var parts = param.Split(' ');
+            if (parts.Length == 2)
+            {
+                LaunchArgsWidth = parts[0];
+                LaunchArgsHeight = parts[1];
+            }
+        });
 
         SelectCustomBackgroundCommand = new AsyncRelayCommand(SelectCustomBackgroundAsync);
         SelectBackgroundSlideshowFolderCommand = new AsyncRelayCommand(SelectBackgroundSlideshowFolderAsync);

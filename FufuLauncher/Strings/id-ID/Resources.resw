@@ -54,6 +54,12 @@
   <data name="Fps_HashMismatch_Content" xml:space="preserve">
     <value>Hash plugin penampil FPS tidak cocok. Plugin mungkin telah diubah atau rusak. Silakan instal ulang launcher.</value>
   </data>
+  <data name="Fps_Missing_Content" xml:space="preserve">
+    <value>File DLL plugin penampil FPS tidak ditemukan. Plugin mungkin belum terpasang, terhapus secara tidak sengaja, atau diblokir oleh antivirus. Gunakan "Perbaiki Plugin Tampilan FPS" di menu Fungsi lalu coba lagi.</value>
+  </data>
+  <data name="Fps_Missing_Title" xml:space="preserve">
+    <value>Plugin FPS Tidak Ditemukan</value>
+  </data>
   <data name="Fps_Repair_Fail_Title" xml:space="preserve">
     <value>Perbaikan Gagal</value>
   </data>
@@ -2116,6 +2122,9 @@ Buka situs web Microsoft untuk mengunduh dan menginstalnya?</value>
   </data>
   <data name="Announcement_Loading" xml:space="preserve">
     <value>Memuat pengumuman...</value>
+  </data>
+  <data name="Announcement_OpenInEdge" xml:space="preserve">
+    <value>Buka di Edge</value>
   </data>
   <data name="CommunityPage_Back" xml:space="preserve">
     <value>Kembali</value>
@@ -6034,4 +6043,174 @@ Anda dapat mencoba node lain atau menggunakan sumber resmi langsung.</value>
   <data name="PluginStoreWritingConfig" xml:space="preserve">
     <value>Writing configuration...</value>
   </data>
+  <data name="EnableCaptchaNotice" xml:space="preserve">
+    <value>Tampilkan keterangan popup captcha</value>
+  </data>
+  <data name="EnableCaptchaNoticeCaption" xml:space="preserve">
+    <value>Menampilkan keterangan asal-usul di jendela captcha kontrol risiko. Menonaktifkannya hanya menyembunyikan teks; verifikasi tetap berjalan.</value>
+  </data>
+  <data name="CaptchaNoticeWatermark" xml:space="preserve">
+    <value>MIYOUSHE · CATATAN · CAPTCHA</value>
+  </data>
+  <data name="CaptchaNoticeTitle" xml:space="preserve">
+    <value>Verifikasi ini berasal dari Catatan Miyoushe</value>
+  </data>
+  <data name="CaptchaNoticeLine1" xml:space="preserve">
+    <value>Jendela ini dipicu oleh kontrol risiko miHoYo dan hanya digunakan untuk permintaan "Catatan". Ini bukan captcha dari launcher.</value>
+  </data>
+  <data name="CaptchaNoticeLine2" xml:space="preserve">
+    <value>Setelah verifikasi selesai, Catatan dapat dilihat. Untuk menyembunyikan keterangan ini, matikan di «Pengaturan → Opsi Lanjutan».</value>
+  </data>
+  <data name="DeviceInfo_Title" xml:space="preserve">
+    <value>Info Perangkat Miyoushe</value>
+  </data>
+  <data name="DeviceInfo_Caption" xml:space="preserve">
+    <value>Lihat dan ubah sidik jari, pengenal, dan profil perangkat akun yang dipilih</value>
+  </data>
+  <data name="DeviceInfo_Account" xml:space="preserve">
+    <value>Akun</value>
+  </data>
+  <data name="DeviceInfo_FingerprintSection" xml:space="preserve">
+    <value>Sidik Jari Perangkat</value>
+  </data>
+  <data name="DeviceInfo_FingerprintCaption" xml:space="preserve">
+    <value>Pengenal perangkat untuk autentikasi API Miyoushe. Perubahan berlaku pada akun ini setelah disimpan.</value>
+  </data>
+  <data name="DeviceInfo_ExtSection" xml:space="preserve">
+    <value>Profil Perangkat (ext_fields)</value>
+  </data>
+  <data name="DeviceInfo_ExtCaption" xml:space="preserve">
+    <value>Karakteristik perangkat yang dikirim bersama sidik jari. Setiap kolom dapat diubah.</value>
+  </data>
+  <data name="DeviceInfo_Randomize" xml:space="preserve">
+    <value>Acak Pengenal</value>
+  </data>
+  <data name="DeviceInfo_Reload" xml:space="preserve">
+    <value>Muat Ulang</value>
+  </data>
+  <data name="DeviceInfo_RestoreDefaults" xml:space="preserve">
+    <value>Kembalikan Default</value>
+  </data>
+  <data name="DeviceInfo_Save" xml:space="preserve">
+    <value>Simpan</value>
+  </data>
+  <data name="DeviceInfo_FilterPlaceholder" xml:space="preserve">
+    <value>Filter kolom</value>
+  </data>
+  <data name="DeviceInfo_NoAccount" xml:space="preserve">
+    <value>Tidak ada akun tersedia</value>
+  </data>
+  <data name="DeviceInfo_NoFingerprint" xml:space="preserve">
+    <value>Akun ini belum memiliki sidik jari perangkat. Masuk dan muat data sekali untuk dapat mengeditnya.</value>
+  </data>
+  <data name="DeviceInfo_Saved" xml:space="preserve">
+    <value>Tersimpan</value>
+  </data>
+  <data name="DeviceInfo_SaveFailed" xml:space="preserve">
+    <value>Gagal menyimpan</value>
+  </data>
+  <data name="DeviceInfo_InvalidJson" xml:space="preserve">
+    <value>ext_fields bukan JSON yang valid</value>
+  </data>
+  <data name="DeviceInfo_Randomized" xml:space="preserve">
+    <value>Pengenal perangkat acak dibuat. Simpan untuk menerapkan.</value>
+  </data>
+  <data name="DeviceInfo_DefaultsRestored" xml:space="preserve">
+    <value>Profil perangkat default dikembalikan. Simpan untuk menerapkan.</value>
+  </data>
+  <data name="DeviceInfo_DeviceIdRequired" xml:space="preserve">
+    <value>device_id tidak boleh kosong</value>
+  </data>
+  <data name="DeviceInfo_ResetToDefaults" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="DeviceInfo_Resetting" xml:space="preserve">
+    <value>Mengembalikan ke konfigurasi default...</value>
+  </data>
+  <data name="DeviceInfo_ResetDone" xml:space="preserve">
+    <value>Konfigurasi default dikembalikan</value>
+  </data>
+  <data name="DeviceInfo_ResetFailed" xml:space="preserve">
+    <value>Reset gagal. Periksa jaringan lalu coba lagi.</value>
+  </data>
+  <data name="SectionStartup" xml:space="preserve">
+    <value>Startup</value>
+  </data>
+  <data name="RunAtStartupTitle" xml:space="preserve">
+    <value>Jalankan saat Startup</value>
+  </data>
+  <data name="RunAtStartupCaption" xml:space="preserve">
+    <value>Jalankan FufuLauncher secara otomatis saat Anda masuk ke Windows</value>
+  </data>
+  <data name="RunAtStartupFailedTitle" xml:space="preserve">
+    <value>Tidak Dapat Mengaktifkan Startup Otomatis</value>
+  </data>
+  <data name="RunAtStartupFailedMessage" xml:space="preserve">
+    <value>Gagal menulis entri startup. Periksa izin sistem atau pengaturan perangkat lunak keamanan.</value>
+  </data>
+  <data name="PluginDllConflict_Title" xml:space="preserve">
+    <value>Konflik DLL Plugin</value>
+  </data>
+  <data name="PluginDllConflict_Message" xml:space="preserve">
+    <value>Kami menemukan DLL dengan nama yang sama di beberapa plugin, jadi injeksi dihentikan. Jika dilanjutkan, versi plugin yang lama bisa dimuat dan game atau plugin dapat berhenti berfungsi dengan baik.</value>
+  </data>
+  <data name="PluginDllConflict_DllNameFormat" xml:space="preserve">
+    <value>Nama DLL: {0}</value>
+  </data>
+  <data name="PluginDllConflict_NewestBadge" xml:space="preserve">
+    <value>Terbaru</value>
+  </data>
+  <data name="PluginDllConflict_OlderBadge" xml:space="preserve">
+    <value>Lama</value>
+  </data>
+  <data name="PluginDllConflict_LocateBtn" xml:space="preserve">
+    <value>Temukan berkas</value>
+  </data>
+  <data name="PluginDllConflict_Hint" xml:space="preserve">
+    <value>Simpan hanya plugin terbaru, lalu hapus atau ganti nama DLL yang sama di plugin lain. Jika tidak yakin mana yang harus disimpan, hapus semua plugin dan pasang ulang.</value>
+  </data>
+  <data name="PluginConflictCheckTitle" xml:space="preserve">
+    <value>Pemeriksaan Konflik Plugin</value>
+  </data>
+  <data name="PluginConflictCheckCaption" xml:space="preserve">
+    <value>Memeriksa DLL plugin dengan nama yang sama sebelum injeksi dan menghentikannya agar Anda dapat menyelesaikan konflik</value>
+  </data>
+  <data name="PluginConflictMainOnlyTitle" xml:space="preserve">
+    <value>Hanya plugin utama</value>
+  </data>
+  <data name="PluginConflictMainOnlyCaption" xml:space="preserve">
+    <value>Hanya memeriksa FufuLauncher.UnlockerIsland.dll; matikan untuk memeriksa semua DLL plugin</value>
+  </data>
+  <data name="PluginDllConflict_DeleteBtn" xml:space="preserve">
+    <value>Hapus</value>
+  </data>
+  <data name="PluginDllConflict_ConfirmDeleteBtn" xml:space="preserve">
+    <value>Konfirmasi hapus</value>
+  </data>
+  <data name="PluginDllConflict_DeleteConfirm" xml:space="preserve">
+    <value>DLL dan config.ini di folder yang sama akan dihapus. Tindakan ini tidak dapat dibatalkan. Lanjutkan?</value>
+  </data>
+  <data name="PluginDllConflict_DeleteFailedFormat" xml:space="preserve">
+    <value>Gagal menghapus: {0}</value>
+  </data>
+  <data name="PluginDllConflict_Resolved" xml:space="preserve">
+    <value>Konflik DLL dengan nama sama sudah teratasi. Anda dapat memulai ulang game.</value>
+  </data>
+  <data name="PluginConfigPage_AutoSaveHint" xml:space="preserve"><value>Perubahan disimpan secara otomatis</value></data>
+  <data name="PluginConfigPage_Saving" xml:space="preserve"><value>Menyimpan…</value></data>
+  <data name="PluginConfigPage_SaveFailed" xml:space="preserve"><value>Gagal menyimpan konfigurasi</value></data>
+  <data name="PluginConfigPage_SaveFailedMessage" xml:space="preserve"><value>Tidak dapat menulis file konfigurasi. Periksa izin file dan coba lagi. Detail: {0}</value></data>
+  <data name="PluginConfigPage_LoadFailed" xml:space="preserve"><value>Gagal memuat konfigurasi</value></data>
+  <data name="PluginConfigPage_LoadFailedMessage" xml:space="preserve"><value>Tidak dapat membaca file konfigurasi plugin. Detail: {0}</value></data>
+  <data name="PluginConfigPage_LoadFailedHint" xml:space="preserve"><value>Pastikan file konfigurasi tersedia dan dapat dibaca, lalu muat ulang.</value></data>
+  <data name="PluginConfigPage_MissingFile" xml:space="preserve"><value>File konfigurasi tidak ditemukan: {0}</value></data>
+  <data name="PluginConfigPage_NoOptions" xml:space="preserve"><value>Tidak ada pengaturan yang dapat dikonfigurasi</value></data>
+  <data name="PluginConfigPage_NoOptionsHint" xml:space="preserve"><value>Plugin ini tidak menyediakan pengaturan yang dapat disesuaikan.</value></data>
+  <data name="PluginConfigPage_NoResults" xml:space="preserve"><value>Tidak ada pengaturan yang cocok</value></data>
+  <data name="PluginConfigPage_NoResultsHint" xml:space="preserve"><value>Coba kata kunci lain atau hapus pencarian.</value></data>
+  <data name="PluginConfigPage_ClearSearch" xml:space="preserve"><value>Hapus pencarian</value></data>
+  <data name="PluginConfigPage_OptionCount" xml:space="preserve"><value>{0} pengaturan</value></data>
+  <data name="PluginConfigPage_FilteredOptionCount" xml:space="preserve"><value>{0} / {1} pengaturan</value></data>
+  <data name="PluginConfigPage_ConfigFile" xml:space="preserve"><value>File konfigurasi</value></data>
+  <data name="PluginConfigPage_ValuePlaceholder" xml:space="preserve"><value>Masukkan nilai…</value></data>
 </root>

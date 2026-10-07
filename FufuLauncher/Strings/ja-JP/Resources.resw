@@ -54,6 +54,12 @@
   <data name="Fps_HashMismatch_Content" xml:space="preserve">
     <value>フレーム表示プラグインのハッシュが一致しません。改ざんまたは破損している可能性があります。ランチャーを再インストールしてください</value>
   </data>
+  <data name="Fps_Missing_Content" xml:space="preserve">
+    <value>FPS表示プラグインのDLLファイルが見つかりません。インストールされていないか、誤って削除されたか、ウイルス対策ソフトにブロックされた可能性があります。機能メニューの「FPS表示プラグインを修復」を実行してから再試行してください。</value>
+  </data>
+  <data name="Fps_Missing_Title" xml:space="preserve">
+    <value>FPSプラグインが見つかりません</value>
+  </data>
   <data name="Fps_Repair_Fail_Title" xml:space="preserve">
     <value>修復に失敗しました</value>
   </data>
@@ -2116,6 +2122,9 @@ MicrosoftのWebサイトからダウンロードしてインストールしま�
   </data>
   <data name="Announcement_Loading" xml:space="preserve">
     <value>お知らせを読み込み中...</value>
+  </data>
+  <data name="Announcement_OpenInEdge" xml:space="preserve">
+    <value>Edge で開く</value>
   </data>
   <data name="CommunityPage_Back" xml:space="preserve">
     <value>戻る</value>
@@ -6034,4 +6043,174 @@ UIGF v4.x/3.0/2.x</value>
   <data name="PluginStoreWritingConfig" xml:space="preserve">
     <value>Writing configuration...</value>
   </data>
+  <data name="EnableCaptchaNotice" xml:space="preserve">
+    <value>CAPTCHAポップアップの説明を表示</value>
+  </data>
+  <data name="EnableCaptchaNoticeCaption" xml:space="preserve">
+    <value>リスクコントロールCAPTCHAウィンドウに出典の説明を表示します。オフにすると説明が隠れるだけで、認証は通常どおり利用できます。</value>
+  </data>
+  <data name="CaptchaNoticeWatermark" xml:space="preserve">
+    <value>米遊社リアルタイムノート · CAPTCHA</value>
+  </data>
+  <data name="CaptchaNoticeTitle" xml:space="preserve">
+    <value>この認証は米遊社のリアルタイムノート用です</value>
+  </data>
+  <data name="CaptchaNoticeLine1" xml:space="preserve">
+    <value>このウィンドウは米遊社のリスクコントロールにより表示され、「リアルタイムノート」の取得にのみ使用されます。ランチャー自身のCAPTCHAではありません。</value>
+  </data>
+  <data name="CaptchaNoticeLine2" xml:space="preserve">
+    <value>認証に成功するとリアルタイムノートを表示できます。この案内が不要な場合は「設定 → 詳細オプション」で非表示にできます。</value>
+  </data>
+  <data name="DeviceInfo_Title" xml:space="preserve">
+    <value>米遊社デバイス情報</value>
+  </data>
+  <data name="DeviceInfo_Caption" xml:space="preserve">
+    <value>選択したアカウントのデバイスフィンガープリント、識別子、デバイスプロファイルを確認・編集します</value>
+  </data>
+  <data name="DeviceInfo_Account" xml:space="preserve">
+    <value>アカウント</value>
+  </data>
+  <data name="DeviceInfo_FingerprintSection" xml:space="preserve">
+    <value>デバイスフィンガープリント</value>
+  </data>
+  <data name="DeviceInfo_FingerprintCaption" xml:space="preserve">
+    <value>米遊社APIの認証に使われるデバイス識別子です。保存するとこのアカウントにすぐ反映されます。</value>
+  </data>
+  <data name="DeviceInfo_ExtSection" xml:space="preserve">
+    <value>デバイスプロファイル（ext_fields）</value>
+  </data>
+  <data name="DeviceInfo_ExtCaption" xml:space="preserve">
+    <value>フィンガープリントと一緒に送信されるデバイス情報です。項目ごとに編集できます。</value>
+  </data>
+  <data name="DeviceInfo_Randomize" xml:space="preserve">
+    <value>識別子をランダム生成</value>
+  </data>
+  <data name="DeviceInfo_Reload" xml:space="preserve">
+    <value>再読み込み</value>
+  </data>
+  <data name="DeviceInfo_RestoreDefaults" xml:space="preserve">
+    <value>既定値に戻す</value>
+  </data>
+  <data name="DeviceInfo_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="DeviceInfo_FilterPlaceholder" xml:space="preserve">
+    <value>項目を絞り込む</value>
+  </data>
+  <data name="DeviceInfo_NoAccount" xml:space="preserve">
+    <value>利用可能なアカウントがありません</value>
+  </data>
+  <data name="DeviceInfo_NoFingerprint" xml:space="preserve">
+    <value>このアカウントにはまだデバイスフィンガープリントがありません。ログインして一度データを読み込むと編集できます。</value>
+  </data>
+  <data name="DeviceInfo_Saved" xml:space="preserve">
+    <value>保存しました</value>
+  </data>
+  <data name="DeviceInfo_SaveFailed" xml:space="preserve">
+    <value>保存に失敗しました</value>
+  </data>
+  <data name="DeviceInfo_InvalidJson" xml:space="preserve">
+    <value>ext_fields が有効な JSON ではありません</value>
+  </data>
+  <data name="DeviceInfo_Randomized" xml:space="preserve">
+    <value>ランダムなデバイス識別子を生成しました。保存すると反映されます。</value>
+  </data>
+  <data name="DeviceInfo_DefaultsRestored" xml:space="preserve">
+    <value>デバイスプロファイルを既定値に戻しました。保存すると反映されます。</value>
+  </data>
+  <data name="DeviceInfo_DeviceIdRequired" xml:space="preserve">
+    <value>device_id は空にできません</value>
+  </data>
+  <data name="DeviceInfo_ResetToDefaults" xml:space="preserve">
+    <value>一括リセット</value>
+  </data>
+  <data name="DeviceInfo_Resetting" xml:space="preserve">
+    <value>既定の構成にリセットしています…</value>
+  </data>
+  <data name="DeviceInfo_ResetDone" xml:space="preserve">
+    <value>既定の構成にリセットしました</value>
+  </data>
+  <data name="DeviceInfo_ResetFailed" xml:space="preserve">
+    <value>リセットに失敗しました。ネットワークを確認して再試行してください。</value>
+  </data>
+  <data name="SectionStartup" xml:space="preserve">
+    <value>スタートアップ</value>
+  </data>
+  <data name="RunAtStartupTitle" xml:space="preserve">
+    <value>起動時に自動起動</value>
+  </data>
+  <data name="RunAtStartupCaption" xml:space="preserve">
+    <value>Windows へのサインイン時に FufuLauncher を自動的に起動します</value>
+  </data>
+  <data name="RunAtStartupFailedTitle" xml:space="preserve">
+    <value>自動起動を有効にできません</value>
+  </data>
+  <data name="RunAtStartupFailedMessage" xml:space="preserve">
+    <value>スタートアップ項目の書き込みに失敗しました。システムの権限やセキュリティソフトの設定を確認してください。</value>
+  </data>
+  <data name="PluginDllConflict_Title" xml:space="preserve">
+    <value>プラグイン DLL の競合</value>
+  </data>
+  <data name="PluginDllConflict_Message" xml:space="preserve">
+    <value>複数のプラグインに同じ名前の DLL が見つかったため、注入を中止しました。このまま注入すると古いバージョンのプラグインが読み込まれ、ゲームやプラグインが正常に動作しなくなる可能性があります。</value>
+  </data>
+  <data name="PluginDllConflict_DllNameFormat" xml:space="preserve">
+    <value>DLL 名：{0}</value>
+  </data>
+  <data name="PluginDllConflict_NewestBadge" xml:space="preserve">
+    <value>最新</value>
+  </data>
+  <data name="PluginDllConflict_OlderBadge" xml:space="preserve">
+    <value>旧バージョン</value>
+  </data>
+  <data name="PluginDllConflict_LocateBtn" xml:space="preserve">
+    <value>場所を開く</value>
+  </data>
+  <data name="PluginDllConflict_Hint" xml:space="preserve">
+    <value>最新のプラグインだけを残し、他のプラグインにある同じ名前の DLL は削除するか名前を変更してください。どれを残せばよいか分からない場合は、すべてのプラグインを削除して再インストールすることをおすすめします。</value>
+  </data>
+  <data name="PluginConflictCheckTitle" xml:space="preserve">
+    <value>プラグイン競合チェック</value>
+  </data>
+  <data name="PluginConflictCheckCaption" xml:space="preserve">
+    <value>注入前に同名のプラグイン DLL を確認し、競合がある場合は注入を中止して対処を促します</value>
+  </data>
+  <data name="PluginConflictMainOnlyTitle" xml:space="preserve">
+    <value>メインプラグインのみ</value>
+  </data>
+  <data name="PluginConflictMainOnlyCaption" xml:space="preserve">
+    <value>FufuLauncher.UnlockerIsland.dll のみを確認します。オフにするとすべてのプラグイン DLL を確認します</value>
+  </data>
+  <data name="PluginDllConflict_DeleteBtn" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="PluginDllConflict_ConfirmDeleteBtn" xml:space="preserve">
+    <value>削除する</value>
+  </data>
+  <data name="PluginDllConflict_DeleteConfirm" xml:space="preserve">
+    <value>この DLL と同じフォルダーにある config.ini を一緒に削除します。元に戻せません。続行しますか？</value>
+  </data>
+  <data name="PluginDllConflict_DeleteFailedFormat" xml:space="preserve">
+    <value>削除に失敗しました：{0}</value>
+  </data>
+  <data name="PluginDllConflict_Resolved" xml:space="preserve">
+    <value>同名 DLL の競合を解消しました。ゲームを再起動できます。</value>
+  </data>
+  <data name="PluginConfigPage_AutoSaveHint" xml:space="preserve"><value>変更は自動的に保存されます</value></data>
+  <data name="PluginConfigPage_Saving" xml:space="preserve"><value>保存中…</value></data>
+  <data name="PluginConfigPage_SaveFailed" xml:space="preserve"><value>設定の保存に失敗しました</value></data>
+  <data name="PluginConfigPage_SaveFailedMessage" xml:space="preserve"><value>設定ファイルに書き込めませんでした。ファイルのアクセス権を確認して再試行してください。詳細：{0}</value></data>
+  <data name="PluginConfigPage_LoadFailed" xml:space="preserve"><value>設定の読み込みに失敗しました</value></data>
+  <data name="PluginConfigPage_LoadFailedMessage" xml:space="preserve"><value>プラグインの設定ファイルを読み込めませんでした。詳細：{0}</value></data>
+  <data name="PluginConfigPage_LoadFailedHint" xml:space="preserve"><value>設定ファイルが存在し、読み取り可能であることを確認してから再読み込みしてください。</value></data>
+  <data name="PluginConfigPage_MissingFile" xml:space="preserve"><value>設定ファイルが存在しません：{0}</value></data>
+  <data name="PluginConfigPage_NoOptions" xml:space="preserve"><value>変更可能な設定はありません</value></data>
+  <data name="PluginConfigPage_NoOptionsHint" xml:space="preserve"><value>このプラグインには調整可能な設定がありません。</value></data>
+  <data name="PluginConfigPage_NoResults" xml:space="preserve"><value>一致する設定がありません</value></data>
+  <data name="PluginConfigPage_NoResultsHint" xml:space="preserve"><value>別のキーワードを試すか、検索をクリアしてください。</value></data>
+  <data name="PluginConfigPage_ClearSearch" xml:space="preserve"><value>検索をクリア</value></data>
+  <data name="PluginConfigPage_OptionCount" xml:space="preserve"><value>{0} 件の設定</value></data>
+  <data name="PluginConfigPage_FilteredOptionCount" xml:space="preserve"><value>{0} / {1} 件の設定</value></data>
+  <data name="PluginConfigPage_ConfigFile" xml:space="preserve"><value>設定ファイル</value></data>
+  <data name="PluginConfigPage_ValuePlaceholder" xml:space="preserve"><value>値を入力…</value></data>
 </root>

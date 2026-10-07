@@ -2,6 +2,7 @@
 Copyright (c) FufuLauncher Dev Team. All rights reserved.
 Licensed under the MIT License.
 */
+
 using System.ComponentModel;
 using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -11,6 +12,7 @@ using FufuLauncher.Contracts.Services;
 using FufuLauncher.Helpers;
 using FufuLauncher.Messages;
 using FufuLauncher.Models;
+using FufuLauncher.Views;
 using Microsoft.UI.Xaml;
 
 namespace FufuLauncher.ViewModels;
@@ -18,6 +20,7 @@ namespace FufuLauncher.ViewModels;
 public partial class MainViewModel
 {
     #region 游戏启动与进程监控
+
     [ObservableProperty] private bool _isGameNotLaunching;
 
     [ObservableProperty] private string _launchButtonText = "LaunchBtn_SelectPath".GetLocalized();
@@ -51,6 +54,7 @@ public partial class MainViewModel
             var exeNames = await FufuLauncher.Helpers.GameExeManager.GetExeNamesAsync();
             _cachedProcessNames = exeNames.Select(System.IO.Path.GetFileNameWithoutExtension).ToList();
         }
+
         return _cachedProcessNames;
     }
 
@@ -94,6 +98,7 @@ public partial class MainViewModel
         {
             return;
         }
+
         _lastLaunchButtonPressTime = now;
 
         if (IsGameLaunching)
@@ -114,7 +119,8 @@ public partial class MainViewModel
 
         if (!_gameLauncherService.IsGamePathSelected())
         {
-            _notificationService.Show("LaunchErr_NoGamePath".GetLocalized(), "LaunchErr_NoGamePathMsg".GetLocalized(), NotificationType.Error, 0);
+            _notificationService.Show("LaunchErr_NoGamePath".GetLocalized(), "LaunchErr_NoGamePathMsg".GetLocalized(),
+                NotificationType.Error, 0);
             return;
         }
 
@@ -129,7 +135,8 @@ public partial class MainViewModel
 
             if (result.Cancelled)
             {
-                _notificationService.Show("LaunchCancelled_Title".GetLocalized(), "LaunchCancelled_Msg".GetLocalized(), NotificationType.Information, 3000);
+                _notificationService.Show("LaunchCancelled_Title".GetLocalized(), "LaunchCancelled_Msg".GetLocalized(),
+                    NotificationType.Information, 3000);
                 return;
             }
 
@@ -138,9 +145,18 @@ public partial class MainViewModel
                 await ForceRefreshGameStateAsync();
                 await ApplyPostLaunchBehaviorAsync();
             }
+            else if (result.PluginDllConflicts.Count > 0)
+            {
+                if (!await PluginDllConflictDialog.ShowAsync(result.PluginDllConflicts))
+                {
+                    _notificationService.Show("LaunchErr_LaunchFailed".GetLocalized(), result.ErrorMessage,
+                        NotificationType.Error, 0);
+                }
+            }
             else
             {
-                _notificationService.Show("LaunchErr_LaunchFailed".GetLocalized(), result.ErrorMessage, NotificationType.Error, 0);
+                _notificationService.Show("LaunchErr_LaunchFailed".GetLocalized(), result.ErrorMessage,
+                    NotificationType.Error, 0);
             }
         }
         finally
@@ -320,7 +336,10 @@ public partial class MainViewModel
                         {
                             // ignored
                         }
-                        catch (InvalidOperationException) { continue; }
+                        catch (InvalidOperationException)
+                        {
+                            continue;
+                        }
                     }
 
                     process.Kill();
@@ -379,5 +398,6 @@ public partial class MainViewModel
             await Task.Delay(checkDelay, token);
         }
     }
+
     #endregion
 }
